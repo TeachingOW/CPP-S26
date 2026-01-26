@@ -24,6 +24,9 @@
 ## Cheat Sheet
  - [C++ Cheat Sheet](cheatsheet.pdf)
 
+## In-Class Quizzes
+ - [Weekly Quizzes & Practice Materials](quizzes/) - Comprehensive quiz system covering all C++ topics
+
 ## Lectures Code
 
 | Lecture  | Link                                                                 | 
