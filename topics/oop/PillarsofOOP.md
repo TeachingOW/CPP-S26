@@ -171,9 +171,10 @@ int main() {
 
 ---
 
-## ⭐ Bonus: Multiple Inheritance in C++
+##  Multiple Inheritance in C++
 
 C++ allows a class to inherit from **multiple parents**.
+
 
 ```cpp
 #include <iostream>
