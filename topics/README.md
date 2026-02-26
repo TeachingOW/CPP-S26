@@ -8,6 +8,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 **Focus:** OOP principles and C++ implementation
 
 **Topics:**
+- [ObjectTypesAndOOP.md](./oop/ObjectTypesAndOOP.md) - Complete tutorial on OOP types, inheritance, polymorphism, operators, and exceptions
 - [PillarsofOOP.md](./oop/PillarsofOOP.md) - The four pillars: Encapsulation, Abstraction, Inheritance, Polymorphism
 - [Exception.md](./oop/Exception.md) - Exception handling in C++
 
