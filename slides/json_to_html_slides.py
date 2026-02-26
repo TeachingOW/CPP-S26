@@ -76,21 +76,23 @@ def split_document(doc: dict) -> list[dict]:
     current: list[str] = []
     current_chars = 0
     current_code = False
+    current_code_blocks = 0
 
     def flush() -> None:
-        nonlocal current, current_chars, current_code
+        nonlocal current, current_chars, current_code, current_code_blocks
         if current:
             chunks.append(current)
         current = []
         current_chars = 0
         current_code = False
+        current_code_blocks = 0
 
     for para in paragraphs:
         para = str(para).strip()
         para_is_code = is_code_like(para)
         para_chars = len(para)
 
-        max_chars = 700 if para_is_code else 900
+        max_chars = 760 if para_is_code else 900
         max_blocks = 4 if para_is_code else 8
 
         # Split very long single blocks by lines so one HTML slide does not overflow.
@@ -119,13 +121,19 @@ def split_document(doc: dict) -> list[dict]:
                 should_flush = True
             if current_chars + para_chars > max_chars:
                 should_flush = True
-            if current_code != para_is_code and (current_chars > 250 or para_chars > 250):
-                should_flush = True
+            if current_code != para_is_code:
+                # Allow a short text preamble to stay with one code block.
+                if not (not para_is_code and current_code_blocks == 1 and current_chars < 820):
+                    if not (para_is_code and len(current) <= 2 and current_chars < 220 and current_chars + para_chars < 880):
+                        if current_chars > 250 or para_chars > 250:
+                            should_flush = True
         if should_flush:
             flush()
 
         current.append(para)
         current_chars += para_chars
+        if para_is_code:
+            current_code_blocks += 1
         current_code = para_is_code if len(current) == 1 else current_code and para_is_code
 
     flush()
@@ -184,6 +192,10 @@ def classify_blocks(paragraphs: list[str]) -> list[tuple[str, str]]:
             if lines and bulletish >= max(2, len(lines) // 2):
                 blocks.append(("list", "\n".join(lines)))
                 continue
+            # Many slide paragraphs are extracted as newline-separated statements without bullets.
+            if len(lines) >= 4 and all(len(ln) <= 140 for ln in lines) and not any(is_code_like(ln) for ln in lines):
+                blocks.append(("list_plain", "\n".join(lines)))
+                continue
         blocks.append(("text", text))
     return blocks
 
@@ -205,10 +217,11 @@ def render_slide(doc: dict, index: int, total: int) -> str:
     for kind, raw in blocks:
         if kind == "code":
             content_blocks.append(f'<pre class="code"><code>{highlight_cpp(raw)}</code></pre>')
-        elif kind == "list":
+        elif kind in {"list", "list_plain"}:
             items = []
             for line in raw.splitlines():
-                line = re.sub(r"^([-*]|\d+[.)])\s+", "", line)
+                if kind == "list":
+                    line = re.sub(r"^([-*]|\d+[.)])\s+", "", line)
                 items.append(f"<li>{html.escape(line)}</li>")
             content_blocks.append("<ul>" + "".join(items) + "</ul>")
         else:
