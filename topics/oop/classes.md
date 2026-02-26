@@ -584,11 +584,126 @@ public:
 };
 ```
 
-## 13. Exceptions 
+## 13. `static` Members and Methods
+
+`static` members belong to the class itself, not to each object instance.
+
+### 13.1 `static` Member Function
+
+A `static` member function can be called without creating an object.
+It does not have access to `this`, so it can only use:
+
+- its parameters
+- local variables
+- other `static` members
+
+```cpp
+#include <iostream>
+
+class math_utils {
+public:
+    static int square(int x) {
+        return x * x;
+    }
+};
+
+int main() {
+    std::cout << math_utils::square(5) << "\n"; // call using class name
+}
+```
+
+### 13.2 `static` Data Member (with `static` Method)
+
+```cpp
+#include <iostream>
+
+class student {
+private:
+    static int count; // shared by all student objects
+
+public:
+    student() { ++count; }
+
+    static int getCount() {
+        return count;
+    }
+};
+
+int student::count = 0; // definition (usually in a .cpp file)
+
+int main() {
+    student a;
+    student b;
+    std::cout << "Students created: " << student::getCount() << "\n";
+}
+```
+
+Use `static` methods for utility behavior, factories, counters, or logic that belongs to the class concept but not to one specific object.
+
+## 14. Templates: Function Templates and Class Templates
+
+Templates let you write generic code that works with many types.
+
+### 14.1 Function Template
+
+```cpp
+#include <iostream>
+
+template <typename T>
+T maximum(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    std::cout << maximum(3, 7) << "\n";
+    std::cout << maximum(2.5, 1.2) << "\n";
+}
+```
+
+### 14.2 Class Template
+
+```cpp
+#include <iostream>
+
+template <typename T>
+class box {
+private:
+    T value;
+
+public:
+    explicit box(T v) : value(v) {}
+    T get() const { return value; }
+};
+
+int main() {
+    box<int> a(10);
+    box<double> b(3.14);
+    std::cout << a.get() << "\n";
+    std::cout << b.get() << "\n";
+}
+```
+
+### 14.3 Why Template Code Is Usually Kept in One Header File
+
+For templates, the compiler usually needs to see the **full definition** at the point where the template is used (instantiated).
+
+- If you put only the declaration in a header and the definition in a `.cpp` file, other `.cpp` files may not see the definition
+- That often causes linker errors such as `undefined reference`
+- Keeping template declaration + definition in the same header makes the definition visible everywhere the template is used
+
+Common pattern:
+
+- `my_template.h` (or `.hpp`): contains both template declarations and definitions
+
+Advanced exception:
+
+- You *can* separate template definitions if you use **explicit instantiation**, but that is more advanced and usually not needed in beginner/intermediate code
+
+## 15. Exceptions 
 
 Classes and exceptions are tightly connected in C++ because of resource management and polymorphism.
 
-### 13.1 Basics: `try`, `throw`, `catch`
+### 15.1 Basics: `try`, `throw`, `catch`
 
 - `try`: wrap code that may fail
 - `throw`: signal an error
@@ -627,7 +742,7 @@ int main() {
 }
 ```
 
-### 13.2 Standard Exceptions and `what()`
+### 15.2 Standard Exceptions and `what()`
 
 As described in `Exception.md`, standard exceptions derive from `std::exception`, and `what()` is virtual.
 That means when you catch by `const std::exception&`, the derived `what()` message is preserved.
@@ -658,7 +773,7 @@ int main() {
 }
 ```
 
-### 13.3 Stack Unwinding and Destructors (RAII)
+### 15.3 Stack Unwinding and Destructors (RAII)
 
 When an exception is thrown, local objects are destroyed automatically during stack unwinding.
 This is why destructors and RAII are so important.
@@ -693,7 +808,7 @@ Key takeaway:
 - Throw exceptions for runtime errors
 - Catch exceptions by `const` reference (`const std::exception&`)
 
-## 14. Common Mistakes and Best Practices
+## 16. Common Mistakes and Best Practices
 
 ### Mistakes
 
@@ -713,7 +828,7 @@ Key takeaway:
 - Use RAII and standard library containers (`std::string`, `std::vector`) to avoid manual memory bugs
 - If you implement one of destructor/copy constructor/copy assignment for resource management, consider the full Rule of Three (or Rule of Five in modern C++)
 
-## 15. Splitting Code into Files and Compiling
+## 17. Splitting Code into Files and Compiling
 
 As programs grow, put declarations and implementations in separate files.
 
@@ -723,7 +838,7 @@ Typical layout:
 - Source file (`.cpp`): method definitions
 - `main.cpp`: program entry point and usage
 
-### 15.1 Example: `bank_account` split into files
+### 17.1 Example: `bank_account` split into files
 
 `bank_account.h`
 
@@ -797,7 +912,7 @@ int main() {
 }
 ```
 
-### 15.2 How to Compile (with `g++`)
+### 17.2 How to Compile (with `g++`)
 
 Compile all `.cpp` files together:
 
@@ -811,7 +926,7 @@ Run:
 ./app
 ```
 
-### 15.3 Separate Compilation (Object Files)
+### 17.3 Separate Compilation (Object Files)
 
 This is common in larger projects because only changed files need recompiling.
 
@@ -821,15 +936,16 @@ g++ -std=c++17 -Wall -Wextra -pedantic -c main.cpp -o main.o
 g++ main.o bank_account.o -o app
 ```
 
-### 15.4 Header and Include Tips
+### 17.4 Header and Include Tips
 
 - Put declarations in headers and definitions in `.cpp` files
 - Use include guards (`#ifndef`, `#define`, `#endif`) or `#pragma once`
 - Include only what you need
 - Keep headers self-contained when possible
 - Do not put non-`inline` function definitions in headers unless you understand linker behavior
+- Template functions/classes are usually fully defined in headers so the compiler can instantiate them where they are used
 
-### 15.5 Common Compile Errors
+### 17.5 Common Compile Errors
 
 - `undefined reference to ...`
   Cause: a `.cpp` file was not compiled/linked, or a function was declared but not defined
@@ -840,7 +956,7 @@ g++ main.o bank_account.o -o app
 - Method signature mismatch
   Cause: declaration in the header does not exactly match the definition in the source file
 
-## 16. Practice Exercises
+## 18. Practice Exercises
 
 1. Create a `student` class with private members and public getters/setters.
 2. Create an abstract base class `shape` and derive `rectangle` and `triangle`.
@@ -848,7 +964,7 @@ g++ main.o bank_account.o -o app
 4. Build a diamond hierarchy with and without virtual inheritance and observe the difference.
 5. Create a custom exception class for invalid user input and use it in a class method.
 
-## 17. Related Notes
+## 19. Related Notes
 
 - `topics/oop/PillarsofOOP.md`
 - `topics/advanced/ruleofThree.md`
