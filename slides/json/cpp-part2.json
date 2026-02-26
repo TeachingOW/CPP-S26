@@ -1,0 +1,3497 @@
+{
+  "source_file": "slides/cpp-part2.pptx",
+  "deck_name": "cpp-part2",
+  "slide_count": 174,
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "Introduction to Classes and Objects",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "Introduction to Classes and Objects"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "1"
+        }
+      ],
+      "full_text": "Introduction to Classes and Objects\n\n1"
+    },
+    {
+      "slide_number": 2,
+      "title": "Topics",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Topics"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "7.1  Abstract Data Types\n7.2  Object-Oriented Programming\n7.3  Introduction to Classes\n7.4  Creating and Using Objects\n7.5  Defining Member Functions\n7.6  Constructors\n7.7  Destructors\n7.8  Private Member Functions\n7.9    Passing Objects to Functions\n7.10  Object Composition\n7.11  Separating Class Specification,  \tImplementation, and Client Code"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 2"
+        }
+      ],
+      "full_text": "Topics\n\n7.1  Abstract Data Types\n7.2  Object-Oriented Programming\n7.3  Introduction to Classes\n7.4  Creating and Using Objects\n7.5  Defining Member Functions\n7.6  Constructors\n7.7  Destructors\n7.8  Private Member Functions\n7.9    Passing Objects to Functions\n7.10  Object Composition\n7.11  Separating Class Specification,  \tImplementation, and Client Code\n\n7- 2"
+    },
+    {
+      "slide_number": 3,
+      "title": "7.1  Abstract Data Types",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.1  Abstract Data Types"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Are programmer-created  data types  that specify\nthe legal values that can be stored\nthe operations that can be done on the values\nThe user of an  abstract data type  (ADT) does not need to know any implementation details ( e.g. , how the data is stored or how the operations on it are carried out)"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 3"
+        }
+      ],
+      "full_text": "7.1  Abstract Data Types\n\nAre programmer-created  data types  that specify\nthe legal values that can be stored\nthe operations that can be done on the values\nThe user of an  abstract data type  (ADT) does not need to know any implementation details ( e.g. , how the data is stored or how the operations on it are carried out)\n\n7- 3"
+    },
+    {
+      "slide_number": 4,
+      "title": "Abstraction in Software Development",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Abstraction in Software Development"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Abstraction  allows a programmer to design a solution to a problem and to use data items without concern for how the data items are implemented\nThis has already been encountered in the book:\nTo use the  pow  function, you need to know what inputs it expects and what kind of results it produces\nYou do not need to know how it works"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 4"
+        }
+      ],
+      "full_text": "Abstraction in Software Development\n\nAbstraction  allows a programmer to design a solution to a problem and to use data items without concern for how the data items are implemented\nThis has already been encountered in the book:\nTo use the  pow  function, you need to know what inputs it expects and what kind of results it produces\nYou do not need to know how it works\n\n7- 4"
+    },
+    {
+      "slide_number": 5,
+      "title": "Abstraction and Data Types",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Abstraction and Data Types"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Abstraction : a definition that captures general characteristics without details\nex: An abstract triangle is a 3-sided polygon.  A specific triangle may be scalene, isosceles, or equilateral\nData Type : defines the kind of values that can be stored and the operations that can be performed on the values"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 5"
+        }
+      ],
+      "full_text": "Abstraction and Data Types\n\nAbstraction : a definition that captures general characteristics without details\nex: An abstract triangle is a 3-sided polygon.  A specific triangle may be scalene, isosceles, or equilateral\nData Type : defines the kind of values that can be stored and the operations that can be performed on the values\n\n7- 5"
+    },
+    {
+      "slide_number": 6,
+      "title": "7.2  Object-Oriented Programming",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.2  Object-Oriented Programming"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Procedural programming  focuses on the processes/ actions that occur in a program.  Data and functions are separate and distinct.\nObject-oriented programming  is based on objects that encapsulate the data and the functions that operate with and on the data."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 6"
+        }
+      ],
+      "full_text": "7.2  Object-Oriented Programming\n\nProcedural programming  focuses on the processes/ actions that occur in a program.  Data and functions are separate and distinct.\nObject-oriented programming  is based on objects that encapsulate the data and the functions that operate with and on the data.\n\n7- 6"
+    },
+    {
+      "slide_number": 7,
+      "title": "Limitations of Procedural Programming",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Limitations of Procedural Programming"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Use of global data may allow data corruption\nPrograms are often based on complex function hierarchies\ndifficult to understand and maintain\ndifficult to modify and extend\neasy to break"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7"
+        }
+      ],
+      "full_text": "Limitations of Procedural Programming\n\nUse of global data may allow data corruption\nPrograms are often based on complex function hierarchies\ndifficult to understand and maintain\ndifficult to modify and extend\neasy to break\n\n7"
+    },
+    {
+      "slide_number": 8,
+      "title": "Object-Oriented Programming Terminology",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object-Oriented Programming Terminology"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "class : similar to a  struct\nAllows bundling of related variables ( member data ) and the functions that operate on them ( member functions )\nDescribes the properties that all instances of the class will have\nobject : an instance of a  class , in the same way that a variable can be an instance of a  struct"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "8"
+        }
+      ],
+      "full_text": "Object-Oriented Programming Terminology\n\nclass : similar to a  struct\nAllows bundling of related variables ( member data ) and the functions that operate on them ( member functions )\nDescribes the properties that all instances of the class will have\nobject : an instance of a  class , in the same way that a variable can be an instance of a  struct\n\n8"
+    },
+    {
+      "slide_number": 9,
+      "title": "Object-Oriented Programming Terminology",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object-Oriented Programming Terminology"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "attributes :   the data items of an object, stored in  member variables\nmember functions (methods) : procedures/ functions that act on the attributes of the class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 9"
+        }
+      ],
+      "full_text": "Object-Oriented Programming Terminology\n\nattributes :   the data items of an object, stored in  member variables\nmember functions (methods) : procedures/ functions that act on the attributes of the class\n\n7- 9"
+    },
+    {
+      "slide_number": 10,
+      "title": "More Object-Oriented Programming Terminology",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "More Object-Oriented Programming Terminology"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "data hiding : restricting data access to certain members of an object.\nProtection \u2013provide a layer of protection against inadvertent or deliberate data corruption\nNeed-to-know \u2013the programmer needn\u2019t worry about implementation details when writing \u201cclient\u201d code\nencapsulation : the bundling of an object\u2019s data and procedures into a single entity"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 10"
+        }
+      ],
+      "full_text": "More Object-Oriented Programming Terminology\n\ndata hiding : restricting data access to certain members of an object.\nProtection \u2013provide a layer of protection against inadvertent or deliberate data corruption\nNeed-to-know \u2013the programmer needn\u2019t worry about implementation details when writing \u201cclient\u201d code\nencapsulation : the bundling of an object\u2019s data and procedures into a single entity\n\n7- 10"
+    },
+    {
+      "slide_number": 11,
+      "title": "Object Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object Example"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 11"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Member variables (attributes)\nint  side;"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Member functions\nvoid  setSide ( int  s)\nint   getSide ()"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Square"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Square object\u2019s data item:   side\nSquare object\u2019s functions:   setSide  -   set the size of the side of the square,    getSide  -   return the size of the side of the square"
+        }
+      ],
+      "full_text": "Object Example\n\n7- 11\n\nMember variables (attributes)\nint  side;\n\nMember functions\nvoid  setSide ( int  s)\nint   getSide ()\n\nSquare\n\nSquare object\u2019s data item:   side\nSquare object\u2019s functions:   setSide  -   set the size of the side of the square,    getSide  -   return the size of the side of the square"
+    },
+    {
+      "slide_number": 12,
+      "title": "7.3 Introduction to Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.3 Introduction to Classes"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Class : a programmer-defined data type used to define objects\nIt is a pattern for creating objects\nex:\nstring fName, lName;\nThis creates two objects of the  string  class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 12"
+        }
+      ],
+      "full_text": "7.3 Introduction to Classes\n\nClass : a programmer-defined data type used to define objects\nIt is a pattern for creating objects\nex:\nstring fName, lName;\nThis creates two objects of the  string  class\n\n7- 12"
+    },
+    {
+      "slide_number": 13,
+      "title": "Introduction to Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Introduction to Classes"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A class declaration describes the member variables and member functions that its objects will have\nIt is a pattern for creating objects\ndeclaration format:\nclass  className\n{\ndeclaration;\ndeclaration;\n};"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 13"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Note the required  ;"
+        }
+      ],
+      "full_text": "Introduction to Classes\n\nA class declaration describes the member variables and member functions that its objects will have\nIt is a pattern for creating objects\ndeclaration format:\nclass  className\n{\ndeclaration;\ndeclaration;\n};\n\n7- 13\n\nNote the required  ;"
+    },
+    {
+      "slide_number": 14,
+      "title": "Access Specifiers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Access Specifiers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Used to control access to members of the class.\nEach member is declared to be either\npublic :  can be accessed by functions\noutside  of the class\nor\nprivate :  can only be called by or accessed\nby functions that are members of\nthe class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 14"
+        }
+      ],
+      "full_text": "Access Specifiers\n\nUsed to control access to members of the class.\nEach member is declared to be either\npublic :  can be accessed by functions\noutside  of the class\nor\nprivate :  can only be called by or accessed\nby functions that are members of\nthe class\n\n7- 14"
+    },
+    {
+      "slide_number": 15,
+      "title": "Class Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Class Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "class Square\n{\nprivate:\nint side;\npublic:\nvoid setSide(int s)\n{ side = s; }\nint getSide()\n{ return side; }\n};"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 15"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Access specifiers"
+        }
+      ],
+      "full_text": "Class Example\n\nclass Square\n{\nprivate:\nint side;\npublic:\nvoid setSide(int s)\n{ side = s; }\nint getSide()\n{ return side; }\n};\n\n7- 15\n\nAccess specifiers"
+    },
+    {
+      "slide_number": 16,
+      "title": "More on Access Specifiers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "More on Access Specifiers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Can be listed in any order in a class\nCan appear multiple times in a class\nIf not specified, the default is  private"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 16"
+        }
+      ],
+      "full_text": "More on Access Specifiers\n\nCan be listed in any order in a class\nCan appear multiple times in a class\nIf not specified, the default is  private\n\n7- 16"
+    },
+    {
+      "slide_number": 17,
+      "title": "7.4  Creating and Using Objects",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.4  Creating and Using Objects"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "An  object  is an instance of a class\nIt is defined just like other variables\nSquare sq1, sq2;\nIt can access members using dot operator\nsq1.setSide(5);\ncout << sq1.getSide();"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 17"
+        }
+      ],
+      "full_text": "7.4  Creating and Using Objects\n\nAn  object  is an instance of a class\nIt is defined just like other variables\nSquare sq1, sq2;\nIt can access members using dot operator\nsq1.setSide(5);\ncout << sq1.getSide();\n\n7- 17"
+    },
+    {
+      "slide_number": 18,
+      "title": "7.5  Defining Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.5  Defining Member Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Member functions are part of a class declaration\nPlace entire function definition inside the class declaration,\nor\nPlace just the prototype inside the class declaration and write the function definition after the class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 18"
+        }
+      ],
+      "full_text": "7.5  Defining Member Functions\n\nMember functions are part of a class declaration\nPlace entire function definition inside the class declaration,\nor\nPlace just the prototype inside the class declaration and write the function definition after the class\n\n7- 18"
+    },
+    {
+      "slide_number": 19,
+      "title": "Types of Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Types of Member Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Acessor, get, getter function :  uses but does not modify a member variable\nex:   getSide\nMutator, set, setter function :  modifies a member variable\nex:   setSide"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 19"
+        }
+      ],
+      "full_text": "Types of Member Functions\n\nAcessor, get, getter function :  uses but does not modify a member variable\nex:   getSide\nMutator, set, setter function :  modifies a member variable\nex:   setSide\n\n7- 19"
+    },
+    {
+      "slide_number": 20,
+      "title": "Defining Member Functions Inside the Class Declaration",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Defining Member Functions Inside the Class Declaration"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Member functions defined inside the class declaration are called  inline functions\nOnly very short functions, like the one below, should be inline functions\nint getSide()\n{ return side; }"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 20"
+        }
+      ],
+      "full_text": "Defining Member Functions Inside the Class Declaration\n\nMember functions defined inside the class declaration are called  inline functions\nOnly very short functions, like the one below, should be inline functions\nint getSide()\n{ return side; }\n\n7- 20"
+    },
+    {
+      "slide_number": 21,
+      "title": "Inline Member Function Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inline Member Function Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "class Square\n{\nprivate:\nint side;\npublic:\nvoid setSide(int s)\n{ side = s; }\nint getSide()\n{ return side; }\n};"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 21"
+        },
+        {
+          "placeholder_type": null,
+          "text": "inline functions"
+        }
+      ],
+      "full_text": "Inline Member Function Example\n\nclass Square\n{\nprivate:\nint side;\npublic:\nvoid setSide(int s)\n{ side = s; }\nint getSide()\n{ return side; }\n};\n\n7- 21\n\ninline functions"
+    },
+    {
+      "slide_number": 22,
+      "title": "Defining Member Functions After the Class Declaration * preferred way",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Defining Member Functions After the Class Declaration * preferred way"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Put a function prototype in the class declaration\nIn the function definition, precede the function name with the class name and  scope resolution operator  ( :: )\nint Square::getSide()\n{\nreturn side;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 22"
+        }
+      ],
+      "full_text": "Defining Member Functions After the Class Declaration * preferred way\n\nPut a function prototype in the class declaration\nIn the function definition, precede the function name with the class name and  scope resolution operator  ( :: )\nint Square::getSide()\n{\nreturn side;\n}\n\n7- 22"
+    },
+    {
+      "slide_number": 23,
+      "title": "Conventions and a Suggestion",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Conventions and a Suggestion"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Conventions:\nMember variables are usually  private\nAccessor and mutator functions are usually  public\nUse \u2018get\u2019 in the name of accessor functions, \u2018set\u2019 in the name of mutator functions\nSuggestion:   If possible, use member variables to calculate a value to be returned, as opposed to storing the calculated value.  This minimizes the likelihood of stale data."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 23"
+        }
+      ],
+      "full_text": "Conventions and a Suggestion\n\nConventions:\nMember variables are usually  private\nAccessor and mutator functions are usually  public\nUse \u2018get\u2019 in the name of accessor functions, \u2018set\u2019 in the name of mutator functions\nSuggestion:   If possible, use member variables to calculate a value to be returned, as opposed to storing the calculated value.  This minimizes the likelihood of stale data.\n\n7- 23"
+    },
+    {
+      "slide_number": 24,
+      "title": "Tradeoffs of Inline vs. Regular Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Tradeoffs of Inline vs. Regular Member Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "When a regular function is called, control passes to the called function\nthe compiler stores return address of call, allocates memory for local variables, etc.\nCode for an inline function is copied into the program in place of the call when the program is compiled\nlarger executable program, but\nless function call overhead, hence faster execution"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 24"
+        }
+      ],
+      "full_text": "Tradeoffs of Inline vs. Regular Member Functions\n\nWhen a regular function is called, control passes to the called function\nthe compiler stores return address of call, allocates memory for local variables, etc.\nCode for an inline function is copied into the program in place of the call when the program is compiled\nlarger executable program, but\nless function call overhead, hence faster execution\n\n7- 24"
+    },
+    {
+      "slide_number": 25,
+      "title": "Design Considerations",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Design Considerations"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Class should be designed to provide methods to store and retrieve data\nIn general, I/O should be done by functions that use class objects, rather than by class member functions  (Exceptions can occur, as with a class designed to display a menu)"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "25"
+        }
+      ],
+      "full_text": "Design Considerations\n\nClass should be designed to provide methods to store and retrieve data\nIn general, I/O should be done by functions that use class objects, rather than by class member functions  (Exceptions can occur, as with a class designed to display a menu)\n\n25"
+    },
+    {
+      "slide_number": 26,
+      "title": "7.6  Constructors",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.6  Constructors"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A  constructor  is a member function Is can be used to initialize data members\nIt must be a  public  member function\nIt must be named the same as the class\nIt must have no return type\nis automatically called when an object of the class is created"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 26"
+        }
+      ],
+      "full_text": "7.6  Constructors\n\nA  constructor  is a member function Is can be used to initialize data members\nIt must be a  public  member function\nIt must be named the same as the class\nIt must have no return type\nis automatically called when an object of the class is created\n\n7- 26"
+    },
+    {
+      "slide_number": 27,
+      "title": "Constructor \u2013 2 Examples",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Constructor \u2013 2 Examples"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 27"
+        }
+      ],
+      "full_text": "Constructor \u2013 2 Examples\n\n7- 27"
+    },
+    {
+      "slide_number": 28,
+      "title": "Another Default Constructor Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Another Default Constructor Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "class Square\n{\nprivate:\nint side;\npublic:\nSquare(int s = 1) // default\n{ side = s; }     // constructor\n// Other member\n// functions go here\n};"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Has parameter\nbut it has a default value"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "28"
+        }
+      ],
+      "full_text": "Another Default Constructor Example\n\nclass Square\n{\nprivate:\nint side;\npublic:\nSquare(int s = 1) // default\n{ side = s; }     // constructor\n// Other member\n// functions go here\n};\n\nHas parameter\nbut it has a default value\n\n28"
+    },
+    {
+      "slide_number": 29,
+      "title": "Overloading Constructors",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Overloading Constructors"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A class can have more than 1 constructor\nOverloaded constructors in a class must have different parameter lists\nSquare();\nSquare(int);"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 29"
+        }
+      ],
+      "full_text": "Overloading Constructors\n\nA class can have more than 1 constructor\nOverloaded constructors in a class must have different parameter lists\nSquare();\nSquare(int);\n\n7- 29"
+    },
+    {
+      "slide_number": 30,
+      "title": "The Default Constructor",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "The Default Constructor"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Constructors can have any number of parameters, including none\nA   default constructor   is one that takes no arguments either due to\nNo parameters or\nAll parameters have default values\nIf a class has any programmer-defined constructors, it should have a programmer - defined default constructor"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 30"
+        }
+      ],
+      "full_text": "The Default Constructor\n\nConstructors can have any number of parameters, including none\nA   default constructor   is one that takes no arguments either due to\nNo parameters or\nAll parameters have default values\nIf a class has any programmer-defined constructors, it should have a programmer - defined default constructor\n\n7- 30"
+    },
+    {
+      "slide_number": 31,
+      "title": "Default Constructor Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Default Constructor Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "class Square\n{\nprivate:\nint side;\npublic:\nSquare()       // default\n{ side = 1; }  // constructor\n// Other member\n// functions go here\n};"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "31"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Has no\nparameters"
+        }
+      ],
+      "full_text": "Default Constructor Example\n\nclass Square\n{\nprivate:\nint side;\npublic:\nSquare()       // default\n{ side = 1; }  // constructor\n// Other member\n// functions go here\n};\n\n31\n\nHas no\nparameters"
+    },
+    {
+      "slide_number": 32,
+      "title": "Another Default Constructor Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Another Default Constructor Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "class Square\n{\nprivate:\nint side;\npublic:\nSquare(int s = 1) // default\n{ side = s; }     // constructor\n// Other member\n// functions go here\n};"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 32"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Has parameter\nbut it has a default value"
+        }
+      ],
+      "full_text": "Another Default Constructor Example\n\nclass Square\n{\nprivate:\nint side;\npublic:\nSquare(int s = 1) // default\n{ side = s; }     // constructor\n// Other member\n// functions go here\n};\n\n7- 32\n\nHas parameter\nbut it has a default value"
+    },
+    {
+      "slide_number": 33,
+      "title": "Invoking a Constructor",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Invoking a Constructor"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "To create an object using the default constructor, use no argument list and no  ()\nSquare square1;\nTo create an object using a constructor that has parameters, include an argument list\nSquare square2(8);"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 33"
+        }
+      ],
+      "full_text": "Invoking a Constructor\n\nTo create an object using the default constructor, use no argument list and no  ()\nSquare square1;\nTo create an object using a constructor that has parameters, include an argument list\nSquare square2(8);\n\n7- 33"
+    },
+    {
+      "slide_number": 34,
+      "title": "7.7  Destructors",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.7  Destructors"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Are public member functions that are  automatically called when objects are destroyed\nThe destructor name is  ~ className ,  e.g. ,  \t ~Square\nIt has no return type\nIt takes no arguments\nOnly 1 destructor is allowed per class\n( i.e. , it cannot be overloaded)"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 34"
+        }
+      ],
+      "full_text": "7.7  Destructors\n\nAre public member functions that are  automatically called when objects are destroyed\nThe destructor name is  ~ className ,  e.g. ,  \t ~Square\nIt has no return type\nIt takes no arguments\nOnly 1 destructor is allowed per class\n( i.e. , it cannot be overloaded)\n\n7- 34"
+    },
+    {
+      "slide_number": 35,
+      "title": "7. 8  Private Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7. 8  Private Member Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A  private  member function can only be called by another member function of the same class\nIt is used for internal processing by the class, not for use outside of the class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 35"
+        }
+      ],
+      "full_text": "7. 8  Private Member Functions\n\nA  private  member function can only be called by another member function of the same class\nIt is used for internal processing by the class, not for use outside of the class\n\n7- 35"
+    },
+    {
+      "slide_number": 36,
+      "title": "7.9  Passing Objects to Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.9  Passing Objects to Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A class object can be passed as an argument to a function.\nWhen it is passed by value, the function makes a local copy of the object.  The original object in calling environment is unaffected by actions in the function.\nWhen passed by reference, the function can use \u2018set\u2019 functions to modify the object in the calling environment ."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 36"
+        }
+      ],
+      "full_text": "7.9  Passing Objects to Functions\n\nA class object can be passed as an argument to a function.\nWhen it is passed by value, the function makes a local copy of the object.  The original object in calling environment is unaffected by actions in the function.\nWhen passed by reference, the function can use \u2018set\u2019 functions to modify the object in the calling environment .\n\n7- 36"
+    },
+    {
+      "slide_number": 37,
+      "title": "Notes on Passing Objects",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Notes on Passing Objects"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Using a value parameter for an object can slow down a program and waste space\nUsing a reference parameter speeds up the program. It allows the function to modify data in the parameter, which may not be desirable."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 37"
+        }
+      ],
+      "full_text": "Notes on Passing Objects\n\nUsing a value parameter for an object can slow down a program and waste space\nUsing a reference parameter speeds up the program. It allows the function to modify data in the parameter, which may not be desirable.\n\n7- 37"
+    },
+    {
+      "slide_number": 38,
+      "title": "Notes on Passing Objects",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Notes on Passing Objects"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "To save space and time while protecting parameter data that should not be changed, use a  const  reference parameter\nvoid  showData ( const  Square &s)\n// header\nIn order for the  showData  function to call  Square  member functions, those functions must use  const  in their prototype and header:\nint  Square:: getSide ()  const ;"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 38"
+        }
+      ],
+      "full_text": "Notes on Passing Objects\n\nTo save space and time while protecting parameter data that should not be changed, use a  const  reference parameter\nvoid  showData ( const  Square &s)\n// header\nIn order for the  showData  function to call  Square  member functions, those functions must use  const  in their prototype and header:\nint  Square:: getSide ()  const ;\n\n7- 38"
+    },
+    {
+      "slide_number": 39,
+      "title": "Returning an Object from a Function",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Returning an Object from a Function"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A function can return an object\nSquare initSquare();   // prototype\nSquare s1 = initSquare();// call\nThe function must create an object\nfor internal use\nto use with  return  statement"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 39"
+        }
+      ],
+      "full_text": "Returning an Object from a Function\n\nA function can return an object\nSquare initSquare();   // prototype\nSquare s1 = initSquare();// call\nThe function must create an object\nfor internal use\nto use with  return  statement\n\n7- 39"
+    },
+    {
+      "slide_number": 40,
+      "title": "Returning an Object Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Returning an Object Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Square initSquare()\n{\nSquare s;    // local object\nint inputSize;\ncout << \"Enter the length of side: \";\ncin >> inputSize;\ns.setSide(inputSize);\nreturn s;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 40"
+        }
+      ],
+      "full_text": "Returning an Object Example\n\nSquare initSquare()\n{\nSquare s;    // local object\nint inputSize;\ncout << \"Enter the length of side: \";\ncin >> inputSize;\ns.setSide(inputSize);\nreturn s;\n}\n\n7- 40"
+    },
+    {
+      "slide_number": 41,
+      "title": "7.11 Separating Class Specification, Implementation, and Client Code",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.11 Separating Class Specification, Implementation, and Client Code"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Separating the class declaration, member function definitions, and the program that uses the class into separate files is considered good design."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 41"
+        }
+      ],
+      "full_text": "7.11 Separating Class Specification, Implementation, and Client Code\n\nSeparating the class declaration, member function definitions, and the program that uses the class into separate files is considered good design.\n\n7- 41"
+    },
+    {
+      "slide_number": 42,
+      "title": "Using Separate Files",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Using Separate Files"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Place the class declaration in a header file that serves as the  class specification file .  Name the file  classname .h  ( for example,  Square.h )\nPlace the member function definitions in a  class implementation file . Name the file  classname.cpp  (for example,  Square.cpp ) This file should  #include  the class specification file.\nA client program (client code) that uses the class must  #include  the class specification file and be compiled and linked with the class implementation file."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 42"
+        }
+      ],
+      "full_text": "Using Separate Files\n\nPlace the class declaration in a header file that serves as the  class specification file .  Name the file  classname .h  ( for example,  Square.h )\nPlace the member function definitions in a  class implementation file . Name the file  classname.cpp  (for example,  Square.cpp ) This file should  #include  the class specification file.\nA client program (client code) that uses the class must  #include  the class specification file and be compiled and linked with the class implementation file.\n\n7- 42"
+    },
+    {
+      "slide_number": 43,
+      "title": "Include Guard",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Include Guard"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Is used to prevent a header file from being included twice\nFormat:\n#ifndef  symbol_name\n#define  symbol_name\n. . .   (normal contents of header file)\n#endif\nsymbol_name   is usually the name of the header file, in all capital letters:\n#ifndef SQUARE_H\n#define SQUARE_H\n. . .\n#endif"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 43"
+        }
+      ],
+      "full_text": "Include Guard\n\nIs used to prevent a header file from being included twice\nFormat:\n#ifndef  symbol_name\n#define  symbol_name\n. . .   (normal contents of header file)\n#endif\nsymbol_name   is usually the name of the header file, in all capital letters:\n#ifndef SQUARE_H\n#define SQUARE_H\n. . .\n#endif\n\n7- 43"
+    },
+    {
+      "slide_number": 44,
+      "title": "#pragma once",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "#pragma once"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "This instructor prefers to use\n#pragma once\nat the beginning of the file, because it is too easy to forget the  #endif"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "1- 44"
+        }
+      ],
+      "full_text": "#pragma once\n\nThis instructor prefers to use\n#pragma once\nat the beginning of the file, because it is too easy to forget the  #endif\n\n1- 44"
+    },
+    {
+      "slide_number": 45,
+      "title": "What Should Be Done Inside  vs.  Outside the Class",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "What Should Be Done Inside  vs.  Outside the Class"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Class should be designed to provide functions to store and retrieve data\nIn general, input and output (I/O) should be done by functions that use class objects, rather than by class member functions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 45"
+        }
+      ],
+      "full_text": "What Should Be Done Inside  vs.  Outside the Class\n\nClass should be designed to provide functions to store and retrieve data\nIn general, input and output (I/O) should be done by functions that use class objects, rather than by class member functions\n\n7- 45"
+    },
+    {
+      "slide_number": 46,
+      "title": "7.10  Object Composition",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.10  Object Composition"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "This occurs when an object is a member variable of another object.\nIt is often used to design complex objects whose members are simpler objects\nex. (from book):  Define a rectangle class. Then, define a carpet class and use a rectangle object as a member of a carpet object."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 46"
+        }
+      ],
+      "full_text": "7.10  Object Composition\n\nThis occurs when an object is a member variable of another object.\nIt is often used to design complex objects whose members are simpler objects\nex. (from book):  Define a rectangle class. Then, define a carpet class and use a rectangle object as a member of a carpet object.\n\n7- 46"
+    },
+    {
+      "slide_number": 47,
+      "title": "Object Composition, cont.",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object Composition, cont."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 47"
+        }
+      ],
+      "full_text": "Object Composition, cont.\n\n7- 47"
+    },
+    {
+      "slide_number": 48,
+      "title": "7.15  Introduction to Object-Oriented Analysis and Design",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "7.15  Introduction to Object-Oriented Analysis and Design"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Object-Oriented Analysis : that phase of program development when the program functionality is determined from the requirements\nIt includes\nidentification of classes and objects\ndefinition of each class's attributes\ndefinition of each class's behaviors\ndefinition of the relationship between classes"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 48"
+        }
+      ],
+      "full_text": "7.15  Introduction to Object-Oriented Analysis and Design\n\nObject-Oriented Analysis : that phase of program development when the program functionality is determined from the requirements\nIt includes\nidentification of classes and objects\ndefinition of each class's attributes\ndefinition of each class's behaviors\ndefinition of the relationship between classes\n\n7- 48"
+    },
+    {
+      "slide_number": 49,
+      "title": "Identify Classes and Objects",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Identify Classes and Objects"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Consider the major data elements and the operations on these elements\nCandidates include\nuser-interface components (menus, text boxes,  etc. )\nI/O devices\nphysical objects\nhistorical data (employee records, transaction logs,  etc. )\nthe roles of human participants"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 49"
+        }
+      ],
+      "full_text": "Identify Classes and Objects\n\nConsider the major data elements and the operations on these elements\nCandidates include\nuser-interface components (menus, text boxes,  etc. )\nI/O devices\nphysical objects\nhistorical data (employee records, transaction logs,  etc. )\nthe roles of human participants\n\n7- 49"
+    },
+    {
+      "slide_number": 50,
+      "title": "Define Class Attributes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Define Class Attributes"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Attributes are the data elements of an object of the class\nThey are necessary for the object to work in its role in the program"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 50"
+        }
+      ],
+      "full_text": "Define Class Attributes\n\nAttributes are the data elements of an object of the class\nThey are necessary for the object to work in its role in the program\n\n7- 50"
+    },
+    {
+      "slide_number": 51,
+      "title": "Define Class Behaviors",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Define Class Behaviors"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "For each class,\nIdentify what an object of a class should do in the program\nThe behaviors determine some of the member functions of the class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 51"
+        }
+      ],
+      "full_text": "Define Class Behaviors\n\nFor each class,\nIdentify what an object of a class should do in the program\nThe behaviors determine some of the member functions of the class\n\n7- 51"
+    },
+    {
+      "slide_number": 52,
+      "title": "Relationships Between Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Relationships Between Classes"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Possible relationships\nAccess (\"uses-a\")\nOwnership/Composition (\"has-a\")\nInheritance (\"is-a\")"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 52"
+        }
+      ],
+      "full_text": "Relationships Between Classes\n\nPossible relationships\nAccess (\"uses-a\")\nOwnership/Composition (\"has-a\")\nInheritance (\"is-a\")\n\n7- 52"
+    },
+    {
+      "slide_number": 53,
+      "title": "Finding the Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Finding the Classes"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Technique:\nWrite a description of the problem domain (objects, events, etc. related to the problem)\nList the nouns, noun phrases, and pronouns.  These are all candidate objects\nRefine the list to include only those objects that are relevant to the problem"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 53"
+        }
+      ],
+      "full_text": "Finding the Classes\n\nTechnique:\nWrite a description of the problem domain (objects, events, etc. related to the problem)\nList the nouns, noun phrases, and pronouns.  These are all candidate objects\nRefine the list to include only those objects that are relevant to the problem\n\n7- 53"
+    },
+    {
+      "slide_number": 54,
+      "title": "Determine Class Responsibilities",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Determine Class Responsibilities"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Class responsibilities:\nWhat is the class responsible to know?\nWhat is the class responsible to do?\nUse these to define some of the member functions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 54"
+        }
+      ],
+      "full_text": "Determine Class Responsibilities\n\nClass responsibilities:\nWhat is the class responsible to know?\nWhat is the class responsible to do?\nUse these to define some of the member functions\n\n7- 54"
+    },
+    {
+      "slide_number": 55,
+      "title": "Object Reuse",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object Reuse"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A well-defined class can be used to create objects in multiple programs\nBy re-using an object definition, program development time is shortened\nOne goal of object-oriented programming is to support object reuse"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 55"
+        }
+      ],
+      "full_text": "Object Reuse\n\nA well-defined class can be used to create objects in multiple programs\nBy re-using an object definition, program development time is shortened\nOne goal of object-oriented programming is to support object reuse\n\n7- 55"
+    },
+    {
+      "slide_number": 56,
+      "title": "Object-Based vs. Object-Oriented",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object-Based vs. Object-Oriented"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A program that uses classes and objects is  object-based .\nAn object-based program that\ndefines relationships between classes of objects\ncreates classes from other classes\ndetermines member function behavior based on the object\nis more likely to be an  object-oriented  program"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "7- 56"
+        }
+      ],
+      "full_text": "Object-Based vs. Object-Oriented\n\nA program that uses classes and objects is  object-based .\nAn object-based program that\ndefines relationships between classes of objects\ncreates classes from other classes\ndetermines member function behavior based on the object\nis more likely to be an  object-oriented  program\n\n7- 56"
+    },
+    {
+      "slide_number": 57,
+      "title": "Inheritance, Polymorphism, and Virtual Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inheritance, Polymorphism, and Virtual Functions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "57"
+        }
+      ],
+      "full_text": "Inheritance, Polymorphism, and Virtual Functions\n\n57"
+    },
+    {
+      "slide_number": 58,
+      "title": "What Is Inheritance?",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "What Is Inheritance?"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Provides a way to create a new class from an existing class\nThe new class is a specialized version of the existing class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "58"
+        }
+      ],
+      "full_text": "What Is Inheritance?\n\nProvides a way to create a new class from an existing class\nThe new class is a specialized version of the existing class\n\n58"
+    },
+    {
+      "slide_number": 59,
+      "title": "Example: Insect Taxonomy",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Example: Insect Taxonomy"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "59"
+        }
+      ],
+      "full_text": "Example: Insect Taxonomy\n\n59"
+    },
+    {
+      "slide_number": 60,
+      "title": "The \"is a\" Relationship",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "The \"is a\" Relationship"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Inheritance establishes an \"is a\" relationship between classes.\nA poodle is a dog\nA car is a vehicle\nA flower is a plant\nA football player is an athlete"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "60"
+        }
+      ],
+      "full_text": "The \"is a\" Relationship\n\nInheritance establishes an \"is a\" relationship between classes.\nA poodle is a dog\nA car is a vehicle\nA flower is a plant\nA football player is an athlete\n\n60"
+    },
+    {
+      "slide_number": 61,
+      "title": "Inheritance \u2013 Terminology and Notation in C++",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inheritance \u2013 Terminology and Notation in C++"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Base  class (or parent) \u2013 inherited from\nDerived  class (or child) \u2013 inherits from the base class\nNotation:\nclass Student \t      // base class\n{\n. . .\n};\nclass  UnderGrad  : public Student\n{\t\t\t\t\t// derived class\n. . .\n};"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "61"
+        }
+      ],
+      "full_text": "Inheritance \u2013 Terminology and Notation in C++\n\nBase  class (or parent) \u2013 inherited from\nDerived  class (or child) \u2013 inherits from the base class\nNotation:\nclass Student \t      // base class\n{\n. . .\n};\nclass  UnderGrad  : public Student\n{\t\t\t\t\t// derived class\n. . .\n};\n\n61"
+    },
+    {
+      "slide_number": 62,
+      "title": "Back to the \u2018is a\u2019 Relationship",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Back to the \u2018is a\u2019 Relationship"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "An object of a derived class 'is a(n)' object of the base class\nExample:\nan  UnderGrad  is a  Student\na  Mammal  is an  Animal\nA derived object has  all  of the characteristics of the base class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "62"
+        }
+      ],
+      "full_text": "Back to the \u2018is a\u2019 Relationship\n\nAn object of a derived class 'is a(n)' object of the base class\nExample:\nan  UnderGrad  is a  Student\na  Mammal  is an  Animal\nA derived object has  all  of the characteristics of the base class\n\n62"
+    },
+    {
+      "slide_number": 63,
+      "title": "What Does a Child Have?",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "What Does a Child Have?"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "An object of the derived class has:\nall members defined in child class\nall members declared in parent class\nAn object of the derived class can use:\nall  public  members defined in child class\nall  public  members defined in parent class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "63"
+        }
+      ],
+      "full_text": "What Does a Child Have?\n\nAn object of the derived class has:\nall members defined in child class\nall members declared in parent class\nAn object of the derived class can use:\nall  public  members defined in child class\nall  public  members defined in parent class\n\n63"
+    },
+    {
+      "slide_number": 64,
+      "title": "Protected Members and         Class Access",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Protected Members and         Class Access"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "protected  member access specification: like  private , but accessible by objects of derived class\nClass access specification : determines how  private ,  protected , and  public  members of base class are inherited by the derived class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "64"
+        }
+      ],
+      "full_text": "Protected Members and         Class Access\n\nprotected  member access specification: like  private , but accessible by objects of derived class\nClass access specification : determines how  private ,  protected , and  public  members of base class are inherited by the derived class\n\n64"
+    },
+    {
+      "slide_number": 65,
+      "title": "Class Access  Specifiers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Class Access  Specifiers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "public  \u2013 object of derived class can be treated as object of base class (not vice-versa)\nprotected  \u2013 more restrictive than  public , but allows derived classes to know details of parents\nprivate  \u2013 prevents objects of derived class from being treated as objects of base class."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "65"
+        }
+      ],
+      "full_text": "Class Access  Specifiers\n\npublic  \u2013 object of derived class can be treated as object of base class (not vice-versa)\nprotected  \u2013 more restrictive than  public , but allows derived classes to know details of parents\nprivate  \u2013 prevents objects of derived class from being treated as objects of base class.\n\n65"
+    },
+    {
+      "slide_number": 66,
+      "title": "Inheritance vs. Access",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inheritance vs. Access"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "66"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private: x\nprotected: y\npublic: z"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private: x\nprotected: y\npublic: z"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private: x\nprotected: y\npublic: z"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Base class members"
+        },
+        {
+          "placeholder_type": null,
+          "text": "x  is inaccessible\nprivate: y\nprivate: z"
+        },
+        {
+          "placeholder_type": null,
+          "text": "x  is inaccessible\nprotected: y\nprotected: z"
+        },
+        {
+          "placeholder_type": null,
+          "text": "x  is inaccessible\nprotected: y\npublic: z"
+        },
+        {
+          "placeholder_type": null,
+          "text": "How inherited base class members\nappear in derived class"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private\nbase class"
+        },
+        {
+          "placeholder_type": null,
+          "text": "protected\nbase class"
+        },
+        {
+          "placeholder_type": null,
+          "text": "public\nbase class"
+        }
+      ],
+      "full_text": "Inheritance vs. Access\n\n66\n\nprivate: x\nprotected: y\npublic: z\n\nprivate: x\nprotected: y\npublic: z\n\nprivate: x\nprotected: y\npublic: z\n\nBase class members\n\nx  is inaccessible\nprivate: y\nprivate: z\n\nx  is inaccessible\nprotected: y\nprotected: z\n\nx  is inaccessible\nprotected: y\npublic: z\n\nHow inherited base class members\nappear in derived class\n\nprivate\nbase class\n\nprotected\nbase class\n\npublic\nbase class"
+    },
+    {
+      "slide_number": 67,
+      "title": "Inheritance vs. Access",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inheritance vs. Access"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "67"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nchar letter;\nfloat score;\nvoid calcGrade();\npublic members:\nvoid setScore(float);\nfloat getScore();\nchar getLetter();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class Grade"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nint numQuestions;\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class Test : public Grade"
+        },
+        {
+          "placeholder_type": null,
+          "text": "When  Test  class inherits\nfrom  Grade  class using\npublic  class access, it looks like this:"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nint   numQuestions :\nfloat  pointsEach ;\nint   numMissed ;\npublic members:\nTest( int ,  int );\nvoid  setScore (float);\nfloat  getScore ();\nchar  getLetter ();"
+        }
+      ],
+      "full_text": "Inheritance vs. Access\n\n67\n\nprivate members:\nchar letter;\nfloat score;\nvoid calcGrade();\npublic members:\nvoid setScore(float);\nfloat getScore();\nchar getLetter();\n\nclass Grade\n\nprivate members:\nint numQuestions;\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);\n\nclass Test : public Grade\n\nWhen  Test  class inherits\nfrom  Grade  class using\npublic  class access, it looks like this:\n\nprivate members:\nint   numQuestions :\nfloat  pointsEach ;\nint   numMissed ;\npublic members:\nTest( int ,  int );\nvoid  setScore (float);\nfloat  getScore ();\nchar  getLetter ();"
+    },
+    {
+      "slide_number": 68,
+      "title": "Inheritance vs. Access",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inheritance vs. Access"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "68"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nchar letter;\nfloat score;\nvoid calcGrade();\npublic members:\nvoid setScore(float);\nfloat getScore();\nchar getLetter();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class Grade"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nint numQuestions;\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);"
+        },
+        {
+          "placeholder_type": null,
+          "text": "When  Test  class inherits\nfrom  Grade  class using\nprotected  class access, it looks like this:"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nint numQuestions:\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);\nprotected members:\nvoid setScore(float);\nfloat getScore();\nfloat getLetter();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class Test : protected Grade"
+        }
+      ],
+      "full_text": "Inheritance vs. Access\n\n68\n\nprivate members:\nchar letter;\nfloat score;\nvoid calcGrade();\npublic members:\nvoid setScore(float);\nfloat getScore();\nchar getLetter();\n\nclass Grade\n\nprivate members:\nint numQuestions;\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);\n\nWhen  Test  class inherits\nfrom  Grade  class using\nprotected  class access, it looks like this:\n\nprivate members:\nint numQuestions:\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);\nprotected members:\nvoid setScore(float);\nfloat getScore();\nfloat getLetter();\n\nclass Test : protected Grade"
+    },
+    {
+      "slide_number": 69,
+      "title": "Inheritance vs. Access",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Inheritance vs. Access"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "69"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nint numQuestions:\nfloat pointsEach;\nint numMissed;\nvoid setScore(float);\nfloat getScore();\nfloat getLetter();\npublic members:\nTest(int, int);"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nchar letter;\nfloat score;\nvoid calcGrade();\npublic members:\nvoid setScore(float);\nfloat getScore();\nchar getLetter();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class Grade"
+        },
+        {
+          "placeholder_type": null,
+          "text": "private members:\nint numQuestions;\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);"
+        },
+        {
+          "placeholder_type": null,
+          "text": "When  Test  class inherits\nfrom  Grade  class using\nprivate  class access, it looks like this:"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class Test : private Grade"
+        }
+      ],
+      "full_text": "Inheritance vs. Access\n\n69\n\nprivate members:\nint numQuestions:\nfloat pointsEach;\nint numMissed;\nvoid setScore(float);\nfloat getScore();\nfloat getLetter();\npublic members:\nTest(int, int);\n\nprivate members:\nchar letter;\nfloat score;\nvoid calcGrade();\npublic members:\nvoid setScore(float);\nfloat getScore();\nchar getLetter();\n\nclass Grade\n\nprivate members:\nint numQuestions;\nfloat pointsEach;\nint numMissed;\npublic members:\nTest(int, int);\n\nWhen  Test  class inherits\nfrom  Grade  class using\nprivate  class access, it looks like this:\n\nclass Test : private Grade"
+    },
+    {
+      "slide_number": 70,
+      "title": "Constructors and Destructors in Base and Derived Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Constructors and Destructors in Base and Derived Classes"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Derived classes can have their own constructors and destructors\nWhen an object of a derived class is created, the base class\u2019s constructor is executed first, followed by the derived class\u2019s constructor\nWhen an object of a derived class is destroyed, its destructor is called first, then that of the base class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "70"
+        }
+      ],
+      "full_text": "Constructors and Destructors in Base and Derived Classes\n\nDerived classes can have their own constructors and destructors\nWhen an object of a derived class is created, the base class\u2019s constructor is executed first, followed by the derived class\u2019s constructor\nWhen an object of a derived class is destroyed, its destructor is called first, then that of the base class\n\n70"
+    },
+    {
+      "slide_number": 71,
+      "title": "Constructors and Destructors in Base and Derived Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Constructors and Destructors in Base and Derived Classes"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "71"
+        }
+      ],
+      "full_text": "Constructors and Destructors in Base and Derived Classes\n\n71"
+    },
+    {
+      "slide_number": 72,
+      "title": "Constructors and Destructors in Base and Derived Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Constructors and Destructors in Base and Derived Classes"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "72"
+        }
+      ],
+      "full_text": "Constructors and Destructors in Base and Derived Classes\n\n72"
+    },
+    {
+      "slide_number": 73,
+      "title": "Constructors and Destructors in Base and Derived Classes",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Constructors and Destructors in Base and Derived Classes"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "73"
+        }
+      ],
+      "full_text": "Constructors and Destructors in Base and Derived Classes\n\n73"
+    },
+    {
+      "slide_number": 74,
+      "title": "Passing Arguments to  Base Class Constructor",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Passing Arguments to  Base Class Constructor"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Allows selection between multiple base class constructors\nSpecify arguments to base constructor on derived constructor heading:\nSquare::Square( int  side) : \t\t\t\t\tRectangle(side, side)\nCan also be done with inline constructors\nMust be done if base class has no default constructor"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "74"
+        }
+      ],
+      "full_text": "Passing Arguments to  Base Class Constructor\n\nAllows selection between multiple base class constructors\nSpecify arguments to base constructor on derived constructor heading:\nSquare::Square( int  side) : \t\t\t\t\tRectangle(side, side)\nCan also be done with inline constructors\nMust be done if base class has no default constructor\n\n74"
+    },
+    {
+      "slide_number": 75,
+      "title": "Passing Arguments to  Base Class Constructor",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Passing Arguments to  Base Class Constructor"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "75"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Square::Square( int  side):Rectangle( side,side )"
+        },
+        {
+          "placeholder_type": null,
+          "text": "derived class constructor"
+        },
+        {
+          "placeholder_type": null,
+          "text": "base class constructor"
+        },
+        {
+          "placeholder_type": null,
+          "text": "derived constructor parameter"
+        },
+        {
+          "placeholder_type": null,
+          "text": "base constructor parameters"
+        }
+      ],
+      "full_text": "Passing Arguments to  Base Class Constructor\n\n75\n\nSquare::Square( int  side):Rectangle( side,side )\n\nderived class constructor\n\nbase class constructor\n\nderived constructor parameter\n\nbase constructor parameters"
+    },
+    {
+      "slide_number": 76,
+      "title": "Redefining Base Class Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Redefining Base Class Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Redefining  function: function in a derived class that has the  same name and parameter list  as a function in the base class\nTypically used to replace a function in base class with different actions in derived class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "76"
+        }
+      ],
+      "full_text": "Redefining Base Class Functions\n\nRedefining  function: function in a derived class that has the  same name and parameter list  as a function in the base class\nTypically used to replace a function in base class with different actions in derived class\n\n76"
+    },
+    {
+      "slide_number": 77,
+      "title": "Redefining Base Class Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Redefining Base Class Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Not the same as overloading \u2013 with overloading, parameter lists must be different\nObjects of base class use base class version of function; objects of derived class use derived class version of function"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "77"
+        }
+      ],
+      "full_text": "Redefining Base Class Functions\n\nNot the same as overloading \u2013 with overloading, parameter lists must be different\nObjects of base class use base class version of function; objects of derived class use derived class version of function\n\n77"
+    },
+    {
+      "slide_number": 78,
+      "title": "Base Class",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Base Class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "78"
+        }
+      ],
+      "full_text": "Base Class\n\n78"
+    },
+    {
+      "slide_number": 79,
+      "title": "Derived Class",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Derived Class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "79"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Redefined  setScore  function"
+        }
+      ],
+      "full_text": "Derived Class\n\n79\n\nRedefined  setScore  function"
+    },
+    {
+      "slide_number": 80,
+      "title": "Driver Program",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Driver Program"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "80"
+        }
+      ],
+      "full_text": "Driver Program\n\n80"
+    },
+    {
+      "slide_number": 81,
+      "title": "Problem with Redefining",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Problem with Redefining"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Consider this situation:\nClass  BaseClass  defines functions  x()  and  y() .    x()  calls  y() .\nClass  DerivedClass  inherits from  BaseClass  and redefines function  y() .\nAn object  D  of class  DerivedClass  is created and function  x()  is called.\nWhen  x()  is called, which  y()  is used, the one defined in  BaseClass  or the  the  redefined one in  DerivedClass ?"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "81"
+        }
+      ],
+      "full_text": "Problem with Redefining\n\nConsider this situation:\nClass  BaseClass  defines functions  x()  and  y() .    x()  calls  y() .\nClass  DerivedClass  inherits from  BaseClass  and redefines function  y() .\nAn object  D  of class  DerivedClass  is created and function  x()  is called.\nWhen  x()  is called, which  y()  is used, the one defined in  BaseClass  or the  the  redefined one in  DerivedClass ?\n\n81"
+    },
+    {
+      "slide_number": 82,
+      "title": "Problem with Redefining",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Problem with Redefining"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "82"
+        },
+        {
+          "placeholder_type": null,
+          "text": "BaseClass"
+        },
+        {
+          "placeholder_type": null,
+          "text": "DerivedClass"
+        },
+        {
+          "placeholder_type": null,
+          "text": "void X();\nvoid Y();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "void Y();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "DerivedClass D;\nD.X();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Object  D  invokes function  X()\nIn  BaseClass .  Function  X()\ninvokes function  Y()  in  BaseClass , not function  Y()   in  DerivedClass ,\nbecause function calls are  bound at compile time.  This is  static binding."
+        }
+      ],
+      "full_text": "Problem with Redefining\n\n82\n\nBaseClass\n\nDerivedClass\n\nvoid X();\nvoid Y();\n\nvoid Y();\n\nDerivedClass D;\nD.X();\n\nObject  D  invokes function  X()\nIn  BaseClass .  Function  X()\ninvokes function  Y()  in  BaseClass , not function  Y()   in  DerivedClass ,\nbecause function calls are  bound at compile time.  This is  static binding."
+    },
+    {
+      "slide_number": 83,
+      "title": "Class Hierarchies",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Class Hierarchies"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "83"
+        },
+        {
+          "placeholder_type": null,
+          "text": "A base class can be derived from another base class."
+        }
+      ],
+      "full_text": "Class Hierarchies\n\n83\n\nA base class can be derived from another base class."
+    },
+    {
+      "slide_number": 84,
+      "title": "Class Hierarchies",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Class Hierarchies"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "84"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Consider the GradedActivity, FinalExam, PassFailActivity, PassFailExam hierarchy in Chapter 15."
+        }
+      ],
+      "full_text": "Class Hierarchies\n\n84\n\nConsider the GradedActivity, FinalExam, PassFailActivity, PassFailExam hierarchy in Chapter 15."
+    },
+    {
+      "slide_number": 85,
+      "title": "Polymorphism and Virtual Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Polymorphism and Virtual Member Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Virtual member function : function in base class that expects to be redefined in derived class\nFunction defined with key word  virtual :\nvirtual void Y() {...}\nSupports  dynamic binding : functions bound at run time to function that they call\nWithout virtual member functions, C++ uses  static  (compile time)  binding"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "85"
+        }
+      ],
+      "full_text": "Polymorphism and Virtual Member Functions\n\nVirtual member function : function in base class that expects to be redefined in derived class\nFunction defined with key word  virtual :\nvirtual void Y() {...}\nSupports  dynamic binding : functions bound at run time to function that they call\nWithout virtual member functions, C++ uses  static  (compile time)  binding\n\n85"
+    },
+    {
+      "slide_number": 86,
+      "title": "Polymorphism and Virtual Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Polymorphism and Virtual Member Functions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "86"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Because the parameter in the  displayGrade  function is a GradedActivity reference variable, it can reference any object that is derived from GradedActivity. That means we can pass a GradedActivity object, a FinalExam object, a PassFailExam object, or any other object that is derived from GradedActivity.\nA problem occurs in Program 15-10 however..."
+        }
+      ],
+      "full_text": "Polymorphism and Virtual Member Functions\n\n86\n\nBecause the parameter in the  displayGrade  function is a GradedActivity reference variable, it can reference any object that is derived from GradedActivity. That means we can pass a GradedActivity object, a FinalExam object, a PassFailExam object, or any other object that is derived from GradedActivity.\nA problem occurs in Program 15-10 however..."
+    },
+    {
+      "slide_number": 87,
+      "title": "87",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "87"
+        }
+      ],
+      "full_text": "87"
+    },
+    {
+      "slide_number": 88,
+      "title": "88",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "88"
+        },
+        {
+          "placeholder_type": null,
+          "text": "As you can see from the example output, the  getLetterGrade  member function returned \u2018C\u2019 instead of \u2018P\u2019. This is because the GradedActivity class\u2019s  getLetterGrade  function was executed instead of the PassFailActivity class\u2019s version of the function."
+        }
+      ],
+      "full_text": "88\n\nAs you can see from the example output, the  getLetterGrade  member function returned \u2018C\u2019 instead of \u2018P\u2019. This is because the GradedActivity class\u2019s  getLetterGrade  function was executed instead of the PassFailActivity class\u2019s version of the function."
+    },
+    {
+      "slide_number": 89,
+      "title": "Static Binding",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Static Binding"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Program 15-10 displays 'C' instead of 'P' because the call to the  getLetterGrade  function is statically bound (at compile time) with the  GradedActivity  class's version of the function. We can remedy this by making the function  virtual ."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "89"
+        }
+      ],
+      "full_text": "Static Binding\n\nProgram 15-10 displays 'C' instead of 'P' because the call to the  getLetterGrade  function is statically bound (at compile time) with the  GradedActivity  class's version of the function. We can remedy this by making the function  virtual .\n\n89"
+    },
+    {
+      "slide_number": 90,
+      "title": "Virtual Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Virtual Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A virtual function is dynamically bound to calls at runtime. At runtime, C++ determines the type of object making the call, and binds the function to the appropriate version of the function."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "90"
+        }
+      ],
+      "full_text": "Virtual Functions\n\nA virtual function is dynamically bound to calls at runtime. At runtime, C++ determines the type of object making the call, and binds the function to the appropriate version of the function.\n\n90"
+    },
+    {
+      "slide_number": 91,
+      "title": "Virtual Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Virtual Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "To make a function virtual, place the virtual key word before the return type in the base class's declaration:\nvirtual char  getLetterGrade ()  const ;\nThe compiler will not bind the function to calls. Instead, the program will bind them at runtime."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "91"
+        }
+      ],
+      "full_text": "Virtual Functions\n\nTo make a function virtual, place the virtual key word before the return type in the base class's declaration:\nvirtual char  getLetterGrade ()  const ;\nThe compiler will not bind the function to calls. Instead, the program will bind them at runtime.\n\n91"
+    },
+    {
+      "slide_number": 92,
+      "title": "Updated Version of  GradedActivity",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Updated Version of  GradedActivity"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "92"
+        },
+        {
+          "placeholder_type": null,
+          "text": "The function                                  is now virtual."
+        },
+        {
+          "placeholder_type": null,
+          "text": "The function also becomes virtual in all derived classes automatically!"
+        }
+      ],
+      "full_text": "Updated Version of  GradedActivity\n\n92\n\nThe function                                  is now virtual.\n\nThe function also becomes virtual in all derived classes automatically!"
+    },
+    {
+      "slide_number": 93,
+      "title": "Polymorphism",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Polymorphism"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "93"
+        },
+        {
+          "placeholder_type": null,
+          "text": "If we recompile our program with the updated versions of the classes, we will get the right output, shown here: (See Program 15-11 in the book.)"
+        },
+        {
+          "placeholder_type": null,
+          "text": "This type of behavior is known as polymorphism. The term  polymorphism  means the ability to take many forms.\nProgram 15-12 demonstrates polymorphism by passing\nobjects of the  GradedActivity  and  PassFailExam  classes to the  displayGrade  function."
+        }
+      ],
+      "full_text": "Polymorphism\n\n93\n\nIf we recompile our program with the updated versions of the classes, we will get the right output, shown here: (See Program 15-11 in the book.)\n\nThis type of behavior is known as polymorphism. The term  polymorphism  means the ability to take many forms.\nProgram 15-12 demonstrates polymorphism by passing\nobjects of the  GradedActivity  and  PassFailExam  classes to the  displayGrade  function."
+    },
+    {
+      "slide_number": 94,
+      "title": "94",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "94"
+        }
+      ],
+      "full_text": "94"
+    },
+    {
+      "slide_number": 95,
+      "title": "95",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "95"
+        }
+      ],
+      "full_text": "95"
+    },
+    {
+      "slide_number": 96,
+      "title": "Polymorphism Requires References or Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Polymorphism Requires References or Pointers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Polymorphic behavior is only possible when an object is referenced by a reference variable or a pointer, as demonstrated in the  displayGrade   function."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "96"
+        }
+      ],
+      "full_text": "Polymorphism Requires References or Pointers\n\nPolymorphic behavior is only possible when an object is referenced by a reference variable or a pointer, as demonstrated in the  displayGrade   function.\n\n96"
+    },
+    {
+      "slide_number": 97,
+      "title": "Base Class Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Base Class Pointers"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "97"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Can define a pointer to a  base  class object\nCan assign it the address of a  derived  class object"
+        }
+      ],
+      "full_text": "Base Class Pointers\n\n97\n\nCan define a pointer to a  base  class object\nCan assign it the address of a  derived  class object"
+    },
+    {
+      "slide_number": 98,
+      "title": "Base Class Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Base Class Pointers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Base class pointers and references only know about members of the base class\nSo, you can\u2019t use a base class pointer to call a derived class function\nRedefined functions in  derived  class will be ignored unless  base  class declares the function  virtual"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "98"
+        }
+      ],
+      "full_text": "Base Class Pointers\n\nBase class pointers and references only know about members of the base class\nSo, you can\u2019t use a base class pointer to call a derived class function\nRedefined functions in  derived  class will be ignored unless  base  class declares the function  virtual\n\n98"
+    },
+    {
+      "slide_number": 99,
+      "title": "Redefining vs. Overriding",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Redefining vs. Overriding"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "In C++, redefined functions are statically bound and overridden functions are dynamically bound. So, a virtual function is overridden, and a non-virtual function is redefined."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "99"
+        }
+      ],
+      "full_text": "Redefining vs. Overriding\n\nIn C++, redefined functions are statically bound and overridden functions are dynamically bound. So, a virtual function is overridden, and a non-virtual function is redefined.\n\n99"
+    },
+    {
+      "slide_number": 100,
+      "title": "Virtual Destructors",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Virtual Destructors"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "It's a good idea to make destructors virtual if the class could ever become a base class.\nOtherwise, the compiler will perform static binding on the destructor if the class ever is derived from.\nSee Program 15-14 for an example"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "100"
+        }
+      ],
+      "full_text": "Virtual Destructors\n\nIt's a good idea to make destructors virtual if the class could ever become a base class.\nOtherwise, the compiler will perform static binding on the destructor if the class ever is derived from.\nSee Program 15-14 for an example\n\n100"
+    },
+    {
+      "slide_number": 101,
+      "title": "Abstract Base Classes and Pure Virtual Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Abstract Base Classes and Pure Virtual Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Pure virtual function : a virtual member function that  must  be overridden in a derived class that has objects\nAbstract base class contains at least one pure virtual function:\nvirtual void Y() = 0;\nThe  = 0  indicates a pure virtual function\nMust have no function definition in the base class"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "101"
+        }
+      ],
+      "full_text": "Abstract Base Classes and Pure Virtual Functions\n\nPure virtual function : a virtual member function that  must  be overridden in a derived class that has objects\nAbstract base class contains at least one pure virtual function:\nvirtual void Y() = 0;\nThe  = 0  indicates a pure virtual function\nMust have no function definition in the base class\n\n101"
+    },
+    {
+      "slide_number": 102,
+      "title": "Abstract Base Classes and Pure Virtual Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Abstract Base Classes and Pure Virtual Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Abstract base class : class that can have no objects.  Serves as a basis for derived classes that may/will have objects\nA class becomes an abstract base class when one or more of its member functions is a pure virtual function"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "102"
+        }
+      ],
+      "full_text": "Abstract Base Classes and Pure Virtual Functions\n\nAbstract base class : class that can have no objects.  Serves as a basis for derived classes that may/will have objects\nA class becomes an abstract base class when one or more of its member functions is a pure virtual function\n\n102"
+    },
+    {
+      "slide_number": 103,
+      "title": "Multiple Inheritance",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Multiple Inheritance"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "103"
+        },
+        {
+          "placeholder_type": null,
+          "text": "A derived class can have more than one base class\nEach base class can have its own access specification in derived class's definition:\nclass cube : public square,\npublic  rectSolid ;"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class\nsquare"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class\nrectSolid"
+        },
+        {
+          "placeholder_type": null,
+          "text": "class\ncube"
+        }
+      ],
+      "full_text": "Multiple Inheritance\n\n103\n\nA derived class can have more than one base class\nEach base class can have its own access specification in derived class's definition:\nclass cube : public square,\npublic  rectSolid ;\n\nclass\nsquare\n\nclass\nrectSolid\n\nclass\ncube"
+    },
+    {
+      "slide_number": 104,
+      "title": "Multiple Inheritance",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Multiple Inheritance"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Problem:  what if base classes have member variables/functions with the same name?\nSolutions:\nDerived class redefines the multiply-defined function\nDerived class invokes member function in a particular base class using scope resolution operator  ::\nCompiler errors occur if derived class uses base class function without one of these solutions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "104"
+        }
+      ],
+      "full_text": "Multiple Inheritance\n\nProblem:  what if base classes have member variables/functions with the same name?\nSolutions:\nDerived class redefines the multiply-defined function\nDerived class invokes member function in a particular base class using scope resolution operator  ::\nCompiler errors occur if derived class uses base class function without one of these solutions\n\n104"
+    },
+    {
+      "slide_number": 105,
+      "title": "C++ Exceptions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "C++ Exceptions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "105"
+        }
+      ],
+      "full_text": "C++ Exceptions\n\n105"
+    },
+    {
+      "slide_number": 106,
+      "title": "How to Deal with Exceptional States?",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "How to Deal with Exceptional States?"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Ignore them:\nWrong thing to do for all but demo programs.\nAbort processing \u2013 detect but don\u2019t try to recover:\nNot appropriate for programs with safety issues or critical missions.\nHave functions return error codes:\nProgram is constantly spending CPU cycles looking for rare events.\nEasy to miss a check.\nUse C++ Exceptions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "106"
+        }
+      ],
+      "full_text": "How to Deal with Exceptional States?\n\nIgnore them:\nWrong thing to do for all but demo programs.\nAbort processing \u2013 detect but don\u2019t try to recover:\nNot appropriate for programs with safety issues or critical missions.\nHave functions return error codes:\nProgram is constantly spending CPU cycles looking for rare events.\nEasy to miss a check.\nUse C++ Exceptions\n\n106"
+    },
+    {
+      "slide_number": 107,
+      "title": "C++ Exceptions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "C++ Exceptions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Exceptions use three keywords:   \t\tthrow, try, and catch\nthrow e: constructs an exception object, e, and takes it out of an enclosing context defined by a try block\ntry {\u2026}: defines, for thrown exceptions, an enclosing context with specified catch handlers\ncatch(E e) {\u2026}: exception handler catch(E e) responds to an exception object of type \u201cE\u201d"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "107"
+        }
+      ],
+      "full_text": "C++ Exceptions\n\nExceptions use three keywords:   \t\tthrow, try, and catch\nthrow e: constructs an exception object, e, and takes it out of an enclosing context defined by a try block\ntry {\u2026}: defines, for thrown exceptions, an enclosing context with specified catch handlers\ncatch(E e) {\u2026}: exception handler catch(E e) responds to an exception object of type \u201cE\u201d\n\n107"
+    },
+    {
+      "slide_number": 108,
+      "title": "Example",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Example"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "try\n{\n// some code that may throw an exception\n}\nCatch(exception &e)\n{\n// some processing to attempt to recover from error\n// based on information carried by the exception\n}"
+        },
+        {
+          "placeholder_type": null,
+          "text": "If no exception is thrown, the code in the try block is executed, the\ncatch clause is skipped, and computation resumes after the catch clause."
+        },
+        {
+          "placeholder_type": null,
+          "text": "If an exception is thrown somewhere in the try block, the remaining code in the try block is skipped,  and a matching catch clause is entered, if found.  Computation resumes after the last statement in matching catch clause.  Matching is based on the type of the exception."
+        },
+        {
+          "placeholder_type": null,
+          "text": "If the exception is thrown in some lower level scope, defined, perhaps, by a called function within the try block, all local objects in that scope are destroyed as the exception moves out of that scope."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "108"
+        }
+      ],
+      "full_text": "Example\n\ntry\n{\n// some code that may throw an exception\n}\nCatch(exception &e)\n{\n// some processing to attempt to recover from error\n// based on information carried by the exception\n}\n\nIf no exception is thrown, the code in the try block is executed, the\ncatch clause is skipped, and computation resumes after the catch clause.\n\nIf an exception is thrown somewhere in the try block, the remaining code in the try block is skipped,  and a matching catch clause is entered, if found.  Computation resumes after the last statement in matching catch clause.  Matching is based on the type of the exception.\n\nIf the exception is thrown in some lower level scope, defined, perhaps, by a called function within the try block, all local objects in that scope are destroyed as the exception moves out of that scope.\n\n108"
+    },
+    {
+      "slide_number": 109,
+      "title": "Chained Handlers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Chained Handlers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Exception handlers are often chained at the end of a try block, e.g.:\nMatching attempts are based on the order of declaration of the handlers."
+        },
+        {
+          "placeholder_type": null,
+          "text": "try {\n// some code that may throw an exception\n}\nCatch(T1 t1) {\n// processing for type T1\n}\nCatch(T2 t2) {   // processing for type T2\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "109"
+        }
+      ],
+      "full_text": "Chained Handlers\n\nException handlers are often chained at the end of a try block, e.g.:\nMatching attempts are based on the order of declaration of the handlers.\n\ntry {\n// some code that may throw an exception\n}\nCatch(T1 t1) {\n// processing for type T1\n}\nCatch(T2 t2) {   // processing for type T2\n}\n\n109"
+    },
+    {
+      "slide_number": 110,
+      "title": "Uncaught Exceptions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Uncaught Exceptions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "If none of the catch handlers for a try block matches a thrown exception the exception moves to the next enclosing try block.\nIf there is no match in any enclosing try block the exception is uncaught.  An uncaught exception also occurs if a new exception is thrown before an existing one is handled.  Cleanups may fail to occur with an uncaught exception, so this is an error.\nIf an exception is uncaught the special function terminate() is called.\nUncaught exceptions can always be avoided by enclosing the contents of main in a try block with an ellipsis handler."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "110"
+        }
+      ],
+      "full_text": "Uncaught Exceptions\n\nIf none of the catch handlers for a try block matches a thrown exception the exception moves to the next enclosing try block.\nIf there is no match in any enclosing try block the exception is uncaught.  An uncaught exception also occurs if a new exception is thrown before an existing one is handled.  Cleanups may fail to occur with an uncaught exception, so this is an error.\nIf an exception is uncaught the special function terminate() is called.\nUncaught exceptions can always be avoided by enclosing the contents of main in a try block with an ellipsis handler.\n\n110"
+    },
+    {
+      "slide_number": 111,
+      "title": "Rethrowing Exceptions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Rethrowing Exceptions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "If your catch handler does not completely handle an exception you may re-throw it to the next enclosing context.   \tcatch(E e)   \t{  \t  // processing to handle e is incomplete  \t    throw;  \t}\nThis allows processing an exception in several passes as it travels up through a series of try-contexts."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "111"
+        }
+      ],
+      "full_text": "Rethrowing Exceptions\n\nIf your catch handler does not completely handle an exception you may re-throw it to the next enclosing context.   \tcatch(E e)   \t{  \t  // processing to handle e is incomplete  \t    throw;  \t}\nThis allows processing an exception in several passes as it travels up through a series of try-contexts.\n\n111"
+    },
+    {
+      "slide_number": 112,
+      "title": "Standard Exceptions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Standard Exceptions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Standard Exception class: namespace std {   class exception {     public:       virtual const char* what() const throw();       // create, copy, assign, and destroy       // exception objects   }; }"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "112"
+        }
+      ],
+      "full_text": "Standard Exceptions\n\nStandard Exception class: namespace std {   class exception {     public:       virtual const char* what() const throw();       // create, copy, assign, and destroy       // exception objects   }; }\n\n112"
+    },
+    {
+      "slide_number": 113,
+      "title": "Standard Exceptions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Standard Exceptions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "113"
+        }
+      ],
+      "full_text": "Standard Exceptions\n\n113"
+    },
+    {
+      "slide_number": 114,
+      "title": "Exception Specifications",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Exception Specifications"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "All exception specifications have been removed from C++11 except for throw() and nothrow().\nA function can declare exception specifications:\nvoid f() throw (E1, E2, E3); declares that f may throw any of E1, E2, or E3.\nvoid f() throw() declares that no exceptions are thrown in f.\nvoid f() declares that any type exception may be thrown in f."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "114"
+        }
+      ],
+      "full_text": "Exception Specifications\n\nAll exception specifications have been removed from C++11 except for throw() and nothrow().\nA function can declare exception specifications:\nvoid f() throw (E1, E2, E3); declares that f may throw any of E1, E2, or E3.\nvoid f() throw() declares that no exceptions are thrown in f.\nvoid f() declares that any type exception may be thrown in f.\n\n114"
+    },
+    {
+      "slide_number": 115,
+      "title": "vector",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "vector"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Renu Balyan"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "115"
+        }
+      ],
+      "full_text": "vector\n\nRenu Balyan\n\n115"
+    },
+    {
+      "slide_number": 116,
+      "title": "Vectors are part of the C++ Standard Template Library (STL).",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "Vectors are part of the C++ Standard Template Library (STL).\nstd::vector\u00a0 in C++ is the  class template  that contains the vector container and its member functions.\nIt is defined inside the\u00a0 <vector> \u00a0header file.\nVectors are the same as dynamic arrays with the ability to resize itself automatically\nwhen an element is inserted or deleted, their storage is handled automatically by the container\nVector elements are placed in contiguous storage so that they can be accessed and traversed using iterators\ndata is inserted at the end"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Vectors"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "116"
+        }
+      ],
+      "full_text": "Vectors are part of the C++ Standard Template Library (STL).\nstd::vector\u00a0 in C++ is the  class template  that contains the vector container and its member functions.\nIt is defined inside the\u00a0 <vector> \u00a0header file.\nVectors are the same as dynamic arrays with the ability to resize itself automatically\nwhen an element is inserted or deleted, their storage is handled automatically by the container\nVector elements are placed in contiguous storage so that they can be accessed and traversed using iterators\ndata is inserted at the end\n\nVectors\n\n116"
+    },
+    {
+      "slide_number": 117,
+      "title": "std :: vector <T>  vector_name ;",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "std :: vector <T>  vector_name ;"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Vector Declarations & Initializations"
+        },
+        {
+          "placeholder_type": null,
+          "text": "vector < int > num;"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include  <vector>"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "117"
+        }
+      ],
+      "full_text": "std :: vector <T>  vector_name ;\n\nVector Declarations & Initializations\n\nvector < int > num;\n\n#include  <vector>\n\n117"
+    },
+    {
+      "slide_number": 118,
+      "title": "#include  <iostream>",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main () {\nvector < int > vector1 = { 1 ,  2 ,  3 ,  4 ,  5 };  // initializer list\nvector < int > vector2{ 6 ,  7 ,  8 ,  9 ,  10 };  // uniform initialization\nvector < int >  vector3 ( 5 ,  12 );  // method 3\ncout  <<  \"vector1 = \" ;\n// ranged loop\nfor  ( int   i  : vector1)\n{  cout  <<  i  <<  \" \" ; }\ncout  <<  \"\\nvector2 = \" ;\n// ranged loop\nfor  ( int   i  : vector2)\n{  cout  <<  i  <<  \" \" ; }\ncout  <<  \"\\nvector3 = \" ;\n// ranged loop\nfor  ( int   i  : vector3)\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ; }"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Initialize & print Elements of a vector"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "118"
+        }
+      ],
+      "full_text": "#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main () {\nvector < int > vector1 = { 1 ,  2 ,  3 ,  4 ,  5 };  // initializer list\nvector < int > vector2{ 6 ,  7 ,  8 ,  9 ,  10 };  // uniform initialization\nvector < int >  vector3 ( 5 ,  12 );  // method 3\ncout  <<  \"vector1 = \" ;\n// ranged loop\nfor  ( int   i  : vector1)\n{  cout  <<  i  <<  \" \" ; }\ncout  <<  \"\\nvector2 = \" ;\n// ranged loop\nfor  ( int   i  : vector2)\n{  cout  <<  i  <<  \" \" ; }\ncout  <<  \"\\nvector3 = \" ;\n// ranged loop\nfor  ( int   i  : vector3)\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ; }\n\nInitialize & print Elements of a vector\n\n118"
+    },
+    {
+      "slide_number": 119,
+      "title": "Add & Access Elements to & from a vector",
+      "text_blocks": [
+        {
+          "placeholder_type": "body",
+          "text": "Add & Access Elements to & from a vector"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main ()\n{\nvector < int > num { 1 ,  2 ,  3 ,  4 ,  5 };\ncout  <<  \"Initial Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\n// add the integers 6 and 7 to the vector\nnum.push_back ( 6 );\nnum.push_back ( 7 );\ncout  <<  \"\\ nUpdated  Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ;\n}"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main ()\n{  vector < int > num { 1 ,  2 ,  3 ,  4 ,  5 };\ncout << \"Element at Index 0: \" <<num.at( 0 ) <<  endl ;\ncout << \"Element at Index 2: \" <<num.at( 2 ) <<  endl ;\ncout << \"Element at Index 4: \" <<num.at( 4 ) <<  endl ;\ncout << \"Element at Index 0: \" <<num[ 0]  <<  endl ;\ncout << \"Element at Index 2: \" <<num[ 2]  <<  endl ;\ncout << \"Element at Index 4: \" <<num[ 4] <<  endl ;\nreturn   0 ;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "119"
+        }
+      ],
+      "full_text": "Add & Access Elements to & from a vector\n\n#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main ()\n{\nvector < int > num { 1 ,  2 ,  3 ,  4 ,  5 };\ncout  <<  \"Initial Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\n// add the integers 6 and 7 to the vector\nnum.push_back ( 6 );\nnum.push_back ( 7 );\ncout  <<  \"\\ nUpdated  Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ;\n}\n\n#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main ()\n{  vector < int > num { 1 ,  2 ,  3 ,  4 ,  5 };\ncout << \"Element at Index 0: \" <<num.at( 0 ) <<  endl ;\ncout << \"Element at Index 2: \" <<num.at( 2 ) <<  endl ;\ncout << \"Element at Index 4: \" <<num.at( 4 ) <<  endl ;\ncout << \"Element at Index 0: \" <<num[ 0]  <<  endl ;\ncout << \"Element at Index 2: \" <<num[ 2]  <<  endl ;\ncout << \"Element at Index 4: \" <<num[ 4] <<  endl ;\nreturn   0 ;\n}\n\n119"
+    },
+    {
+      "slide_number": 120,
+      "title": "Change & delete the vector Elements",
+      "text_blocks": [
+        {
+          "placeholder_type": "body",
+          "text": "Change & delete the vector Elements"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main () {\nvector < int > num { 1 ,  2 ,  3 ,  4 ,  5 };\ncout  <<  \"Initial Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\n// change elements at indexes 1 and 4\nnum.at( 1 ) =  9 ;\nnum.at( 4 ) =  7 ;\ncout  <<  \"\\ nUpdated  Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ;\n}"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main () {\nvector < int >  prime_numbers { 2 ,  3 ,  5 ,  7 };\n// initial vector\ncout  <<  \"Initial Vector: \" ;\nfor  ( int   i  :  prime_numbers )\n{  cout  <<  i  <<  \" \" ; }\n// remove the last element\nprime_numbers.pop_back ();\n// final vector\ncout  <<  \"\\ nUpdated  Vector: \" ;\nfor  ( int   i  :  prime_numbers )\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "120"
+        }
+      ],
+      "full_text": "Change & delete the vector Elements\n\n#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main () {\nvector < int > num { 1 ,  2 ,  3 ,  4 ,  5 };\ncout  <<  \"Initial Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\n// change elements at indexes 1 and 4\nnum.at( 1 ) =  9 ;\nnum.at( 4 ) =  7 ;\ncout  <<  \"\\ nUpdated  Vector: \" ;\nfor  ( int   i  : num)\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ;\n}\n\n#include  <iostream>\n#include  <vector>\nusing   namespace   std ;\nint   main () {\nvector < int >  prime_numbers { 2 ,  3 ,  5 ,  7 };\n// initial vector\ncout  <<  \"Initial Vector: \" ;\nfor  ( int   i  :  prime_numbers )\n{  cout  <<  i  <<  \" \" ; }\n// remove the last element\nprime_numbers.pop_back ();\n// final vector\ncout  <<  \"\\ nUpdated  Vector: \" ;\nfor  ( int   i  :  prime_numbers )\n{  cout  <<  i  <<  \" \" ; }\nreturn   0 ;\n}\n\n120"
+    },
+    {
+      "slide_number": 121,
+      "title": "121",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "121"
+        }
+      ],
+      "full_text": "121"
+    },
+    {
+      "slide_number": 122,
+      "title": "#include   <iostream>",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "#include   <iostream>\n#include   <vector>\nusing   namespace   std ;\nint   main ()\n{\nvector < int >   v ;\ncout   <<   \"Initial capacity: \"   <<   v . capacity ()  <<   endl ;\nfor ( int   i   =   0 ;  i   !=   20 ;  ++ i )\n{\nv .push_ back ( i );\ncout   <<   \"Size \"   <<   v . size ()  <<   \" capacity: \"   <<   v . capacity ()  <<   endl ;\n}\nreturn   0 ;\n}"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Size and Capacity"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "122"
+        }
+      ],
+      "full_text": "#include   <iostream>\n#include   <vector>\nusing   namespace   std ;\nint   main ()\n{\nvector < int >   v ;\ncout   <<   \"Initial capacity: \"   <<   v . capacity ()  <<   endl ;\nfor ( int   i   =   0 ;  i   !=   20 ;  ++ i )\n{\nv .push_ back ( i );\ncout   <<   \"Size \"   <<   v . size ()  <<   \" capacity: \"   <<   v . capacity ()  <<   endl ;\n}\nreturn   0 ;\n}\n\nSize and Capacity\n\n122"
+    },
+    {
+      "slide_number": 123,
+      "title": "// C++ program to illustrate the capacity function in vector",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "// C++ program to illustrate the capacity function in vector\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main()\n{\nvector<int> g1;\nfor (int  i  = 1;  i  <= 5;  i ++)\ng1.push_back( i );\ncout  << \"Size : \" << g1.size();\ncout  << \"\\ nCapacity  : \" << g1.capacity();\ncout  << \"\\ nMax_Size  : \" << g1.max_size();\n// resizes the vector size to 4\ng1.resize(4);\n// prints the vector size after resize()\ncout  << \"\\ nSize  : \" << g1.size();"
+        },
+        {
+          "placeholder_type": null,
+          "text": "// checks if the vector is empty or not\nif (g1.empty() == false)\ncout  << \"\\ nVector  is not empty\";\nelse\ncout  << \"\\ nVector  is empty\";\n// Shrinks the vector\ng1.shrink_to_fit();\ncout  << \"\\ nVector  elements are: \";\nfor (auto it = g1.begin(); it != g1.end(); it++)\ncout  << *it << \" \";\nreturn 0;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "123"
+        }
+      ],
+      "full_text": "// C++ program to illustrate the capacity function in vector\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main()\n{\nvector<int> g1;\nfor (int  i  = 1;  i  <= 5;  i ++)\ng1.push_back( i );\ncout  << \"Size : \" << g1.size();\ncout  << \"\\ nCapacity  : \" << g1.capacity();\ncout  << \"\\ nMax_Size  : \" << g1.max_size();\n// resizes the vector size to 4\ng1.resize(4);\n// prints the vector size after resize()\ncout  << \"\\ nSize  : \" << g1.size();\n\n// checks if the vector is empty or not\nif (g1.empty() == false)\ncout  << \"\\ nVector  is not empty\";\nelse\ncout  << \"\\ nVector  is empty\";\n// Shrinks the vector\ng1.shrink_to_fit();\ncout  << \"\\ nVector  elements are: \";\nfor (auto it = g1.begin(); it != g1.end(); it++)\ncout  << *it << \" \";\nreturn 0;\n}\n\n123"
+    },
+    {
+      "slide_number": 124,
+      "title": "Iterators",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "Iterators"
+        },
+        {
+          "placeholder_type": null,
+          "text": "begin()\u2013  Returns an iterator pointing to the first element in the vector\nend()\u2013  Returns an iterator pointing to the theoretical element that follows the last element in the vector\nrbegin ()\u2013  Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element\nrend() \u00a0 \u2013 Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector (considered as reverse end)\ncbegin ()  \u2013 Returns a constant iterator pointing to the first element in the vector.\ncend ()  \u2013 Returns a constant iterator pointing to the theoretical element that follows the last element in the vector."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "124"
+        }
+      ],
+      "full_text": "Iterators\n\nbegin()\u2013  Returns an iterator pointing to the first element in the vector\nend()\u2013  Returns an iterator pointing to the theoretical element that follows the last element in the vector\nrbegin ()\u2013  Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element\nrend() \u00a0 \u2013 Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector (considered as reverse end)\ncbegin ()  \u2013 Returns a constant iterator pointing to the first element in the vector.\ncend ()  \u2013 Returns a constant iterator pointing to the theoretical element that follows the last element in the vector.\n\n124"
+    },
+    {
+      "slide_number": 125,
+      "title": "// C++ program to illustrate the iterators in vector",
+      "text_blocks": [
+        {
+          "placeholder_type": null,
+          "text": "// C++ program to illustrate the iterators in vector\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main()\n{\nvector<int> g1;\nfor (int  i  = 1;  i  <= 5;  i ++)\ng1.push_back( i );\ncout  << \"Output of begin and end: \";\nfor (auto  i  = g1.begin();  i  != g1.end(); ++ i )\ncout  << * i  << \" \";\ncout  << \"\\ nOutput  of  cbegin  and  cend : \";\nfor (auto  i  = g1.cbegin();  i  != g1.cend(); ++ i )\ncout  << * i  << \" \";"
+        },
+        {
+          "placeholder_type": null,
+          "text": "cout  << \"\\ nOutput  of  rbegin  and rend: \";\nfor (auto  ir  = g1.rbegin();  ir  != g1.rend(); ++ ir )\ncout  << * ir  << \" \";\ncout  << \"\\ nOutput  of  crbegin  and  crend  : \";\nfor (auto  ir  = g1.crbegin();  ir  != g1.crend(); ++ ir )\ncout  << * ir  << \" \";\nreturn 0;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "125"
+        }
+      ],
+      "full_text": "// C++ program to illustrate the iterators in vector\n#include <iostream>\n#include <vector>\nusing namespace std;\nint main()\n{\nvector<int> g1;\nfor (int  i  = 1;  i  <= 5;  i ++)\ng1.push_back( i );\ncout  << \"Output of begin and end: \";\nfor (auto  i  = g1.begin();  i  != g1.end(); ++ i )\ncout  << * i  << \" \";\ncout  << \"\\ nOutput  of  cbegin  and  cend : \";\nfor (auto  i  = g1.cbegin();  i  != g1.cend(); ++ i )\ncout  << * i  << \" \";\n\ncout  << \"\\ nOutput  of  rbegin  and rend: \";\nfor (auto  ir  = g1.rbegin();  ir  != g1.rend(); ++ ir )\ncout  << * ir  << \" \";\ncout  << \"\\ nOutput  of  crbegin  and  crend  : \";\nfor (auto  ir  = g1.crbegin();  ir  != g1.crend(); ++ ir )\ncout  << * ir  << \" \";\nreturn 0;\n}\n\n125"
+    },
+    {
+      "slide_number": 126,
+      "title": "File I/O in C++",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File I/O in C++"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "126"
+        }
+      ],
+      "full_text": "File I/O in C++\n\n126"
+    },
+    {
+      "slide_number": 127,
+      "title": "Using  Input/Output  Files",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Using  Input/Output  Files"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A computer file:\nis stored on a secondary storage device (e.g., disk);\nis permanent;\ncan be used to\nprovide input data to a program\nor receive output data from a program\nor both;\nshould reside in Project directory for easy access;\nmust be opened before it is used."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "127"
+        }
+      ],
+      "full_text": "Using  Input/Output  Files\n\nA computer file:\nis stored on a secondary storage device (e.g., disk);\nis permanent;\ncan be used to\nprovide input data to a program\nor receive output data from a program\nor both;\nshould reside in Project directory for easy access;\nmust be opened before it is used.\n\n127"
+    },
+    {
+      "slide_number": 128,
+      "title": "General File I/O Steps",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "General File I/O Steps"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Include the header file  fstream  in the program.\nDeclare file stream variables.\nAssociate the file stream variables with the input/output sources.\nOpen the file\nUse the file stream variables with >>, <<, or other input/output functions.\nClose the file."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "128"
+        }
+      ],
+      "full_text": "General File I/O Steps\n\nInclude the header file  fstream  in the program.\nDeclare file stream variables.\nAssociate the file stream variables with the input/output sources.\nOpen the file\nUse the file stream variables with >>, <<, or other input/output functions.\nClose the file.\n\n128"
+    },
+    {
+      "slide_number": 129,
+      "title": "Using  Input/Output  Files",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Using  Input/Output  Files"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "stream  - a sequence of characters\ninteractive ( iostream )\n\uf0b7  cin  - input stream associated with  keyboard.\ncout  - output stream associated with  display\nfile ( fstream )\n\uf0b7   ifstream  - defines new input stream (normally associated with a file).\n\uf0b7   ofstream  - defines new output stream (normally associated with a file)."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "129"
+        }
+      ],
+      "full_text": "Using  Input/Output  Files\n\nstream  - a sequence of characters\ninteractive ( iostream )\n\uf0b7  cin  - input stream associated with  keyboard.\ncout  - output stream associated with  display\nfile ( fstream )\n\uf0b7   ifstream  - defines new input stream (normally associated with a file).\n\uf0b7   ofstream  - defines new output stream (normally associated with a file).\n\n129"
+    },
+    {
+      "slide_number": 130,
+      "title": "Stream I/O Library Header Files",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Stream I/O Library Header Files"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Note: There is no \u201c.h\u201d on standard header files : < fstream >\niostream  -- contains basic information required for all stream I/O operations\nfstream  -- contains information for performing file I/O operations"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "130"
+        }
+      ],
+      "full_text": "Stream I/O Library Header Files\n\nNote: There is no \u201c.h\u201d on standard header files : < fstream >\niostream  -- contains basic information required for all stream I/O operations\nfstream  -- contains information for performing file I/O operations\n\n130"
+    },
+    {
+      "slide_number": 131,
+      "title": "C++ streams",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "C++ streams"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "//Add additional header files you use\n#include   < fstream >\nint  main ()\n{  /* Declare file stream variables such as\nthe following  */\nifstream    fsIn ; //input\nofstream   fsOut ;  // output\nfstream  both  //input & output\n//Open the files\nfsIn.open ( \"prog1.txt\" );  //open the input file\nfsOut.open ( \"prog2.txt\" );  //open the output file\n//Code for data manipulation\n.\n.\n//Close files\nfsIn.close ();\nfsOut.close ();\nreturn  0; }"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "131"
+        }
+      ],
+      "full_text": "C++ streams\n\n//Add additional header files you use\n#include   < fstream >\nint  main ()\n{  /* Declare file stream variables such as\nthe following  */\nifstream    fsIn ; //input\nofstream   fsOut ;  // output\nfstream  both  //input & output\n//Open the files\nfsIn.open ( \"prog1.txt\" );  //open the input file\nfsOut.open ( \"prog2.txt\" );  //open the output file\n//Code for data manipulation\n.\n.\n//Close files\nfsIn.close ();\nfsOut.close ();\nreturn  0; }\n\n131"
+    },
+    {
+      "slide_number": 132,
+      "title": "Object and Member Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Object and Member Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "input_stream.open (\"numbers.txt\u201c)"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Stream handle\nName"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Calling\nObject"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Dot\nOperator"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Member Function\nName"
+        },
+        {
+          "placeholder_type": null,
+          "text": "File Name\nDir : \\\\ folder \\ fileName.extention\nExtention  ( . dat , .out, .txt)"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "132"
+        }
+      ],
+      "full_text": "Object and Member Functions\n\ninput_stream.open (\"numbers.txt\u201c)\n\nStream handle\nName\n\nCalling\nObject\n\nDot\nOperator\n\nMember Function\nName\n\nFile Name\nDir : \\\\ folder \\ fileName.extention\nExtention  ( . dat , .out, .txt)\n\n132"
+    },
+    {
+      "slide_number": 133,
+      "title": "Open()",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Open()"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Opening a file associates a file stream variable declared in the program with a physical file at the source, such as a disk.\nIn the case of an input file:\nthe file must exist before the open statement executes.\nIf the file does not exist, the open statement fails and the input stream enters the fail state\nAn output file does not have to exist before it is opened;\nif the output file does not exist, the computer prepares an empty file for output.\nIf the designated output file already exists, by default, the old contents are erased when the file is opened."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "133"
+        }
+      ],
+      "full_text": "Open()\n\nOpening a file associates a file stream variable declared in the program with a physical file at the source, such as a disk.\nIn the case of an input file:\nthe file must exist before the open statement executes.\nIf the file does not exist, the open statement fails and the input stream enters the fail state\nAn output file does not have to exist before it is opened;\nif the output file does not exist, the computer prepares an empty file for output.\nIf the designated output file already exists, by default, the old contents are erased when the file is opened.\n\n133"
+    },
+    {
+      "slide_number": 134,
+      "title": "Validate the file before trying to access",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Validate the file before trying to access"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "By checking the stream variable;\nIf ( !  Mystream )\n{\nCout  << \u201cCannot open file. \\ n \u201d;\n}"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "First method"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Second method"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "By using  bool   is_open () function.\nIf ( !  Mystream.is_open ()) {\nCout  << \u201cFile is not open. \\ n \u201d;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "134"
+        }
+      ],
+      "full_text": "Validate the file before trying to access\n\nBy checking the stream variable;\nIf ( !  Mystream )\n{\nCout  << \u201cCannot open file. \\ n \u201d;\n}\n\nFirst method\n\nSecond method\n\nBy using  bool   is_open () function.\nIf ( !  Mystream.is_open ()) {\nCout  << \u201cFile is not open. \\ n \u201d;\n}\n\n134"
+    },
+    {
+      "slide_number": 135,
+      "title": "File I/O Example: Open the file with validation",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File I/O Example: Open the file with validation"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < fstream >\nusing   namespace   std ;\nint  main()\n{\n//declare and automatically open the file\nofstream   outFile (\u201cfout.txt \");\n// Open validation\nif (!  outFile ) {\nCout  << \u201cCannot open file.\\n \u201d;\nreturn  1;\n}\nreturn  0;\n}"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "First Method (use the  constructor )"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Second Method ( use Open function)"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < fstream >\nusing   namespace   std ;\nint  main()\n{\n//declare output file variable\nofstream   outFile ;\n// open an exist file fout.txt\noutFile.open (\u201cfout.txt\u201d);\n// Open validation\nif (!  outFile.is_open () ) {\nCout  << \u201cCannot open file.\\n \u201d;\nreturn  1;\n}\nreturn  0;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "135"
+        }
+      ],
+      "full_text": "File I/O Example: Open the file with validation\n\n#include   < fstream >\nusing   namespace   std ;\nint  main()\n{\n//declare and automatically open the file\nofstream   outFile (\u201cfout.txt \");\n// Open validation\nif (!  outFile ) {\nCout  << \u201cCannot open file.\\n \u201d;\nreturn  1;\n}\nreturn  0;\n}\n\nFirst Method (use the  constructor )\n\nSecond Method ( use Open function)\n\n#include   < fstream >\nusing   namespace   std ;\nint  main()\n{\n//declare output file variable\nofstream   outFile ;\n// open an exist file fout.txt\noutFile.open (\u201cfout.txt\u201d);\n// Open validation\nif (!  outFile.is_open () ) {\nCout  << \u201cCannot open file.\\n \u201d;\nreturn  1;\n}\nreturn  0;\n}\n\n135"
+    },
+    {
+      "slide_number": 136,
+      "title": "More Input File-Related Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "More Input File-Related Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "ifstream   fsin ;\nfsin.open ( const   char []  fname )\nconnects stream  fsin  to the external file  fname .\nfsin.get ( char  character)\nextracts next character from the input stream  fsin  and places it in the character variable  character.\nfsin.eof ()\ntests for the end-of-file condition."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "136"
+        }
+      ],
+      "full_text": "More Input File-Related Functions\n\nifstream   fsin ;\nfsin.open ( const   char []  fname )\nconnects stream  fsin  to the external file  fname .\nfsin.get ( char  character)\nextracts next character from the input stream  fsin  and places it in the character variable  character.\nfsin.eof ()\ntests for the end-of-file condition.\n\n136"
+    },
+    {
+      "slide_number": 137,
+      "title": "File I/O Example: Reading",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File I/O Example: Reading"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < iostream >\n#include   < fstream >\nint  main()\n{ //Declare and open a text file\nifstream   openFile ( \" data.txt \");\nchar   ch ;\n//do until the end of file\nwhile ( !  OpenFile.eof () )\n{\nOpenFile.get ( ch );  // get one character\ncout  <<  ch ;    // display the character\n}\nOpenFile.close ();  // close the file\nreturn  0;\n}"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Read char by char"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Read a line"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < iostream >\n#include   < fstream >\n#include   <string>\nint  main()\n{ //Declare and open a text file\nifstream   openFile ( \"data.txt\" );\nstring line;\nwhile (! openFile.eof ())\n{//fetch line from data.txt and put it in a string\ngetline ( openFile , line);\ncout  << line;\n}\nopenFile.close ();  // close the file\nreturn  0; }"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "137"
+        }
+      ],
+      "full_text": "File I/O Example: Reading\n\n#include   < iostream >\n#include   < fstream >\nint  main()\n{ //Declare and open a text file\nifstream   openFile ( \" data.txt \");\nchar   ch ;\n//do until the end of file\nwhile ( !  OpenFile.eof () )\n{\nOpenFile.get ( ch );  // get one character\ncout  <<  ch ;    // display the character\n}\nOpenFile.close ();  // close the file\nreturn  0;\n}\n\nRead char by char\n\nRead a line\n\n#include   < iostream >\n#include   < fstream >\n#include   <string>\nint  main()\n{ //Declare and open a text file\nifstream   openFile ( \"data.txt\" );\nstring line;\nwhile (! openFile.eof ())\n{//fetch line from data.txt and put it in a string\ngetline ( openFile , line);\ncout  << line;\n}\nopenFile.close ();  // close the file\nreturn  0; }\n\n137"
+    },
+    {
+      "slide_number": 138,
+      "title": "More Output File-Related Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "More Output File-Related Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "ofstream fsOut;\nfsOut.open( const   char [] fname)\nconnects stream  fsOut  to the external file  fname.\nfsOut.put( char  character)\ninserts character  character   to the output stream  fsOut .\nfsOut.eof()\ntests for the end-of-file condition."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "138"
+        }
+      ],
+      "full_text": "More Output File-Related Functions\n\nofstream fsOut;\nfsOut.open( const   char [] fname)\nconnects stream  fsOut  to the external file  fname.\nfsOut.put( char  character)\ninserts character  character   to the output stream  fsOut .\nfsOut.eof()\ntests for the end-of-file condition.\n\n138"
+    },
+    {
+      "slide_number": 139,
+      "title": "File I/O Example: Writing",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File I/O Example: Writing"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < fstream >\nusing   namespace   std ;\nint  main()\n{ /* declare and automatically open the file*/\nofstream   outFile ( \"fout.txt\" );\n//behave just like  cout , put the word into  the file\noutFile  <<  \"Hello World!\" ;\noutFile.close ();\nreturn  0;\n}"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "First Method (use the constructor)"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Second Method ( use Open function)"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < fstream >\nusing   namespace   std ;\nint  main()\n{ // declare output file variable\nofstream   outFile ;\n// open an exist file fout.txt\noutFile.open ( \"fout.txt\u201d);\n//behave just like  cout , put the word into  the file\noutFile  <<  \"Hello World!\" ;\noutFile.close ();\nreturn  0;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "139"
+        }
+      ],
+      "full_text": "File I/O Example: Writing\n\n#include   < fstream >\nusing   namespace   std ;\nint  main()\n{ /* declare and automatically open the file*/\nofstream   outFile ( \"fout.txt\" );\n//behave just like  cout , put the word into  the file\noutFile  <<  \"Hello World!\" ;\noutFile.close ();\nreturn  0;\n}\n\nFirst Method (use the constructor)\n\nSecond Method ( use Open function)\n\n#include   < fstream >\nusing   namespace   std ;\nint  main()\n{ // declare output file variable\nofstream   outFile ;\n// open an exist file fout.txt\noutFile.open ( \"fout.txt\u201d);\n//behave just like  cout , put the word into  the file\noutFile  <<  \"Hello World!\" ;\noutFile.close ();\nreturn  0;\n}\n\n139"
+    },
+    {
+      "slide_number": 140,
+      "title": "File Open Mode",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File Open Mode"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "140"
+        }
+      ],
+      "full_text": "File Open Mode\n\n140"
+    },
+    {
+      "slide_number": 141,
+      "title": "File Open Mode",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File Open Mode"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include   < fstream >\nint  main( void )\n{\nofstream   outFile ( \"file1.txt\" ,  ios ::out);\noutFile  <<  \"That's new!\\n\" ;\noutFile.close ();\nReturn 0;\n}"
+        },
+        {
+          "placeholder_type": null,
+          "text": "If you want to set more than one open mode, just use the  OR  operator-  | . This way:\nios ::ate |  ios ::binary"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "141"
+        }
+      ],
+      "full_text": "File Open Mode\n\n#include   < fstream >\nint  main( void )\n{\nofstream   outFile ( \"file1.txt\" ,  ios ::out);\noutFile  <<  \"That's new!\\n\" ;\noutFile.close ();\nReturn 0;\n}\n\nIf you want to set more than one open mode, just use the  OR  operator-  | . This way:\nios ::ate |  ios ::binary\n\n141"
+    },
+    {
+      "slide_number": 142,
+      "title": "Summary of Input File-Related Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Summary of Input File-Related Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include  < fstream >\nifstream   fsIn ;\nfsIn.open ( const   char []  fname )\nconnects stream   fsIn   to the external file   fname .\nfsIn.get ( char & c)\nextracts next character from the input stream  fsIn  and places it in the character variable  c.\nfsIn.eof ()\ntests for the end-of-file condition.\nfsIn.close ()\ndisconnects the stream and associated file.\nfsIn  >> c;  //Behaves just like  cin"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "142"
+        }
+      ],
+      "full_text": "Summary of Input File-Related Functions\n\n#include  < fstream >\nifstream   fsIn ;\nfsIn.open ( const   char []  fname )\nconnects stream   fsIn   to the external file   fname .\nfsIn.get ( char & c)\nextracts next character from the input stream  fsIn  and places it in the character variable  c.\nfsIn.eof ()\ntests for the end-of-file condition.\nfsIn.close ()\ndisconnects the stream and associated file.\nfsIn  >> c;  //Behaves just like  cin\n\n142"
+    },
+    {
+      "slide_number": 143,
+      "title": "Summary of Output File-Related Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Summary of Output File-Related Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include  < fstream >\nofstream   fsOut ;\nfsOut.open ( const   char []  fname )\nconnects stream   fsOut   to the external file   fname .\nfsOut.put ( char  c)\ninserts character  c   to the output stream  fsOut .\nfsOut.eof ()\ntests for the end-of-file condition.\nfsOut.close ()\ndisconnects the stream and associated file.\nfsOut  << c;        //Behaves just like  cout"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "143"
+        }
+      ],
+      "full_text": "Summary of Output File-Related Functions\n\n#include  < fstream >\nofstream   fsOut ;\nfsOut.open ( const   char []  fname )\nconnects stream   fsOut   to the external file   fname .\nfsOut.put ( char  c)\ninserts character  c   to the output stream  fsOut .\nfsOut.eof ()\ntests for the end-of-file condition.\nfsOut.close ()\ndisconnects the stream and associated file.\nfsOut  << c;        //Behaves just like  cout\n\n143"
+    },
+    {
+      "slide_number": 144,
+      "title": "File format",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "File format"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "In  c++  files we (read from/ write to) them as a stream of characters\nWhat if I want to write or read numbers ?"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "144"
+        }
+      ],
+      "full_text": "File format\n\nIn  c++  files we (read from/ write to) them as a stream of characters\nWhat if I want to write or read numbers ?\n\n144"
+    },
+    {
+      "slide_number": 145,
+      "title": "Example writing to file",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Example writing to file"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include  < iostream >\n#include  < fstream >\nusing namespace std;\nvoid  main()\n{\nofstream   outFile ;\n// open an exist file fout.txt\noutFile.open ( \"number.txt\", ios ::app);// ios ::app == Append\nif  (! outFile.is_open ())\n{  cout  <<  \" problem with opening the file \";}\nelse\n{ outFile  <<200 << endl  ;\ncout  <<  \"done writing\" << endl ;}\noutFile.close ();\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "145"
+        }
+      ],
+      "full_text": "Example writing to file\n\n#include  < iostream >\n#include  < fstream >\nusing namespace std;\nvoid  main()\n{\nofstream   outFile ;\n// open an exist file fout.txt\noutFile.open ( \"number.txt\", ios ::app);// ios ::app == Append\nif  (! outFile.is_open ())\n{  cout  <<  \" problem with opening the file \";}\nelse\n{ outFile  <<200 << endl  ;\ncout  <<  \"done writing\" << endl ;}\noutFile.close ();\n}\n\n145"
+    },
+    {
+      "slide_number": 146,
+      "title": "Example Reading from  file",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Example Reading from  file"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include   < iostream >\n#include   < fstream >\n#include   <string>\n#include   < sstream >\nusing   namespace   std ;\nvoid  main()\n{ //Declare and open a text file\nifstream   INFile ( \"number.txt\" );\nstring line;\nint  total=0;\nwhile (!  INFile.eof ())\n{\ngetline ( INFile , line);\n//converting line string to  int\nstringstream (line) >> total;\ncout  << line  << endl ;\ncout  <<total +1<< endl ;}\nINFile.close ();  // close the file\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "146"
+        }
+      ],
+      "full_text": "Example Reading from  file\n\n#include   < iostream >\n#include   < fstream >\n#include   <string>\n#include   < sstream >\nusing   namespace   std ;\nvoid  main()\n{ //Declare and open a text file\nifstream   INFile ( \"number.txt\" );\nstring line;\nint  total=0;\nwhile (!  INFile.eof ())\n{\ngetline ( INFile , line);\n//converting line string to  int\nstringstream (line) >> total;\ncout  << line  << endl ;\ncout  <<total +1<< endl ;}\nINFile.close ();  // close the file\n}\n\n146"
+    },
+    {
+      "slide_number": 147,
+      "title": "147",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "147"
+        }
+      ],
+      "full_text": "147"
+    },
+    {
+      "slide_number": 148,
+      "title": "Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "ctrTitle",
+          "text": "Pointers"
+        },
+        {
+          "placeholder_type": null,
+          "text": "Renu   Balyan"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "148"
+        }
+      ],
+      "full_text": "Pointers\n\nRenu   Balyan\n\n148"
+    },
+    {
+      "slide_number": 149,
+      "title": "Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A  pointer  is a reference to another variable (memory location) in a program\nor\nA Pointer is variable whose value is a memory address.\nUsed to change variables inside a function (reference parameters)\nUsed to remember a particular member of a group (such as an array)\nUsed in dynamic (on-the-fly) memory allocation (especially of arrays)\nUsed in building complex data structures (linked lists, stacks, queues, trees, etc.)"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "149"
+        }
+      ],
+      "full_text": "Pointers\n\nA  pointer  is a reference to another variable (memory location) in a program\nor\nA Pointer is variable whose value is a memory address.\nUsed to change variables inside a function (reference parameters)\nUsed to remember a particular member of a group (such as an array)\nUsed in dynamic (on-the-fly) memory allocation (especially of arrays)\nUsed in building complex data structures (linked lists, stacks, queues, trees, etc.)\n\n149"
+    },
+    {
+      "slide_number": 150,
+      "title": "Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "The *  and   & operators\n-  & operator is the address operator\n-  * operator is the dereferencing operator. It is used in\npointers declaration"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "150"
+        }
+      ],
+      "full_text": "Pointers\n\nThe *  and   & operators\n-  & operator is the address operator\n-  * operator is the dereferencing operator. It is used in\npointers declaration\n\n150"
+    },
+    {
+      "slide_number": 151,
+      "title": "Pointer Variable Declaration",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Variable Declaration"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Basic syntax: <t ype>  * variable_ Name\nExamples:\nint *P;\t/* P is var that can point to an int var */\nfloat *Q;\t/* Q is a float pointer */\nchar *R;\t/* R is a char pointer */\nvoid *  yPtr ;     //  yPtr  is a generic pointer, represents any type\nComplex example:\nint *AP[5];\t/* AP is an array of 5 pointers to  ints  */\nmore on how to read complex declarations later"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "151"
+        }
+      ],
+      "full_text": "Pointer Variable Declaration\n\nBasic syntax: <t ype>  * variable_ Name\nExamples:\nint *P;\t/* P is var that can point to an int var */\nfloat *Q;\t/* Q is a float pointer */\nchar *R;\t/* R is a char pointer */\nvoid *  yPtr ;     //  yPtr  is a generic pointer, represents any type\nComplex example:\nint *AP[5];\t/* AP is an array of 5 pointers to  ints  */\nmore on how to read complex declarations later\n\n151"
+    },
+    {
+      "slide_number": 152,
+      "title": "Address (&) Operator",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Address (&) Operator"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "The address (&) operator can be used in front of any variable object -- the result of the operation is the location in memory of the variable\nSyntax: & VariableReference\nExamples:\nint V;\nint *P;\nint A[5];\n&V - memory location of integer variable V\n&(A[2]) - memory location of array element 2 in array A\n&P - memory location of pointer variable P"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "152"
+        }
+      ],
+      "full_text": "Address (&) Operator\n\nThe address (&) operator can be used in front of any variable object -- the result of the operation is the location in memory of the variable\nSyntax: & VariableReference\nExamples:\nint V;\nint *P;\nint A[5];\n&V - memory location of integer variable V\n&(A[2]) - memory location of array element 2 in array A\n&P - memory location of pointer variable P\n\n152"
+    },
+    {
+      "slide_number": 153,
+      "title": "Pointer Basics",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Basics"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Variables are allocated at  addresses  in computer memory (address depends on computer/operating system)\nName of the variable is a reference to that memory address\nA pointer variable contains a representation of an address of another variable (P is a pointer variable in the following):"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "153"
+        }
+      ],
+      "full_text": "Pointer Basics\n\nVariables are allocated at  addresses  in computer memory (address depends on computer/operating system)\nName of the variable is a reference to that memory address\nA pointer variable contains a representation of an address of another variable (P is a pointer variable in the following):\n\n153"
+    },
+    {
+      "slide_number": 154,
+      "title": "Pointer Assignment",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Assignment"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Assignment can be applied on pointers of the same type\nIf not the same type, a cast operator must be used\nException: pointer to  void  does not need casting to convert a pointer to  void  type\nvoid  pointers cannot be dereferenced\nExample\nint * xPtr , * yPtr ;  int x = 5;\n\u2026\nxPtr  = & x;   //  xPtr  now points to address of  x\nyPtr  =  xPtr ;  // now  yPtr  and  xPtr  point to x"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "154"
+        }
+      ],
+      "full_text": "Pointer Assignment\n\nAssignment can be applied on pointers of the same type\nIf not the same type, a cast operator must be used\nException: pointer to  void  does not need casting to convert a pointer to  void  type\nvoid  pointers cannot be dereferenced\nExample\nint * xPtr , * yPtr ;  int x = 5;\n\u2026\nxPtr  = & x;   //  xPtr  now points to address of  x\nyPtr  =  xPtr ;  // now  yPtr  and  xPtr  point to x\n\n154"
+    },
+    {
+      "slide_number": 155,
+      "title": "Indirection (*) Operator",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Indirection (*) Operator"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "A pointer variable contains a memory address\nTo refer to the  contents  of the variable that the pointer points to, we use indirection operator\nSyntax: * PointerVariable\nExample:\nint V = 101;\nint *P = &V;\n/* Then *P would refer to the contents of the variable V (in this case, the integer 101) */\ncout <<*P;  /* Prints 101 */"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "155"
+        }
+      ],
+      "full_text": "Indirection (*) Operator\n\nA pointer variable contains a memory address\nTo refer to the  contents  of the variable that the pointer points to, we use indirection operator\nSyntax: * PointerVariable\nExample:\nint V = 101;\nint *P = &V;\n/* Then *P would refer to the contents of the variable V (in this case, the integer 101) */\ncout <<*P;  /* Prints 101 */\n\n155"
+    },
+    {
+      "slide_number": 156,
+      "title": "Pointer Sample",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Sample"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "int A = 3;\nint B;\nint *P = &A;\nint *Q = P;\nint *R = &B;\nCout <<\u201cEnter value:\u201c;\nCin >>R;\nCout <<A<<\u201c and \u201c<<B;\nCout <<*P<<\u201c \u201c<<*Q<<\u201c \u201c<<*R;"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Q = &B;\nif (P == Q)\ncout <<\u201c1\u201d<< endl ;\nif (Q == R)\ncout <<\u201c2\u201d<< endl ;\nif (*P == *Q)\ncout <<\u201c3\u201d<< endl ;\nif (*Q == *R)\ncout <<\u201c4\u201d<< endl ;\nif (*P == *R)\ncout <<\u201c5\u201d<< endl ;"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "156"
+        }
+      ],
+      "full_text": "Pointer Sample\n\nint A = 3;\nint B;\nint *P = &A;\nint *Q = P;\nint *R = &B;\nCout <<\u201cEnter value:\u201c;\nCin >>R;\nCout <<A<<\u201c and \u201c<<B;\nCout <<*P<<\u201c \u201c<<*Q<<\u201c \u201c<<*R;\n\nQ = &B;\nif (P == Q)\ncout <<\u201c1\u201d<< endl ;\nif (Q == R)\ncout <<\u201c2\u201d<< endl ;\nif (*P == *Q)\ncout <<\u201c3\u201d<< endl ;\nif (*Q == *R)\ncout <<\u201c4\u201d<< endl ;\nif (*P == *R)\ncout <<\u201c5\u201d<< endl ;\n\n156"
+    },
+    {
+      "slide_number": 157,
+      "title": "Pointer Arithmetic",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Arithmetic"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Increment / decrement pointers ( ++ or -- )\nAdd / subtract an integer to/from a pointer\n( + or += , - or -= )\nPointers may be subtracted from each other\nPointer arithmetic is meaningless unless performed on an array"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "157"
+        }
+      ],
+      "full_text": "Pointer Arithmetic\n\nIncrement / decrement pointers ( ++ or -- )\nAdd / subtract an integer to/from a pointer\n( + or += , - or -= )\nPointers may be subtracted from each other\nPointer arithmetic is meaningless unless performed on an array\n\n157"
+    },
+    {
+      "slide_number": 158,
+      "title": "Pointer Arithmetic",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Arithmetic"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Example\nConsider an integer array of 5 elements on a machine using 4 bytes for integers.\n1000     1004       1008      1012       1016\nPointer variable  vPtr\nvPtr  pointes to first element V[0]  (location 1000)\ni.e.   vPtr  = 1000\nvPtr  +=2;    sets  vPtr  to 1008\ni.e.  vPtr  points to V[2]"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "158"
+        }
+      ],
+      "full_text": "Pointer Arithmetic\n\nExample\nConsider an integer array of 5 elements on a machine using 4 bytes for integers.\n1000     1004       1008      1012       1016\nPointer variable  vPtr\nvPtr  pointes to first element V[0]  (location 1000)\ni.e.   vPtr  = 1000\nvPtr  +=2;    sets  vPtr  to 1008\ni.e.  vPtr  points to V[2]\n\n158"
+    },
+    {
+      "slide_number": 159,
+      "title": "Pointer Arithmetic (Cont.)",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointer Arithmetic (Cont.)"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Subtracting pointers\n- Returns the number of elements between two\naddresses\ne.g.  \tif  v is an array and\nvPtr1 = v[0];\nvPtr2 = v[2];\nthen  \tvPtr2 \u2013 vPtr1 = 2  (i.e. 2 addresses)"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "159"
+        }
+      ],
+      "full_text": "Pointer Arithmetic (Cont.)\n\nSubtracting pointers\n- Returns the number of elements between two\naddresses\ne.g.  \tif  v is an array and\nvPtr1 = v[0];\nvPtr2 = v[2];\nthen  \tvPtr2 \u2013 vPtr1 = 2  (i.e. 2 addresses)\n\n159"
+    },
+    {
+      "slide_number": 160,
+      "title": "Relations Between Pointers and Arrays",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Relations Between Pointers and Arrays"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Arrays and pointers are closely related.\n- Array name is like constant pointer\n- Pointers can do array subscribing operations\n- If we declare an array A[4] and a pointer aPtr\n\uf0b7  aPtr is equal to A\naPtr == A\n\uf0b7  aPtr is equal to the address of the first\nelement of A\naPtr == & A[0]"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "160"
+        }
+      ],
+      "full_text": "Relations Between Pointers and Arrays\n\nArrays and pointers are closely related.\n- Array name is like constant pointer\n- Pointers can do array subscribing operations\n- If we declare an array A[4] and a pointer aPtr\n\uf0b7  aPtr is equal to A\naPtr == A\n\uf0b7  aPtr is equal to the address of the first\nelement of A\naPtr == & A[0]\n\n160"
+    },
+    {
+      "slide_number": 161,
+      "title": "Relations Between Pointers and Arrays (Cont.)",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Relations Between Pointers and Arrays (Cont.)"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Accessing array elements with pointers:\n- Element A[i] can be accessed by *(aPtr+i)\n\uf0b7 This is called pointer/offset notation\n- Array itself can use pointer arithmetic\n\uf0b7 A[3] is same as  *(A+3)\n- Pointers can be subscripted\n(i.e. pointer/subscript notation)\n\uf0b7  aPtr [3] is same as A[3]"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "161"
+        }
+      ],
+      "full_text": "Relations Between Pointers and Arrays (Cont.)\n\nAccessing array elements with pointers:\n- Element A[i] can be accessed by *(aPtr+i)\n\uf0b7 This is called pointer/offset notation\n- Array itself can use pointer arithmetic\n\uf0b7 A[3] is same as  *(A+3)\n- Pointers can be subscripted\n(i.e. pointer/subscript notation)\n\uf0b7  aPtr [3] is same as A[3]\n\n161"
+    },
+    {
+      "slide_number": 162,
+      "title": "Examples on Pointers",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Examples on Pointers"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "//A program to call a function to swap two numbers using reference parameters\n#include <iostream>\nusing namespace std;\nvoid swap(int *, int *);   \t// This is swap's prototype\nint  main()\n{\tint x = 5, y = 7;\nswap(&x , &y);\t\t// calling swap with reference parameters\ncout  << \"\\n x is now \"<< x << \" and y is now \" << y << '\\n\u2019;\nreturn 0;\n}\n// swap function is defined here using dereferencing operator \u2018*\u2019\nvoid swap(int *a, int *b)\n{\tint temp;\ntemp = *a;\n*a = *b;\n*b = temp;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "162"
+        }
+      ],
+      "full_text": "Examples on Pointers\n\n//A program to call a function to swap two numbers using reference parameters\n#include <iostream>\nusing namespace std;\nvoid swap(int *, int *);   \t// This is swap's prototype\nint  main()\n{\tint x = 5, y = 7;\nswap(&x , &y);\t\t// calling swap with reference parameters\ncout  << \"\\n x is now \"<< x << \" and y is now \" << y << '\\n\u2019;\nreturn 0;\n}\n// swap function is defined here using dereferencing operator \u2018*\u2019\nvoid swap(int *a, int *b)\n{\tint temp;\ntemp = *a;\n*a = *b;\n*b = temp;\n}\n\n162"
+    },
+    {
+      "slide_number": 163,
+      "title": "Examples on Pointers (Cont.)",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Examples on Pointers (Cont.)"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "//A program to test pointers and references\n#include <iostream>\nusing namespace std;\nint main ( )\n{   int  intVar  = 10;\nint  * intPtr ;    //  intPtr  is a pointer\nintPtr  = &  intVar ;\ncout  << \"\\ nLocation  of  intVar : \" << &  intVar ;\ncout  << \"\\ nContents  of  intVar : \" <<  intVar ;\ncout  << \"\\ nLocation  of  intPtr : \" << &  intPtr ;\ncout  << \"\\ nContents  of  intPtr : \" <<  intPtr ;\ncout  << \"\\ nThe  value that  intPtr  points to: \" << *  intPtr ;\nreturn 0;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "163"
+        }
+      ],
+      "full_text": "Examples on Pointers (Cont.)\n\n//A program to test pointers and references\n#include <iostream>\nusing namespace std;\nint main ( )\n{   int  intVar  = 10;\nint  * intPtr ;    //  intPtr  is a pointer\nintPtr  = &  intVar ;\ncout  << \"\\ nLocation  of  intVar : \" << &  intVar ;\ncout  << \"\\ nContents  of  intVar : \" <<  intVar ;\ncout  << \"\\ nLocation  of  intPtr : \" << &  intPtr ;\ncout  << \"\\ nContents  of  intPtr : \" <<  intPtr ;\ncout  << \"\\ nThe  value that  intPtr  points to: \" << *  intPtr ;\nreturn 0;\n}\n\n163"
+    },
+    {
+      "slide_number": 164,
+      "title": "When calling, the pointer formal parameter will points to the actual parameter .",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "When calling, the pointer formal parameter will points to the actual parameter ."
+        },
+        {
+          "placeholder_type": "body",
+          "text": "#include  <iostream>\nusing namespace std;\nvoid  Increment(int*);\nint  main() {\nint  A = 10;\nIncrement(&A);\ncout <<A<< endl ;\n}\nvoid  Increment( int  *X)\n{ ++*X; }"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "164"
+        }
+      ],
+      "full_text": "When calling, the pointer formal parameter will points to the actual parameter .\n\n#include  <iostream>\nusing namespace std;\nvoid  Increment(int*);\nint  main() {\nint  A = 10;\nIncrement(&A);\ncout <<A<< endl ;\n}\nvoid  Increment( int  *X)\n{ ++*X; }\n\n164"
+    },
+    {
+      "slide_number": 165,
+      "title": "Pointers and Strings",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Pointers and Strings"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Pointers can be used to declare strings and with string functions"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "165"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include <iostream>\nusing namespace std;\nint main(){\nchar name[ ]= \"Sam\";\nchar *p;\np = name;     /* for string, only this declaration will store its base address */\nwhile( *p != '\\0')\n{\ncout  << *p;\np++;\n}\nreturn 0;\n}"
+        }
+      ],
+      "full_text": "Pointers and Strings\n\nPointers can be used to declare strings and with string functions\n\n165\n\n#include <iostream>\nusing namespace std;\nint main(){\nchar name[ ]= \"Sam\";\nchar *p;\np = name;     /* for string, only this declaration will store its base address */\nwhile( *p != '\\0')\n{\ncout  << *p;\np++;\n}\nreturn 0;\n}"
+    },
+    {
+      "slide_number": 166,
+      "title": "Passing Strings to Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Passing Strings to Functions"
+        },
+        {
+          "placeholder_type": null,
+          "text": "#include <iostream>\nusing namespace std;\nvoid display( char  ch [] )// passing a string\n{\ncout  <<  ch ;\n}\nint main(){\nchar  arr [30];\ncout  << \"Enter a word\" <<  endl ;\ncin  >>  arr ;\ndisplay( arr );\nreturn 0;\n}"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "166"
+        }
+      ],
+      "full_text": "Passing Strings to Functions\n\n#include <iostream>\nusing namespace std;\nvoid display( char  ch [] )// passing a string\n{\ncout  <<  ch ;\n}\nint main(){\nchar  arr [30];\ncout  << \"Enter a word\" <<  endl ;\ncin  >>  arr ;\ndisplay( arr );\nreturn 0;\n}\n\n166"
+    },
+    {
+      "slide_number": 167,
+      "title": "Operator Overloading",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Operator Overloading"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "167"
+        }
+      ],
+      "full_text": "Operator Overloading\n\n167"
+    },
+    {
+      "slide_number": 168,
+      "title": "What is operator overloading?",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "What is operator overloading?"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Changing the definition of an operator so it can be applied on  the objects of a class is called  operator overloading .\nTo overload an operator, we need to  write a function for the operator we are overloading ."
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "168"
+        }
+      ],
+      "full_text": "What is operator overloading?\n\nChanging the definition of an operator so it can be applied on  the objects of a class is called  operator overloading .\nTo overload an operator, we need to  write a function for the operator we are overloading .\n\n168"
+    },
+    {
+      "slide_number": 169,
+      "title": "Introduction",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Introduction"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Overloading an operator\nWrite function  definition as normal\nFunction name is keyword  operator  followed by the symbol  for the operator being overloaded\noperator+  used to overload the addition operator ( + )\nUsing operators\nTo use an operator on a class object it must be overloaded unless the assignment operator (=) or the address operator (&)\nAssignment operator by default performs member wise assignment\nAddress operator (&) by default returns the address of an object"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "169"
+        }
+      ],
+      "full_text": "Introduction\n\nOverloading an operator\nWrite function  definition as normal\nFunction name is keyword  operator  followed by the symbol  for the operator being overloaded\noperator+  used to overload the addition operator ( + )\nUsing operators\nTo use an operator on a class object it must be overloaded unless the assignment operator (=) or the address operator (&)\nAssignment operator by default performs member wise assignment\nAddress operator (&) by default returns the address of an object\n\n169"
+    },
+    {
+      "slide_number": 170,
+      "title": "Restrictions on Operator Overloading",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Restrictions on Operator Overloading"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "C++ operators that can be overloaded\nC++ Operators that cannot be overloaded"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "170"
+        }
+      ],
+      "full_text": "Restrictions on Operator Overloading\n\nC++ operators that can be overloaded\nC++ Operators that cannot be overloaded\n\n170"
+    },
+    {
+      "slide_number": 171,
+      "title": "Restrictions on Operator Overloadin g",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Restrictions on Operator Overloadin g"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Overloading restrictions\nPrecedence of an operator cannot be changed\nAssociativity of an operator cannot be changed\nArity (number of operands) cannot be changed\nUnary operators remain unary, and binary operators remain binary\nOperators  & ,  * ,  +  and  -  each have unary and binary versions\nUnary and binary versions can be overloaded separately\nNo new operators can be created\nUse only existing operators\nNo overloading operators for built-in types\nCannot change how two integers are added\nProduces a syntax error"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "171"
+        }
+      ],
+      "full_text": "Restrictions on Operator Overloadin g\n\nOverloading restrictions\nPrecedence of an operator cannot be changed\nAssociativity of an operator cannot be changed\nArity (number of operands) cannot be changed\nUnary operators remain unary, and binary operators remain binary\nOperators  & ,  * ,  +  and  -  each have unary and binary versions\nUnary and binary versions can be overloaded separately\nNo new operators can be created\nUse only existing operators\nNo overloading operators for built-in types\nCannot change how two integers are added\nProduces a syntax error\n\n171"
+    },
+    {
+      "slide_number": 172,
+      "title": "Operator Functions as Class Members vs. as friend Functions",
+      "text_blocks": [
+        {
+          "placeholder_type": "title",
+          "text": "Operator Functions as Class Members vs. as friend Functions"
+        },
+        {
+          "placeholder_type": "body",
+          "text": "Member vs non-member\nOperator functions can be member or non-member functions\nWhen overloading  (   ) ,  [   ] ,  ->  or any of the assignment operators, must use a member function\nOperator functions as member functions\nLeftmost operand must be an object (or reference to an object) of the class\nIf left operand of a different type, operator function must be a non-member function\nOperator functions as non-member functions\nMust be  friend s if needs to access private or protected members\nEnable the operator to be commutative"
+        },
+        {
+          "placeholder_type": "sldNum",
+          "text": "172"
+        }
+      ],
+      "full_text": "Operator Functions as Class Members vs. as friend Functions\n\nMember vs non-member\nOperator functions can be member or non-member functions\nWhen overloading  (   ) ,  [   ] ,  ->  or any of the assignment operators, must use a member function\nOperator functions as member functions\nLeftmost operand must be an object (or reference to an object) of the class\nIf left operand of a different type, operator function must be a non-member function\nOperator functions as non-member functions\nMust be  friend s if needs to access private or protected members\nEnable the operator to be commutative\n\n172"
+    },
+    {
+      "slide_number": 173,
+      "title": "173",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "173"
+        }
+      ],
+      "full_text": "173"
+    },
+    {
+      "slide_number": 174,
+      "title": "174",
+      "text_blocks": [
+        {
+          "placeholder_type": "sldNum",
+          "text": "174"
+        }
+      ],
+      "full_text": "174"
+    }
+  ]
+}
