@@ -61,11 +61,14 @@ Prefer <code>const auto&amp;</code> for read-only iteration over containers hold
 <hr>
 
 <h2>Structured Bindings with Range-For (C++17)</h2>
-<pre><code>std::map&lt;std::string, int&gt; scores = {{"Alice", 95}, {"Bob", 87}};
-for (auto&amp; [name, score] : scores) {
-    std::cout &lt;&lt; name &lt;&lt; ": " &lt;&lt; score &lt;&lt; "\n";
-}</code></pre>
 
+
+
+{% raw %}
+```cpp
+std::map<std::string, int> grades = {{"Alice", 95}, {"Bob", 88}};
+{% endraw %}
+```
 <hr>
 
 <h2>Modifying Elements</h2>
