@@ -127,12 +127,12 @@ classDiagram
 class MaybeInt {
     - int* value_
     + MaybeInt()
-    + MaybeInt(int)
+    + MaybeInt(int value)
     + ~MaybeInt()
-    + MaybeInt(const MaybeInt&amp;)
-    + operator=(const MaybeInt&amp;) MaybeInt&amp;
-    + MaybeInt(MaybeInt&amp;&amp;)
-    + operator=(MaybeInt&amp;&amp;) MaybeInt&amp;
+    + MaybeInt(MaybeInt const-ref other)
+    + operator=(MaybeInt const-ref other) MaybeInt-ref
+    + MaybeInt(MaybeInt rref other)
+    + operator=(MaybeInt rref other) MaybeInt-ref
 }
 </div>
 
@@ -151,41 +151,42 @@ class MaybeInt {
 
 <h3>🔗 Interactive Visualization</h3>
 
-<p>👉 <a href="https://pythontutor.com/render.html#code=class%20MaybeInt%20%7B%0A%20public%3A%0A%20%20MaybeInt%28%29%20%3A%20value_%28nullptr%29%20%7B%7D%0A%20%20MaybeInt%28int%20value%29%20%3A%20value_%28new%20int%28value%29%29%20%7B%7D%0A%0A%20%20~MaybeInt%28%29%20%7B%0A%20%20%20%20if%20%28value_%20!%3D%20nullptr%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%0A%20private%3A%0A%20%20int*%20value_%3B%0A%7D%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20MaybeInt%20a%287%29%3B%0A%20%20MaybeInt%20b%28a%29%3B%20//%20Copy%20constructor%20%28shallow%29%0A%20%20MaybeInt%20c%3B%0A%20%20c%20%3D%20a%3B%20%20%20%20%20%20%20%20%20//%20Copy%20assignment%20%28shallow%29%0A%20%20return%200%3B%0A%7D&cumulative=false&curInstr=12&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false">View in Python Tutor</a></p>
+<p>👉 <a href="https://pythontutor.com/render.html#code=class%20MaybeInt%20%7B%0A%20public%3A%0A%20%20MaybeInt%28%29%20%3A%20value_%28nullptr%29%20%7B%7D%0A%20%20MaybeInt%28int%20value%29%20%3A%20value_%28new%20int%28value%29%29%20%7B%7D%0A%0A%20%20~MaybeInt%28%29%20%7B%0A%20%20%20%20if%20%28value_%20!%3D%20nullptr%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%0A%20private%3A%0A%20%20int*%20value_%3B%0A%7D%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20MaybeInt%20a%287%29%3B%0A%20%20MaybeInt%20b%28a%29%3B%20//%20Copy%20constructor%20%28shallow%29%0A%20%20MaybeInt%20c%3B%0A%20%20c%20%3D%20a%3B%20%20%20%20%20%20%20%20%20//%20Copy%20assignment%20%28shallow%29%0A%20%20return%200%3B%0A%7D&cumulative=false&curInstr=12&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" rel="noopener">View shallow-copy bug in Python Tutor</a></p>
 
 ---
 
 <h2>Animation — Copy Problem (Shallow Copy / Double Delete)</h2>
 
 <div id="pointer-animation1">
-  <canvas id="pointerCanvas1" width="620" height="370" style="border:1px solid #ccc; border-radius:6px;"></canvas>
+  <canvas id="pointerCanvas1" width="620" height="370" style="border:1px solid #ccc; border-radius:6px; display:block;"></canvas>
 </div>
 
 <script>
 (function() {
-  const canvas = document.getElementById('pointerCanvas1');
-  const ctx = canvas.getContext('2d');
+  var canvas = document.getElementById('pointerCanvas1');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
 
-  let step = 0;
+  var step = 0;
 
-  const stack = [
+  var stack = [
     {name: 'a::value_', x: 50, y: 60,  target: null},
     {name: 'b::value_', x: 50, y: 110, target: null},
     {name: 'c::value_', x: 50, y: 160, target: null}
   ];
 
-  const heap      = {name: '7',       x: 320, y: 110, invalid: false, visible: false};
-  const nullptrPos = {name: 'nullptr', x: 370, y: 230, visible: false};
-  let showDoubleDelete = false;
+  var heap       = {name: '7',       x: 320, y: 110, invalid: false, visible: false};
+  var nullptrPos = {name: 'nullptr', x: 370, y: 230, visible: false};
+  var showDoubleDelete = false;
 
-  const steps = [
+  var steps = [
     "Initial state — no pointers set",
-    "MaybeInt a(7) — a::value_ → heap(7)",
-    "MaybeInt b(a) — shallow copy: b::value_ → same heap(7)",
-    "MaybeInt c    — c::value_ → nullptr",
-    "c = a         — shallow: c::value_ → same heap(7)",
-    "Destructor for a — deletes heap(7) → now invalid",
-    "Destructor for b — tries to delete same heap → ❌ double delete!"
+    "MaybeInt a(7) — a::value_ points to heap(7)",
+    "MaybeInt b(a) — shallow copy: b::value_ points to same heap(7)",
+    "MaybeInt c    — c::value_ = nullptr",
+    "c = a         — shallow: c::value_ points to same heap(7)",
+    "Destructor for a — deletes heap(7), now invalid",
+    "Destructor for b — tries to delete same heap! Double delete!"
   ];
 
   function drawArrow(fromX, fromY, toX, toY, color) {
@@ -195,8 +196,7 @@ class MaybeInt {
     ctx.strokeStyle = color;
     ctx.lineWidth = 2;
     ctx.stroke();
-
-    const angle = Math.atan2(toY - fromY, toX - fromX);
+    var angle = Math.atan2(toY - fromY, toX - fromX);
     ctx.beginPath();
     ctx.moveTo(toX, toY);
     ctx.lineTo(toX - 10 * Math.cos(angle - 0.4), toY - 10 * Math.sin(angle - 0.4));
@@ -206,49 +206,38 @@ class MaybeInt {
     ctx.fill();
   }
 
-  function drawPointer(obj) {
-    ctx.fillStyle = '#87CEFA';
-    ctx.fillRect(obj.x, obj.y, 80, 22);
+  function drawBox(x, y, w, h, fill, text) {
+    ctx.fillStyle = fill;
+    ctx.fillRect(x, y, w, h);
     ctx.strokeStyle = '#333';
     ctx.lineWidth = 1;
-    ctx.strokeRect(obj.x, obj.y, 80, 22);
+    ctx.strokeRect(x, y, w, h);
     ctx.fillStyle = '#000';
     ctx.font = '13px monospace';
-    ctx.fillText(obj.name, obj.x + 4, obj.y + 15);
+    ctx.fillText(text, x + 4, y + 15);
+  }
 
+  function drawPointer(obj) {
+    drawBox(obj.x, obj.y, 80, 22, '#87CEFA', obj.name);
     if (obj.target) {
-      const color = (obj.target === nullptrPos) ? 'red' : '#333';
+      var color = (obj.target === nullptrPos) ? 'red' : '#333';
       drawArrow(obj.x + 80, obj.y + 11, obj.target.x, obj.target.y + 11, color);
     }
   }
 
   function drawHeap() {
     if (heap.visible) {
-      ctx.fillStyle = heap.invalid ? '#FF6347' : '#90EE90';
-      ctx.fillRect(heap.x, heap.y, 80, 22);
-      ctx.strokeStyle = '#333';
-      ctx.lineWidth = 1;
-      ctx.strokeRect(heap.x, heap.y, 80, 22);
-      ctx.fillStyle = '#000';
-      ctx.font = '13px monospace';
-      ctx.fillText(heap.invalid ? 'freed' : heap.name, heap.x + 5, heap.y + 15);
+      drawBox(heap.x, heap.y, 80, 22, heap.invalid ? '#FF6347' : '#90EE90',
+              heap.invalid ? 'freed' : heap.name);
     }
     if (nullptrPos.visible) {
-      ctx.fillStyle = '#FFD700';
-      ctx.fillRect(nullptrPos.x, nullptrPos.y, 70, 22);
-      ctx.strokeStyle = '#333';
-      ctx.lineWidth = 1;
-      ctx.strokeRect(nullptrPos.x, nullptrPos.y, 70, 22);
-      ctx.fillStyle = '#000';
-      ctx.font = '13px monospace';
-      ctx.fillText('nullptr', nullptrPos.x + 5, nullptrPos.y + 15);
+      drawBox(nullptrPos.x, nullptrPos.y, 70, 22, '#FFD700', 'nullptr');
     }
   }
 
   function drawStep() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Labels
     ctx.fillStyle = '#555';
     ctx.font = 'bold 13px sans-serif';
     ctx.fillText('Stack', 50, 40);
@@ -264,49 +253,49 @@ class MaybeInt {
     if (showDoubleDelete) {
       ctx.fillStyle = 'red';
       ctx.font = 'bold 16px sans-serif';
-      ctx.fillText('❌ Double Delete!', heap.x + 90, heap.y + 15);
+      ctx.fillText('Double Delete!', heap.x + 90, heap.y + 15);
     }
 
-    // Buttons
-    ['Prev', 'Next'].forEach((label, i) => {
-      const bx = 160 + i * 120;
-      ctx.fillStyle = '#E0E0E0';
-      ctx.strokeStyle = '#666';
-      ctx.lineWidth = 1;
-      ctx.fillRect(bx, 330, 80, 30);
-      ctx.strokeRect(bx, 330, 80, 30);
-      ctx.fillStyle = '#000';
-      ctx.font = '14px sans-serif';
-      ctx.fillText(label, bx + 25, 350);
-    });
+    ctx.fillStyle = '#E0E0E0';
+    ctx.strokeStyle = '#666';
+    ctx.lineWidth = 1;
+    ctx.fillRect(150, 300, 80, 30);
+    ctx.strokeRect(150, 300, 80, 30);
+    ctx.fillStyle = '#000';
+    ctx.font = '14px sans-serif';
+    ctx.fillText('Prev', 175, 320);
+
+    ctx.fillStyle = '#E0E0E0';
+    ctx.strokeStyle = '#666';
+    ctx.fillRect(270, 300, 80, 30);
+    ctx.strokeRect(270, 300, 80, 30);
+    ctx.fillStyle = '#000';
+    ctx.fillText('Next', 295, 320);
   }
 
   function applyStep(n) {
-    stack.forEach(s => s.target = null);
+    stack.forEach(function(s) { s.target = null; });
     heap.invalid = false; heap.visible = false;
     nullptrPos.visible = false;
     showDoubleDelete = false;
-
-    for (let i = 1; i <= n; i++) {
-      switch(i) {
-        case 1: stack[0].target = heap; heap.visible = true; break;
-        case 2: stack[1].target = heap; break;
-        case 3: stack[2].target = nullptrPos; nullptrPos.visible = true; break;
-        case 4: stack[2].target = heap; break;
-        case 5: heap.invalid = true; break;
-        case 6: showDoubleDelete = true; break;
-      }
+    for (var i = 1; i <= n; i++) {
+      if (i === 1) { stack[0].target = heap; heap.visible = true; }
+      else if (i === 2) { stack[1].target = heap; }
+      else if (i === 3) { stack[2].target = nullptrPos; nullptrPos.visible = true; }
+      else if (i === 4) { stack[2].target = heap; }
+      else if (i === 5) { heap.invalid = true; }
+      else if (i === 6) { showDoubleDelete = true; }
     }
     drawStep();
   }
 
-  canvas.addEventListener('click', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    if (x >= 160 && x <= 240 && y >= 330 && y <= 360) {
+  canvas.addEventListener('click', function(e) {
+    var rect = canvas.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    if (x >= 150 && x <= 230 && y >= 300 && y <= 330) {
       if (step > 0) { step--; applyStep(step); }
-    } else if (x >= 280 && x <= 360 && y >= 330 && y <= 360) {
+    } else if (x >= 270 && x <= 350 && y >= 300 && y <= 330) {
       if (step < 6) { step++; applyStep(step); }
     }
   });
@@ -330,9 +319,9 @@ MaybeInt b = std::move(a);  // Move constructor: b now owns the int, a.value_ ==
 
 <div class="mermaid">
 flowchart LR
-  A["a::value_ → heap(42)"] -->|"std::move(a)"| B["Move constructor called"]
-  B --> C["b::value_ → heap(42)"]
-  B --> D["a::value_ = nullptr"]
+  A["a::value_ points to heap(42)"] -->|"std::move(a)"| B["Move constructor called"]
+  B --> C["b::value_ now owns heap(42)"]
+  B --> D["a::value_ set to nullptr"]
 </div>
 
 <h3>Copy vs. Move Comparison</h3>
@@ -367,39 +356,40 @@ flowchart LR
 <h2>Animation — Move Semantics</h2>
 
 <div id="move-animation">
-  <canvas id="moveCanvas" width="620" height="370" style="border:1px solid #ccc; border-radius:6px;"></canvas>
+  <canvas id="moveCanvas" width="620" height="370" style="border:1px solid #ccc; border-radius:6px; display:block;"></canvas>
 </div>
 
 <script>
 (function() {
-  const canvas = document.getElementById('moveCanvas');
-  const ctx = canvas.getContext('2d');
-  let step = 0;
+  var canvas = document.getElementById('moveCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var step = 0;
 
-  const steps = [
+  var stepLabels = [
     "Initial state",
-    "MaybeInt a(42) — a::value_ → heap(42)",
+    "MaybeInt a(42) — a::value_ points to heap(42)",
     "MaybeInt b = std::move(a) — move constructor called",
-    "b::value_ takes ownership → heap(42)",
-    "a::value_ = nullptr (source emptied)",
-    "Destructor for a — deletes nullptr (no-op ✅)",
-    "Destructor for b — deletes heap(42) ✅ (only one delete)"
+    "b::value_ takes ownership of heap(42)",
+    "a::value_ set to nullptr (source emptied)",
+    "Destructor for a — deletes nullptr (safe, no-op)",
+    "Destructor for b — deletes heap(42) (only one delete!)"
   ];
 
-  const aBox  = {label: 'a::value_', x: 50,  y: 80};
-  const bBox  = {label: 'b::value_', x: 50,  y: 140};
-  const heap  = {label: '42',        x: 340,  y: 110};
-  const nullP = {label: 'nullptr',   x: 360, y: 220};
+  var aBox = {label: 'a::value_', x: 50,  y: 80};
+  var bBox = {label: 'b::value_', x: 50,  y: 140};
+  var heap = {label: '42',        x: 340, y: 110};
+  var nullP = {label: 'nullptr',  x: 360, y: 220};
 
-  // state per step: [aTarget, bTarget, heapVisible, nullVisible, heapDead, note]
-  const states = [
-    [null,  null,  false, false, false, ''],
-    [heap,  null,  true,  false, false, ''],
-    [heap,  null,  true,  false, false, 'Moving…'],
-    [heap,  heap,  true,  false, false, ''],
-    [nullP, heap,  true,  true,  false, 'a emptied'],
-    [null,  heap,  true,  true,  false, 'a destroyed (nullptr, safe)'],
-    [null,  null,  false, false, false, 'b destroyed — heap freed ✅'],
+  // [aTarget, bTarget, heapVisible, nullVisible, note]
+  var states = [
+    [null,  null,  false, false, ''],
+    [heap,  null,  true,  false, ''],
+    [heap,  null,  true,  false, 'Moving...'],
+    [heap,  heap,  true,  false, ''],
+    [nullP, heap,  true,  true,  'a emptied'],
+    [null,  heap,  true,  true,  'a destroyed (nullptr, safe)'],
+    [null,  null,  false, false, 'b destroyed — heap freed correctly']
   ];
 
   function drawBox(x, y, w, h, fill, text) {
@@ -420,7 +410,7 @@ flowchart LR
     ctx.strokeStyle = color;
     ctx.lineWidth = 2;
     ctx.stroke();
-    const angle = Math.atan2(toY - fromY, toX - fromX);
+    var angle = Math.atan2(toY - fromY, toX - fromX);
     ctx.beginPath();
     ctx.moveTo(toX, toY);
     ctx.lineTo(toX - 10 * Math.cos(angle - 0.4), toY - 10 * Math.sin(angle - 0.4));
@@ -433,7 +423,12 @@ flowchart LR
   function drawScene() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    const [aTarget, bTarget, heapVisible, nullVisible, heapDead, note] = states[step];
+    var state = states[step];
+    var aTarget    = state[0];
+    var bTarget    = state[1];
+    var heapVisible = state[2];
+    var nullVisible = state[3];
+    var note        = state[4];
 
     ctx.fillStyle = '#555';
     ctx.font = 'bold 13px sans-serif';
@@ -442,41 +437,45 @@ flowchart LR
 
     ctx.fillStyle = '#000';
     ctx.font = '14px sans-serif';
-    ctx.fillText('Step ' + step + ': ' + steps[step], 10, 22);
-    if (note) { ctx.fillStyle = '#0077b6'; ctx.fillText('→ ' + note, 10, 40); }
+    ctx.fillText('Step ' + step + ': ' + stepLabels[step], 10, 22);
+    if (note) {
+      ctx.fillStyle = '#0077b6';
+      ctx.fillText('-> ' + note, 10, 40);
+    }
 
-    // Draw stack boxes
     drawBox(aBox.x, aBox.y, 90, 22, '#87CEFA', aBox.label);
     drawBox(bBox.x, bBox.y, 90, 22, '#87CEFA', bBox.label);
-
-    if (heapVisible) drawBox(heap.x, heap.y, 70, 22, heapDead ? '#FF6347' : '#90EE90', heap.label);
-    if (nullVisible)  drawBox(nullP.x, nullP.y, 70, 22, '#FFD700', nullP.label);
+    if (heapVisible) drawBox(heap.x, heap.y, 70, 22, '#90EE90', heap.label);
+    if (nullVisible) drawBox(nullP.x, nullP.y, 70, 22, '#FFD700', nullP.label);
 
     if (aTarget === heap)  drawArrow(aBox.x + 90, aBox.y + 11, heap.x,  heap.y  + 11, '#333');
     if (aTarget === nullP) drawArrow(aBox.x + 90, aBox.y + 11, nullP.x, nullP.y + 11, 'red');
     if (bTarget === heap)  drawArrow(bBox.x + 90, bBox.y + 11, heap.x,  heap.y  + 11, '#00a86b');
 
-    // Buttons
-    ['Prev', 'Next'].forEach((label, i) => {
-      const bx = 160 + i * 120;
-      ctx.fillStyle = '#E0E0E0';
-      ctx.strokeStyle = '#666';
-      ctx.lineWidth = 1;
-      ctx.fillRect(bx, 330, 80, 30);
-      ctx.strokeRect(bx, 330, 80, 30);
-      ctx.fillStyle = '#000';
-      ctx.font = '14px sans-serif';
-      ctx.fillText(label, bx + 25, 350);
-    });
+    ctx.fillStyle = '#E0E0E0';
+    ctx.strokeStyle = '#666';
+    ctx.lineWidth = 1;
+    ctx.fillRect(150, 330, 80, 30);
+    ctx.strokeRect(150, 330, 80, 30);
+    ctx.fillStyle = '#000';
+    ctx.font = '14px sans-serif';
+    ctx.fillText('Prev', 175, 350);
+
+    ctx.fillStyle = '#E0E0E0';
+    ctx.strokeStyle = '#666';
+    ctx.fillRect(270, 330, 80, 30);
+    ctx.strokeRect(270, 330, 80, 30);
+    ctx.fillStyle = '#000';
+    ctx.fillText('Next', 295, 350);
   }
 
-  canvas.addEventListener('click', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    if (x >= 160 && x <= 240 && y >= 330 && y <= 360) {
+  canvas.addEventListener('click', function(e) {
+    var rect = canvas.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    if (x >= 150 && x <= 230 && y >= 330 && y <= 360) {
       if (step > 0) { step--; drawScene(); }
-    } else if (x >= 280 && x <= 360 && y >= 330 && y <= 360) {
+    } else if (x >= 270 && x <= 350 && y >= 330 && y <= 360) {
       if (step < states.length - 1) { step++; drawScene(); }
     }
   });
@@ -489,7 +488,15 @@ flowchart LR
 
 <h2>Interactive Python Tutor — All Five Functions</h2>
 
-<iframe width="800" height="500" frameborder="0"
+<p>Click the link below to step through all five special member functions in Python Tutor:</p>
+
+<p>👉 <a href="https://pythontutor.com/render.html#code=class%20MaybeInt%20%7B%0A%20public%3A%0A%20%20MaybeInt%28%29%20%3A%20value_%28nullptr%29%20%7B%7D%0A%20%20MaybeInt%28int%20v%29%20%3A%20value_%28new%20int%28v%29%29%20%7B%7D%0A%0A%20%20~MaybeInt%28%29%20%7B%20delete%20value_%3B%20%7D%0A%0A%20%20MaybeInt%28const%20MaybeInt%26%20o%29%20%7B%0A%20%20%20%20value_%20%3D%20o.value_%20%3F%20new%20int%28*o.value_%29%20%3A%20nullptr%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%26%20operator%3D%28const%20MaybeInt%26%20o%29%20%7B%0A%20%20%20%20if%20%28this%20!%3D%20%26o%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%20%20value_%20%3D%20o.value_%20%3F%20new%20int%28*o.value_%29%20%3A%20nullptr%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20*this%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%28MaybeInt%26%26%20o%29%20noexcept%20%3A%20value_%28o.value_%29%20%7B%0A%20%20%20%20o.value_%20%3D%20nullptr%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%26%20operator%3D%28MaybeInt%26%26%20o%29%20noexcept%20%7B%0A%20%20%20%20if%20%28this%20!%3D%20%26o%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%20%20value_%20%3D%20o.value_%3B%0A%20%20%20%20%20%20o.value_%20%3D%20nullptr%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20*this%3B%0A%20%20%7D%0A%0A%20private%3A%0A%20%20int*%20value_%3B%0A%7D%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20MaybeInt%20a%287%29%3B%0A%20%20MaybeInt%20b%28a%29%3B%0A%20%20MaybeInt%20c%3B%0A%20%20c%20%3D%20a%3B%0A%20%20MaybeInt%20d%28std%3A%3Amove%28a%29%29%3B%0A%20%20MaybeInt%20e%3B%0A%20%20e%20%3D%20std%3A%3Amove%28b%29%3B%0A%20%20return%200%3B%0A%7D&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false" target="_blank" rel="noopener">Open in Python Tutor (all 5 functions)</a></p>
+
+<iframe
+  title="MaybeInt — Rule of Five in Python Tutor"
+  width="100%"
+  height="500"
+  style="border:1px solid #ccc; border-radius:6px;"
   src="https://pythontutor.com/iframe-embed.html#code=class%20MaybeInt%20%7B%0A%20public%3A%0A%20%20MaybeInt%28%29%20%3A%20value_%28nullptr%29%20%7B%7D%0A%20%20MaybeInt%28int%20v%29%20%3A%20value_%28new%20int%28v%29%29%20%7B%7D%0A%0A%20%20~MaybeInt%28%29%20%7B%20delete%20value_%3B%20%7D%0A%0A%20%20MaybeInt%28const%20MaybeInt%26%20o%29%20%7B%0A%20%20%20%20value_%20%3D%20o.value_%20%3F%20new%20int%28*o.value_%29%20%3A%20nullptr%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%26%20operator%3D%28const%20MaybeInt%26%20o%29%20%7B%0A%20%20%20%20if%20%28this%20!%3D%20%26o%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%20%20value_%20%3D%20o.value_%20%3F%20new%20int%28*o.value_%29%20%3A%20nullptr%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20*this%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%28MaybeInt%26%26%20o%29%20noexcept%20%3A%20value_%28o.value_%29%20%7B%0A%20%20%20%20o.value_%20%3D%20nullptr%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%26%20operator%3D%28MaybeInt%26%26%20o%29%20noexcept%20%7B%0A%20%20%20%20if%20%28this%20!%3D%20%26o%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%20%20value_%20%3D%20o.value_%3B%0A%20%20%20%20%20%20o.value_%20%3D%20nullptr%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20*this%3B%0A%20%20%7D%0A%0A%20private%3A%0A%20%20int*%20value_%3B%0A%7D%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20MaybeInt%20a%287%29%3B%0A%20%20MaybeInt%20b%28a%29%3B%0A%20%20MaybeInt%20c%3B%0A%20%20c%20%3D%20a%3B%0A%20%20MaybeInt%20d%28std%3A%3Amove%28a%29%29%3B%0A%20%20MaybeInt%20e%3B%0A%20%20e%20%3D%20std%3A%3Amove%28b%29%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=nevernest&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0&rawInputLstJSON=%5B%5D&textReferences=false">
 </iframe>
 
@@ -563,5 +570,5 @@ class MaybeInt {
 
 <blockquote>
 [!NOTE]
-🧠 <strong>Rule of Five:</strong> In modern C++, if you define <strong>any</strong> of the five special member functions, define <strong>all five</strong> — or use smart pointers (Rule of Zero) and define <strong>none</strong>.
+In modern C++, if you define <strong>any</strong> of the five special member functions, define <strong>all five</strong> — or use smart pointers (Rule of Zero) and define <strong>none</strong>.
 </blockquote>
