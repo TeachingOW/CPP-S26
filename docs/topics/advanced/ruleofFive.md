@@ -49,7 +49,11 @@ flowchart TD
   A --> D
   A --> E
   A --> F
-  B & C & D & E & F --> G
+  B --> G
+  C --> G
+  D --> G
+  E --> G
+  F --> G
 </div>
 
 ---
