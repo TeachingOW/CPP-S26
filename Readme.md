@@ -54,7 +54,7 @@ CPP-S26/
 - [Pointers](topics/cpp-fundamentals/pointers.md)
 - [Templates](topics/cpp-fundamentals/templates.md)
 - [Lambda Expressions](topics/cpp-fundamentals/lambda.md)
-- [Function Arguments](topics/cpp-fundamentals/arguments.md)
+- [Commandline Arguments](topics/cpp-fundamentals/arguments.md)
 - [File I/O](topics/cpp-fundamentals/file.md)
 
 #### Advanced C++
