@@ -86,6 +86,91 @@ int main() {
 }
 ```
 
+## Non-Type Template Parameters (Number Templates)
+Templates can also accept non-type parameters, such as integers, at compile time. This is useful for fixed-size data structures and compile-time constants.
+
+### Example: Fixed-Size Array with a Number Template
+```cpp
+#include <iostream>
+using namespace std;
+
+// Template with a non-type (number) parameter
+template <typename T, int N>
+class FixedArray {
+private:
+    T data[N];
+public:
+    FixedArray() {
+        for (int i = 0; i < N; i++) data[i] = T{};
+    }
+    T& operator[](int index) { return data[index]; }
+    int size() const { return N; }
+};
+
+int main() {
+    FixedArray<int, 5> arr;
+    arr[0] = 10;
+    arr[1] = 20;
+    cout << "Size: " << arr.size() << endl;   // Output: 5
+    cout << "arr[0]: " << arr[0] << endl;     // Output: 10
+    return 0;
+}
+```
+
+The size `N` is a **compile-time constant** — the array lives on the stack and no dynamic allocation is needed.
+
+### Example: Power Function Template (typename base, constant int exponent)
+
+A function template where the **base type** (`T`) is a typename and the **exponent** is a compile-time constant integer:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// T  = type of the base (int, double, float, ...)
+// Exp = exponent — must be known at compile time
+template <typename T, int Exp>
+T power(T base) {
+    T result = 1;
+    for (int i = 0; i < Exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+
+int main() {
+    cout << power<int, 3>(2)      << endl; // 2^3  = 8
+    cout << power<double, 4>(1.5) << endl; // 1.5^4 = 5.0625
+    cout << power<float, 0>(99.9) << endl; // anything^0 = 1
+    return 0;
+}
+```
+
+Key points:
+- `T` can be any numeric type (`int`, `double`, `float`, …).
+- `Exp` is baked in at **compile time** — a different function is generated for each exponent value used.
+- Calling `power<double, 4>(1.5)` is equivalent to writing `1.5 * 1.5 * 1.5 * 1.5` with the loop fully known to the compiler.
+
+### Example: Compile-Time Power (struct / template metaprogramming)
+```cpp
+template <int Base, int Exp>
+struct Power {
+    static const int value = Base * Power<Base, Exp - 1>::value;
+};
+
+template <int Base>
+struct Power<Base, 0> {
+    static const int value = 1;
+};
+
+int main() {
+    cout << Power<2, 10>::value << endl; // Output: 1024
+    return 0;
+}
+```
+
+The entire calculation happens at **compile time** — no runtime cost.
+
 ## Best Practices for Templates
 - Use meaningful names for template parameters (e.g., `typename T1, T2`).
 - Avoid unnecessary template instantiations to reduce compilation time.

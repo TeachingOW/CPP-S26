@@ -8,8 +8,8 @@ This directory contains detailed notes and explanations for various C++ concepts
 **Focus:** OOP principles and C++ implementation
 
 **Topics:**
-- [ObjectTypesAndOOP.md](./oop/ObjectTypesAndOOP.md) - Complete tutorial on OOP types, inheritance, polymorphism, operators, and exceptions
 - [PillarsofOOP.md](./oop/PillarsofOOP.md) - The four pillars: Encapsulation, Abstraction, Inheritance, Polymorphism
+- [classes.md](./oop/classes.md) - Complete tutorial on OOP types, inheritance, polymorphism, operators, and exceptions
 - [Exception.md](./oop/Exception.md) - Exception handling in C++
 
 **Prerequisites:** Basic C++ syntax  
@@ -37,9 +37,14 @@ This directory contains detailed notes and explanations for various C++ concepts
 
 **Topics:**
 - [stl.md](./advanced/stl.md) - Standard Template Library (containers, algorithms, iterators)
-- [ruleofThree.md](./advanced/ruleofThree.md) - Rule of Three (destructor, copy constructor, assignment operator)
-- [c++11.md](./advanced/c++11.md) - C++11 features and improvements
+- [ruleofFive.md](./advanced/ruleofFive.md) - Rule of Five (destructor, copy/move constructors, copy/move assignment)
+- [c++11.md](./advanced/c++11.md) - Move semantics, lvalue/rvalue references, std::move
 - [smartpointers.md](./advanced/smartpointers.md) - Smart pointers (unique_ptr, shared_ptr, weak_ptr)
+- [constexpr.md](./advanced/constexpr.md) - Compile-time evaluation with constexpr, consteval, constinit
+- [auto-decltype.md](./advanced/auto-decltype.md) - Type deduction with auto and decltype
+- [range-for.md](./advanced/range-for.md) - Range-based for loops and iteration patterns
+- [variadic-templates.md](./advanced/variadic-templates.md) - Variadic templates and fold expressions
+- [optional-variant-any.md](./advanced/optional-variant-any.md) - std::optional, std::variant, std::any (C++17)
 
 **Prerequisites:** Strong understanding of C++ fundamentals  
 **Related:** [Advanced assignments](../assignments/)
@@ -79,10 +84,16 @@ This directory contains detailed notes and explanations for various C++ concepts
    - Containers (vector, map, set, etc.)
    - Algorithms (sort, find, transform, etc.)
    - Iterators
-2. Understand **Rule of Three/Five**
-3. Learn **Smart Pointers**
-4. Explore **Modern C++ (C++11/14/17/20)**
-5. Work on complex assignments
+2. Understand **Rule of Five**
+3. Learn **Move Semantics** (C++11)
+4. Learn **Smart Pointers**
+5. Explore **Modern C++ features**
+   - constexpr and compile-time programming
+   - auto and decltype
+   - Range-based for loops
+   - Variadic templates
+   - std::optional, std::variant, std::any
+6. Work on complex assignments
 
 ---
 
@@ -92,14 +103,11 @@ The following topics are planned or recommended for future coverage:
 
 ### Coming Soon
 - **Template Specialization** - Partial and full template specialization
-- **Move Semantics** - lvalue, rvalue, move constructors, and move assignment
 - **Scoped Enums** - enum class and type-safe enumerations
-- **Advanced C++11/14/17/20 Features**
-  - constexpr
-  - auto and decltype
-  - Range-based for loops
-  - Variadic templates
-  - std::optional, std::variant, std::any
+- **Advanced C++20 Features**
+  - Concepts
+  - Ranges
+  - Modules
 
 See [COURSE_OUTLINE.md](../COURSE_OUTLINE.md) for a complete list of planned topics.
 
