@@ -86,7 +86,60 @@ int main() {
 }
 ```
 
-## Best Practices for Templates
+## Non-Type Template Parameters (Number Templates)
+Templates can also accept non-type parameters, such as integers, at compile time. This is useful for fixed-size data structures and compile-time constants.
+
+### Example: Fixed-Size Array with a Number Template
+```cpp
+#include <iostream>
+using namespace std;
+
+// Template with a non-type (number) parameter
+template <typename T, int N>
+class FixedArray {
+private:
+    T data[N];
+public:
+    FixedArray() {
+        for (int i = 0; i < N; i++) data[i] = T{};
+    }
+    T& operator[](int index) { return data[index]; }
+    int size() const { return N; }
+};
+
+int main() {
+    FixedArray<int, 5> arr;
+    arr[0] = 10;
+    arr[1] = 20;
+    cout << "Size: " << arr.size() << endl;   // Output: 5
+    cout << "arr[0]: " << arr[0] << endl;     // Output: 10
+    return 0;
+}
+```
+
+The size `N` is a **compile-time constant** — the array lives on the stack and no dynamic allocation is needed.
+
+### Example: Compile-Time Power Function
+```cpp
+template <int Base, int Exp>
+struct Power {
+    static const int value = Base * Power<Base, Exp - 1>::value;
+};
+
+template <int Base>
+struct Power<Base, 0> {
+    static const int value = 1;
+};
+
+int main() {
+    cout << Power<2, 10>::value << endl; // Output: 1024
+    return 0;
+}
+```
+
+The entire calculation happens at **compile time** — no runtime cost.
+
+
 - Use meaningful names for template parameters (e.g., `typename T1, T2`).
 - Avoid unnecessary template instantiations to reduce compilation time.
 - Consider template specialization for edge cases.
