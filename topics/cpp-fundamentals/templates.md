@@ -119,7 +119,39 @@ int main() {
 
 The size `N` is a **compile-time constant** — the array lives on the stack and no dynamic allocation is needed.
 
-### Example: Compile-Time Power Function
+### Example: Power Function Template (typename base, constant int exponent)
+
+A function template where the **base type** (`T`) is a typename and the **exponent** is a compile-time constant integer:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// T  = type of the base (int, double, float, ...)
+// Exp = exponent — must be known at compile time
+template <typename T, int Exp>
+T power(T base) {
+    T result = 1;
+    for (int i = 0; i < Exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+
+int main() {
+    cout << power<int, 3>(2)      << endl; // 2^3  = 8
+    cout << power<double, 4>(1.5) << endl; // 1.5^4 = 5.0625
+    cout << power<float, 0>(99.9) << endl; // anything^0 = 1
+    return 0;
+}
+```
+
+Key points:
+- `T` can be any numeric type (`int`, `double`, `float`, …).
+- `Exp` is baked in at **compile time** — a different function is generated for each exponent value used.
+- Calling `power<double, 4>(1.5)` is equivalent to writing `1.5 * 1.5 * 1.5 * 1.5` with the loop fully known to the compiler.
+
+### Example: Compile-Time Power (struct / template metaprogramming)
 ```cpp
 template <int Base, int Exp>
 struct Power {
@@ -139,7 +171,7 @@ int main() {
 
 The entire calculation happens at **compile time** — no runtime cost.
 
-
+## Best Practices for Templates
 - Use meaningful names for template parameters (e.g., `typename T1, T2`).
 - Avoid unnecessary template instantiations to reduce compilation time.
 - Consider template specialization for edge cases.
