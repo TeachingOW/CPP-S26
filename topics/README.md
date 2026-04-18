@@ -45,6 +45,12 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [range-for.md](./advanced/range-for.md) - Range-based for loops and iteration patterns
 - [variadic-templates.md](./advanced/variadic-templates.md) - Variadic templates and fold expressions
 - [optional-variant-any.md](./advanced/optional-variant-any.md) - std::optional, std::variant, std::any (C++17)
+- [template-specialization.md](./advanced/template-specialization.md) - Full and partial template specialization
+- [scoped-enums.md](./advanced/scoped-enums.md) - enum class and type-safe enumerations
+- [advanced-cpp20.md](./advanced/advanced-cpp20.md) - Overview of major C++20 features
+- [concepts.md](./advanced/concepts.md) - Template constraints with C++20 concepts
+- [ranges.md](./advanced/ranges.md) - Lazy, composable sequence processing with ranges
+- [modules.md](./advanced/modules.md) - Module-based organization in C++20
 
 **Prerequisites:** Strong understanding of C++ fundamentals  
 **Related:** [Advanced assignments](../assignments/)
@@ -99,15 +105,14 @@ This directory contains detailed notes and explanations for various C++ concepts
 
 ## Additional Topics to Study
 
-The following topics are planned or recommended for future coverage:
+The following advanced topics are now available:
 
-### Coming Soon
-- **Template Specialization** - Partial and full template specialization
-- **Scoped Enums** - enum class and type-safe enumerations
-- **Advanced C++20 Features**
-  - Concepts
-  - Ranges
-  - Modules
+- [Template Specialization](./advanced/template-specialization.md) - Partial and full template specialization
+- [Scoped Enums](./advanced/scoped-enums.md) - enum class and type-safe enumerations
+- [Advanced C++20 Features](./advanced/advanced-cpp20.md)
+- [Concepts](./advanced/concepts.md)
+- [Ranges](./advanced/ranges.md)
+- [Modules](./advanced/modules.md)
 
 See [COURSE_OUTLINE.md](../COURSE_OUTLINE.md) for a complete list of planned topics.
 

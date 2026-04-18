@@ -156,6 +156,24 @@ This directory contains reference materials, books, cheat sheets, and external l
   - Unit testing framework examples
   - Test-driven development
 
+- **[CPP-LRU](https://github.com/TeachingOW/CPP-LRU)**
+  - LRU cache project and data-structure practice
+
+- **[CPP-XML](https://github.com/TeachingOW/CPP-XML)**
+  - XML parsing and data representation practice
+
+- **[CPP-S26-Vector](https://github.com/TeachingOW/CPP-S26-Vector)**
+  - Vector implementation and container internals
+
+- **[CPP-S26-Pointers](https://github.com/TeachingOW/CPP-S26-Pointers)**
+  - Pointer exercises and memory-model practice
+
+- **[cpp-cheatsheet](https://github.com/TeachingOW/cpp-cheatsheet)**
+  - Quick syntax and STL reference companion
+
+- **[CppProjectTemplate](https://github.com/TeachingOW/CppProjectTemplate)**
+  - Starter template for C++ project structure
+
 ---
 
 ## How to Use These Resources

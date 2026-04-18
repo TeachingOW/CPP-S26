@@ -62,6 +62,12 @@ CPP-S26/
 - [Rule of Five](topics/advanced/ruleofFive.md)
 - [Smart Pointers](topics/advanced/smartpointers.md)
 - [C++11 Features](topics/advanced/c++11.md)
+- [Template Specialization](topics/advanced/template-specialization.md)
+- [Scoped Enums](topics/advanced/scoped-enums.md)
+- [Advanced C++20 Features](topics/advanced/advanced-cpp20.md)
+- [Concepts](topics/advanced/concepts.md)
+- [Ranges](topics/advanced/ranges.md)
+- [Modules](topics/advanced/modules.md)
 
 #### Algorithms
 - [Merge Sort](topics/algorithms/mergesort.md)
@@ -86,6 +92,15 @@ CPP-S26/
 - [cppreference.com](https://en.cppreference.com/) - C++ documentation
 - [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html) - Industry best practices
 - [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/) - Modern C++ practices
+
+### Project Links
+- [CPP-LRU](https://github.com/TeachingOW/CPP-LRU)
+- [CPP-XML](https://github.com/TeachingOW/CPP-XML)
+- [CPP-S26-Vector](https://github.com/TeachingOW/CPP-S26-Vector)
+- [CPP-S26-Pointers](https://github.com/TeachingOW/CPP-S26-Pointers)
+- [cpp-cheatsheet](https://github.com/TeachingOW/cpp-cheatsheet)
+- [CPP-Unittest](https://github.com/TeachingOW/CPP-Unittest)
+- [CppProjectTemplate](https://github.com/TeachingOW/CppProjectTemplate)
 
 **[View all resources →](resources/)**
 
