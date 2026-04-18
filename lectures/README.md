@@ -56,7 +56,7 @@ This directory is organized for weekly lecture content, notes, and materials.
 ### Week 07
 **Topics:** Constructors, Destructors, Rule of Three  
 **Lecture Code:** [Lecture 7 Gist](https://gist.github.com/oldwestbury/cd6ec0eaabed25632a059be83cf1e5c2)  
-**Related Topics:** [ruleofThree.md](../topics/advanced/ruleofThree.md)
+**Related Topics:** [ruleofFive.md](../topics/advanced/ruleofFive.md)
 
 ---
 

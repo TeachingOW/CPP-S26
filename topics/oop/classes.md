@@ -967,4 +967,4 @@ g++ main.o bank_account.o -o app
 ## 19. Related Notes
 
 - `topics/oop/PillarsofOOP.md`
-- `topics/advanced/ruleofThree.md`
+- `topics/advanced/ruleofFive.md`

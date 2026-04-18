@@ -59,7 +59,7 @@ CPP-S26/
 
 #### Advanced C++
 - [STL (Standard Template Library)](topics/advanced/stl.md)
-- [Rule of Three](topics/advanced/ruleofThree.md)
+- [Rule of Five](topics/advanced/ruleofFive.md)
 - [Smart Pointers](topics/advanced/smartpointers.md)
 - [C++11 Features](topics/advanced/c++11.md)
 
