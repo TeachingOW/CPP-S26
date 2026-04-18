@@ -38,9 +38,8 @@ auto process(T val) {
     }
 }</code></pre>
 
-<blockquote>[!TIP]
-<code>if constexpr</code> replaces many SFINAE patterns and tag dispatch tricks that were common before C++17.
-</blockquote>
+> [!TIP]
+> <code>if constexpr</code> replaces many SFINAE patterns and tag dispatch tricks that were common before C++17.
 
 <hr>
 
@@ -57,9 +56,8 @@ constexpr int t = triple(4);  // OK: compile-time
 <pre><code>constinit int global_counter = 0;   // constant-initialized
 // global_counter = 42;              // OK: not const</code></pre>
 
-<blockquote>[!WARNING]
-<code>constinit</code> only guarantees the <em>initialization</em> is constant — the variable itself is still mutable unless also declared <code>const</code>.
-</blockquote>
+> [!WARNING]
+> <code>constinit</code> only guarantees the <em>initialization</em> is constant - the variable itself is still mutable unless also declared <code>const</code>.
 
 <hr>
 

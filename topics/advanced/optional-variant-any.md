@@ -23,9 +23,8 @@ std::cout &lt;&lt; age.value_or(0) &lt;&lt; "\n"; // 30 or 0 if empty
 // C++23 monadic operations
 auto doubled = age.transform([](int v){ return v * 2; }); // optional&lt;int&gt;{60}</code></pre>
 
-<blockquote>[!TIP]
-Use <code>value_or(default)</code> to safely extract a value from an <code>optional</code> without risking <code>std::bad_optional_access</code>.
-</blockquote>
+> [!TIP]
+> Use <code>value_or(default)</code> to safely extract a value from an <code>optional</code> without risking <code>std::bad_optional_access</code>.
 
 <hr>
 
@@ -59,9 +58,8 @@ std::visit(overloaded{
     [](const std::string&amp; s){ std::cout &lt;&lt; "string: " &lt;&lt; s &lt;&lt; "\n"; }
 }, v);</code></pre>
 
-<blockquote>[!NOTE]
-<code>std::get&lt;T&gt;(v)</code> throws <code>std::bad_variant_access</code> if the variant does not hold type <code>T</code>. Use <code>std::get_if&lt;T&gt;(&amp;v)</code> for a non-throwing pointer-based access.
-</blockquote>
+> [!NOTE]
+> <code>std::get&lt;T&gt;(v)</code> throws <code>std::bad_variant_access</code> if the variant does not hold type <code>T</code>. Use <code>std::get_if&lt;T&gt;(&amp;v)</code> for a non-throwing pointer-based access.
 
 <hr>
 
@@ -86,9 +84,8 @@ if (auto* p = std::any_cast&lt;double&gt;(&amp;a)) {
     std::cout &lt;&lt; *p &lt;&lt; "\n";
 }</code></pre>
 
-<blockquote>[!WARNING]
-<code>std::any</code> involves heap allocation and runtime type checks. Prefer <code>std::variant</code> when the set of types is known at compile time.
-</blockquote>
+> [!WARNING]
+> <code>std::any</code> involves heap allocation and runtime type checks. Prefer <code>std::variant</code> when the set of types is known at compile time.
 
 <hr>
 

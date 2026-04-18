@@ -42,9 +42,8 @@ void print(T first, Rest... rest) {
 }
 // Usage: print(1, "hello", 3.14);</code></pre>
 
-<blockquote>[!NOTE]
-C++17 fold expressions replace most recursive variadic templates with shorter, clearer code.
-</blockquote>
+> [!NOTE]
+> C++17 fold expressions replace most recursive variadic templates with shorter, clearer code.
 
 <hr>
 
@@ -85,9 +84,8 @@ std::unique_ptr&lt;T&gt; make(Args&amp;&amp;... args) {
     return std::unique_ptr&lt;T&gt;(new T(std::forward&lt;Args&gt;(args)...));
 }</code></pre>
 
-<blockquote>[!TIP]
-This pattern is exactly how <code>std::make_unique</code> and <code>std::make_shared</code> are implemented in the standard library.
-</blockquote>
+> [!TIP]
+> This pattern is exactly how <code>std::make_unique</code> and <code>std::make_shared</code> are implemented in the standard library.
 
 <hr>
 

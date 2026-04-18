@@ -30,11 +30,11 @@ Modern C++ (C++11 and later) adds <strong>move semantics</strong>, extending thi
 </ol>
 
 
->[!NOTE]
->See also: <a href="https://www.youtube.com/watch?v=bvCEqS4S0sg">Rule of Three (video)</a> and <a href="https://www.youtube.com/watch?v=St0MNEU5b0o">Move Semantics (video)</a>
+> [!NOTE]
+> See also: <a href="https://www.youtube.com/watch?v=bvCEqS4S0sg">Rule of Three (video)</a> and <a href="https://www.youtube.com/watch?v=St0MNEU5b0o">Move Semantics (video)</a>
 
 
-<div class="mermaid">
+```mermaid
 flowchart TD
   A["Class manages dynamic resource"]
   B["Destructor"]
@@ -54,7 +54,7 @@ flowchart TD
   D --> G
   E --> G
   F --> G
-</div>
+```
 
 ---
 
@@ -70,13 +70,13 @@ flowchart TD
   <li>🔴 <strong>Unnecessary copies (performance)</strong></li>
 </ul>
 
-<div class="mermaid">
+```mermaid
 flowchart LR
   X["Constructor allocates (new)"] --> Y["Destructor deallocates (delete)"]
   Y --> Z["Copy: duplicate safely"]
   Z --> M["Move: transfer ownership (no copy)"]
   M --> X
-</div>
+```
 
 
 ---
@@ -127,7 +127,7 @@ flowchart LR
 };
 </code></pre>
 
-<div class="mermaid">
+```mermaid
 classDiagram
 class MaybeInt {
     - int* value_
@@ -139,7 +139,7 @@ class MaybeInt {
     + MaybeInt(MaybeInt rref other)
     + operator=(MaybeInt rref other) MaybeInt-ref
 }
-</div>
+```
 
 ---
 
@@ -322,12 +322,12 @@ This is especially important for performance when returning objects from functio
 MaybeInt b = std::move(a);  // Move constructor: b now owns the int, a.value_ == nullptr
 </code></pre>
 
-<div class="mermaid">
+```mermaid
 flowchart LR
   A["a::value_ points to heap(42)"] -->|"std::move(a)"| B["Move constructor called"]
   B --> C["b::value_ now owns heap(42)"]
   B --> D["a::value_ set to nullptr"]
-</div>
+```
 
 <h3>Copy vs. Move Comparison</h3>
 
@@ -495,7 +495,7 @@ flowchart LR
 
 <p>Click the link below to step through all five special member functions in Python Tutor:</p>
 
-<p>👉 Open in Python Tutor (all 5 functions)</a></p>
+<p>👉 Open in Python Tutor (all 5 functions)</p>
 <a href="
 https://pythontutor.com/visualize.html#code=%23include%20%3Cutility%3E%0A%0Aclass%20MaybeInt%20%7B%0A%20public%3A%0A%20%20MaybeInt%28%29%20%3A%20value_%28nullptr%29%20%7B%7D%0A%20%20MaybeInt%28int%20v%29%20%3A%20value_%28new%20int%28v%29%29%20%7B%7D%0A%0A%20%20~MaybeInt%28%29%20%7B%20delete%20value_%3B%20%7D%0A%0A%20%20MaybeInt%28const%20MaybeInt%26%20o%29%20%7B%0A%20%20%20%20value_%20%3D%20o.value_%20%3F%20new%20int%28*o.value_%29%20%3A%20nullptr%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%26%20operator%3D%28const%20MaybeInt%26%20o%29%20%7B%0A%20%20%20%20if%20%28this%20!%3D%20%26o%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%20%20value_%20%3D%20o.value_%20%3F%20new%20int%28*o.value_%29%20%3A%20nullptr%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20*this%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%28MaybeInt%26%26%20o%29%20noexcept%20%3A%20value_%28o.value_%29%20%7B%0A%20%20%20%20o.value_%20%3D%20nullptr%3B%0A%20%20%7D%0A%0A%20%20MaybeInt%26%20operator%3D%28MaybeInt%26%26%20o%29%20noexcept%20%7B%0A%20%20%20%20if%20%28this%20!%3D%20%26o%29%20%7B%0A%20%20%20%20%20%20delete%20value_%3B%0A%20%20%20%20%20%20value_%20%3D%20o.value_%3B%0A%20%20%20%20%20%20o.value_%20%3D%20nullptr%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20*this%3B%0A%20%20%7D%0A%0A%20private%3A%0A%20%20int*%20value_%3B%0A%7D%3B%0A%0Aint%20main%28%29%20%7B%0A%20%20MaybeInt%20a%287%29%3B%0A%20%20MaybeInt%20b%28a%29%3B%0A%20%20MaybeInt%20c%3B%0A%20%20c%20%3D%20a%3B%0A%20%20MaybeInt%20d%28std%3A%3Amove%28a%29%29%3B%0A%20%20MaybeInt%20e%3B%0A%20%20e%20%3D%20std%3A%3Amove%28b%29%3B%0A%20%20return%200%3B%0A%7D&curInstr=6&mode=display&origin=opt-frontend.js&py=cpp_g%2B%2B9.3.0"> Open in Python Tutor  </a>
 
@@ -547,10 +547,8 @@ https://pythontutor.com/visualize.html#code=%23include%20%3Cutility%3E%0A%0Aclas
   </tbody>
 </table>
 
-<blockquote>
-[!TIP]
-<strong>Rule of Zero:</strong> If you use smart pointers (<code>std::unique_ptr</code>, <code>std::shared_ptr</code>) or standard containers, you can often avoid writing any of these five functions yourself — the compiler-generated defaults will do the right thing.
-</blockquote>
+> [!TIP]
+> <strong>Rule of Zero:</strong> If you use smart pointers (<code>std::unique_ptr</code>, <code>std::shared_ptr</code>) or standard containers, you can often avoid writing any of these five functions yourself - the compiler-generated defaults will do the right thing.
 
 <h3>Rule of Zero — Prefer Smart Pointers</h3>
 
@@ -568,7 +566,5 @@ class MaybeInt {
 };
 </code></pre>
 
-<blockquote>
-[!NOTE]
-In modern C++, if you define <strong>any</strong> of the five special member functions, define <strong>all five</strong> — or use smart pointers (Rule of Zero) and define <strong>none</strong>.
-</blockquote>
+> [!NOTE]
+> In modern C++, if you define <strong>any</strong> of the five special member functions, define <strong>all five</strong> - or use smart pointers (Rule of Zero) and define <strong>none</strong>.

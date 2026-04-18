@@ -7,7 +7,7 @@ The program reads the contents of each file and computes a lightweight hash valu
 
 
 
-> [!Note]
+> [!NOTE]
 > You may base your implementation on the following reference code:
 > [https://raw.githubusercontent.com/TeachingOW/CPP-F25/refs/heads/main/code/filematcher3.cpp](https://raw.githubusercontent.com/TeachingOW/CPP-F25/refs/heads/main/code/filematcher3.cpp)
 

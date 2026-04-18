@@ -65,9 +65,8 @@ auto a = cref;       // a is int (not const int&amp;!)
 auto&amp; b = cref;      // b is const int&amp; (reference preserved)
 const auto&amp; c = cref; // c is const int&amp;</code></pre>
 
-<blockquote>[!WARNING]
-When using <code>auto</code> with references or const-qualified types, always add <code>&amp;</code> or <code>const auto&amp;</code> to preserve those qualifiers.
-</blockquote>
+> [!WARNING]
+> When using <code>auto</code> with references or const-qualified types, always add <code>&amp;</code> or <code>const auto&amp;</code> to preserve those qualifiers.
 
 <hr>
 

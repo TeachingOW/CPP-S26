@@ -54,9 +54,8 @@ for (auto name : names)         // COPY — safe but expensive
 for (auto&amp; name : names)        // REFERENCE — modify allowed, no copy
 for (const auto&amp; name : names)  // CONST REF — safe, no copy (preferred for read)</code></pre>
 
-<blockquote>[!TIP]
-Prefer <code>const auto&amp;</code> for read-only iteration over containers holding non-trivial types — it avoids copies entirely.
-</blockquote>
+> [!TIP]
+> Prefer <code>const auto&amp;</code> for read-only iteration over containers holding non-trivial types - it avoids copies entirely.
 
 <hr>
 
@@ -87,9 +86,8 @@ for (const auto&amp; x : v) { std::cout &lt;&lt; i &lt;&lt; ": " &lt;&lt; x &lt;
 // C++23 enumerate (ranges::views::enumerate)
 // for (auto [i, x] : std::views::enumerate(v)) { ... }</code></pre>
 
-<blockquote>[!NOTE]
-C++23 introduces <code>std::views::enumerate</code> which provides index-value pairs directly in a range-for loop.
-</blockquote>
+> [!NOTE]
+> C++23 introduces <code>std::views::enumerate</code> which provides index-value pairs directly in a range-for loop.
 
 <hr>
 

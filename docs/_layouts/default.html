@@ -176,7 +176,24 @@ main {
   <!-- Mermaid + MathJax -->
   <script type="module">
     import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-    mermaid.initialize({ startOnLoad: true });
+
+    function promoteMermaidCodeFences() {
+      // Convert fenced mermaid code blocks into .mermaid elements that Mermaid can render.
+      document.querySelectorAll("pre > code.language-mermaid").forEach((code) => {
+        const pre = code.parentElement;
+        if (!pre) return;
+        const div = document.createElement("div");
+        div.className = "mermaid";
+        div.textContent = code.textContent || "";
+        pre.replaceWith(div);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", async () => {
+      promoteMermaidCodeFences();
+      mermaid.initialize({ startOnLoad: false });
+      await mermaid.run({ querySelector: ".mermaid" });
+    });
   </script>
   <script>
     window.MathJax = {
@@ -217,20 +234,27 @@ main {
       });
     });
 
-    // 🧩 Convert [!NOTE], [!TIP], [!WARNING] blockquotes into styled divs (robust version)
+    // 🧩 Convert [!NOTE], [!TIP], [!WARNING], [!IMPORTANT], [!CAUTION] blockquotes into styled divs
     document.querySelectorAll("blockquote").forEach((bq) => {
       const firstPara = bq.querySelector("p");
-      if (!firstPara) return;
+      const sourceText = firstPara ? firstPara.innerText : bq.innerText;
+      const marker = sourceText.trim().match(/^\[!(NOTE|TIP|WARNING|IMPORTANT|CAUTION)\]/i);
+      if (!marker) return;
 
-      const text = firstPara.innerText.trim().toUpperCase();
-
-      let type = null;
-      if (text.startsWith("[!NOTE]")) type = "note";
-      else if (text.startsWith("[!TIP]")) type = "tip";
-      else if (text.startsWith("[!WARNING]")) type = "warning";
+      let type = marker[1].toLowerCase();
+      if (type === "important") type = "note";
+      if (type === "caution") type = "warning";
 
       if (type) {
-        firstPara.innerHTML = firstPara.innerHTML.replace(/\[!(NOTE|TIP|WARNING)\]/i, "").trim();
+        if (firstPara) {
+          firstPara.innerHTML = firstPara.innerHTML.replace(/^\s*\[!(NOTE|TIP|WARNING|IMPORTANT|CAUTION)\]\s*/i, "");
+          if (!firstPara.innerText.trim() && firstPara.children.length === 0) {
+            firstPara.remove();
+          }
+        } else {
+          bq.innerHTML = bq.innerHTML.replace(/^\s*\[!(NOTE|TIP|WARNING|IMPORTANT|CAUTION)\]\s*/i, "");
+        }
+
         const div = document.createElement("div");
         div.className = `callout callout-${type}`;
 
