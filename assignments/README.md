@@ -5,25 +5,25 @@ This directory contains all course assignments organized by number.
 ## Assignment Overview
 
 ### Assignment 2: BMP Image Processing
-**Directory:** [assignment-02/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02)  
+**Directory:** [assignment-02/](./assignment-02/)  
 **Topics:** File I/O, Binary Data, Image Processing  
 **Difficulty:** ⭐⭐⭐  
 **External Resources:**
 - [BMP Image Processing Quick start](https://github.com/TeachingOW/CPPF25-Assignment2)
 
 ### Assignment 2.5: Advanced BMP Features
-**Directory:** [assignment-02.5/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02.5)  
+**Directory:** [assignment-02.5/](./assignment-02.5/)  
 **Topics:** Advanced Image Processing, Optimization  
 **Difficulty:** ⭐⭐⭐⭐  
 **Prerequisites:** Assignment 2
 
 ### Assignment 3: Data Structures
-**Directory:** [assignment-03/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-03)  
+**Directory:** [assignment-03/](./assignment-03/)  
 **Topics:** Classes, Operator Overloading, Rule of Three  
 **Difficulty:** ⭐⭐⭐
 
 ### Assignment 4: JSON Schema Analyzer
-**Directory:** [assignment-04/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-04)  
+**Directory:** [assignment-04/](./assignment-04/)  
 **Topics:** JSON Parsing, Recursion, SimdJson Library  
 **Difficulty:** ⭐⭐⭐⭐  
 **External Resources:**
@@ -31,7 +31,7 @@ This directory contains all course assignments organized by number.
 - [SimdJson Quickstart](https://github.com/TeachingOW/simdjson-quickstart)
 
 ### Assignment 5: LRU Cache Implementation
-**Directory:** [assignment-05/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-05)  
+**Directory:** [assignment-05/](./assignment-05/)  
 **Topics:** Hash Maps, Doubly Linked Lists, O(1) Operations  
 **Difficulty:** ⭐⭐⭐⭐⭐  
 **LeetCode:** [LRU Cache Problem](https://leetcode.com/problems/lru-cache/description/)
@@ -79,13 +79,13 @@ This directory contains all course assignments organized by number.
 - **Office Hours:** Check course schedule
 - **Discussion Forum:** Use course forum for questions
 - **Team Work:** Some assignments allow team submissions (check individual assignment instructions)
-- **Resources:** See [resources/](https://github.com/TeachingOW/CPP-S26/tree/main/resources) directory for books and references
+- **Resources:** See [resources/](../resources/) directory for books and references
 
 ---
 
 ## Related Materials
 
-- **Code Examples:** [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples)
-- **Practice Problems:** [practice-problems/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems)
-- **Lecture Notes:** [lectures/](https://github.com/TeachingOW/CPP-S26/tree/main/lectures)
-- **Topics:** [topics/](https://github.com/TeachingOW/CPP-S26/tree/main/topics)
+- **Code Examples:** [code-examples/](../code-examples/)
+- **Practice Problems:** [practice-problems/](../practice-problems/)
+- **Lecture Notes:** [lectures/](../lectures/)
+- **Topics:** [topics/](../topics/)

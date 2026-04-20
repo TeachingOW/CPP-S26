@@ -28,7 +28,7 @@ This directory contains step-by-step tutorial guides for learning C++ concepts i
 **Related Materials:**
 - [PillarsofOOP.md](../topics/oop/PillarsofOOP.md)
 - [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
-- [Lecture 6-9 notes](https://github.com/TeachingOW/CPP-S26/tree/main/lectures)
+- [Lecture 6-9 notes](../lectures/)
 
 ---
 
@@ -62,7 +62,7 @@ This directory contains step-by-step tutorial guides for learning C++ concepts i
 - Document your learning journey
 
 #### Auditory Learners
-- Watch related [video lectures](https://github.com/TeachingOW/CPP-S26/tree/main/lectures)
+- Watch related [video lectures](../lectures/)
 - Explain concepts out loud
 - Discuss with study groups
 - Record yourself explaining topics
@@ -151,8 +151,8 @@ Detailed concept explanations:
 ### Code Examples
 Working code to study:
 - [Basic Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
-- [OOP Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples)
-- [Advanced Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples)
+- [OOP Examples](../code-examples/)
+- [Advanced Examples](../code-examples/)
 
 ### Practice
 Problems to solve:
@@ -162,10 +162,10 @@ Problems to solve:
 
 ### Assignments
 Graded projects:
-- [Assignment 2: BMP Processing](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02)
-- [Assignment 3](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-03)
-- [Assignment 4: JSON Analyzer](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-04)
-- [Assignment 5: LRU Cache](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-05)
+- [Assignment 2: BMP Processing](../assignments/assignment-02/)
+- [Assignment 3](../assignments/assignment-03/)
+- [Assignment 4: JSON Analyzer](../assignments/assignment-04/)
+- [Assignment 5: LRU Cache](../assignments/assignment-05/)
 
 ---
 

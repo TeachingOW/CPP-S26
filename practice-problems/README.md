@@ -44,10 +44,10 @@ This directory contains practice problems organized by topic to help you master 
 
 ## Related Materials
 
-- **Assignments:** [assignments/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) - Graded course assignments
-- **Topics:** [topics/](https://github.com/TeachingOW/CPP-S26/tree/main/topics) - Concept explanations and notes
-- **Code Examples:** [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples) - Reference implementations
-- **Tutorials:** [tutorials/](https://github.com/TeachingOW/CPP-S26/tree/main/tutorials) - Step-by-step guides
+- **Assignments:** [assignments/](../assignments/) - Graded course assignments
+- **Topics:** [topics/](../topics/) - Concept explanations and notes
+- **Code Examples:** [code-examples/](../code-examples/) - Reference implementations
+- **Tutorials:** [tutorials/](../tutorials/) - Step-by-step guides
 
 ## External Practice Resources
 

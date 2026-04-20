@@ -113,7 +113,7 @@ This directory is organized for weekly lecture content, notes, and materials.
 - 10/29: Working on Bitmap image programs
 
 **Code:** [code-examples/bmp/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/bmp)  
-**Assignment:** [Assignment 2](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02)
+**Assignment:** [Assignment 2](../assignments/assignment-02/)
 
 ---
 
@@ -176,12 +176,12 @@ This directory is organized for weekly lecture content, notes, and materials.
 
 ## Course Materials Organization
 
-- **Slides:** [slides/](https://github.com/TeachingOW/CPP-S26/tree/main/slides) - PowerPoint presentations
-- **Topics:** [topics/](https://github.com/TeachingOW/CPP-S26/tree/main/topics) - Detailed concept notes
-- **Code Examples:** [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples) - Working code
-- **Assignments:** [assignments/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) - Graded work
-- **Practice:** [practice-problems/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems) - Extra problems
-- **Resources:** [resources/](https://github.com/TeachingOW/CPP-S26/tree/main/resources) - Books, cheat sheets, links
+- **Slides:** [slides/](../slides/) - PowerPoint presentations
+- **Topics:** [topics/](../topics/) - Detailed concept notes
+- **Code Examples:** [code-examples/](../code-examples/) - Working code
+- **Assignments:** [assignments/](../assignments/) - Graded work
+- **Practice:** [practice-problems/](../practice-problems/) - Extra problems
+- **Resources:** [resources/](../resources/) - Books, cheat sheets, links
 
 ---
 

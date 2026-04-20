@@ -29,8 +29,8 @@ CPP-S26/
 4. Watch the [video lectures](#video-lectures)
 
 ### Continuing Students?
-1. Check [Lecture Schedule](https://github.com/TeachingOW/CPP-S26/tree/main/lectures) for weekly content
-2. Review [Assignments](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) for due dates
+1. Check [Lecture Schedule](./lectures/) for weekly content
+2. Review [Assignments](./assignments/) for due dates
 3. Practice with [LeetCode Problems](COURSE_OUTLINE.md#leetcode-problems-to-assign)
 
 ---
@@ -38,7 +38,7 @@ CPP-S26/
 ## 📖 Learning Materials
 
 ### Slides
-- [Course Slides](https://github.com/TeachingOW/CPP-S26/tree/main/slides) - PowerPoint presentations for all topics
+- [Course Slides](./slides/) - PowerPoint presentations for all topics
   - [Part 1: C++ Fundamentals](slides/cpp-part1.pptx)
   - [Part 2: Advanced C++ & OOP](slides/cpp-part2.pptx)
 
@@ -72,7 +72,7 @@ CPP-S26/
 #### Algorithms
 - [Merge Sort](topics/algorithms/mergesort.md)
 
-**[View all topics →](https://github.com/TeachingOW/CPP-S26/tree/main/topics)**
+**[View all topics →](./topics/)**
 
 ## 🎥 Video Lectures
 
@@ -102,7 +102,7 @@ CPP-S26/
 - [CPP-Unittest](https://github.com/TeachingOW/CPP-Unittest)
 - [CppProjectTemplate](https://github.com/TeachingOW/CppProjectTemplate)
 
-**[View all resources →](https://github.com/TeachingOW/CPP-S26/tree/main/resources)**
+**[View all resources →](./resources/)**
 
 ---
 **Happy Coding! 🚀**

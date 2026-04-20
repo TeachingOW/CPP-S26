@@ -53,7 +53,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [modules.md](./advanced/modules.md) - Module-based organization in C++20
 
 **Prerequisites:** Strong understanding of C++ fundamentals  
-**Related:** [Advanced assignments](https://github.com/TeachingOW/CPP-S26/tree/main/assignments)
+**Related:** [Advanced assignments](../assignments/)
 
 ---
 
@@ -64,7 +64,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [mergesort.md](./algorithms/mergesort.md) - Merge sort algorithm and implementation
 
 **Prerequisites:** Basic data structures knowledge  
-**Related:** [Practice Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems), [Sudoku Solver](https://github.com/TeachingOW/Sudoku-Solver)
+**Related:** [Practice Problems](../practice-problems/), [Sudoku Solver](https://github.com/TeachingOW/Sudoku-Solver)
 
 ---
 
@@ -76,14 +76,14 @@ This directory contains detailed notes and explanations for various C++ concepts
    - Function arguments
    - File I/O
 2. Practice with [basic code examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
-3. Work through [beginner problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems)
+3. Work through [beginner problems](../practice-problems/)
 
 ### Intermediate Path
 1. Study **OOP concepts**
    - Pillars of OOP
    - Exception handling
 2. Learn **Templates and Lambda**
-3. Complete [OOP assignments](https://github.com/TeachingOW/CPP-S26/tree/main/assignments)
+3. Complete [OOP assignments](../assignments/)
 
 ### Advanced Path
 1. Master **STL**
@@ -140,12 +140,12 @@ See [COURSE_OUTLINE.md](../COURSE_OUTLINE.md) for a complete list of planned top
 
 ## Related Materials
 
-- **Lectures:** [lectures/](https://github.com/TeachingOW/CPP-S26/tree/main/lectures) - Weekly lecture notes
-- **Slides:** [slides/](https://github.com/TeachingOW/CPP-S26/tree/main/slides) - PowerPoint presentations
-- **Code Examples:** [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples) - Practical implementations
-- **Assignments:** [assignments/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) - Graded projects
-- **Practice:** [practice-problems/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems) - Additional exercises
-- **Resources:** [resources/](https://github.com/TeachingOW/CPP-S26/tree/main/resources) - Books, cheat sheets, external links
+- **Lectures:** [lectures/](../lectures/) - Weekly lecture notes
+- **Slides:** [slides/](../slides/) - PowerPoint presentations
+- **Code Examples:** [code-examples/](../code-examples/) - Practical implementations
+- **Assignments:** [assignments/](../assignments/) - Graded projects
+- **Practice:** [practice-problems/](../practice-problems/) - Additional exercises
+- **Resources:** [resources/](../resources/) - Books, cheat sheets, external links
 
 ---
 
