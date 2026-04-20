@@ -12,7 +12,7 @@ This directory is organized for weekly lecture content, notes, and materials.
 - First C++ program
 
 **Slides:** [slides/cpp-part1.pptx](../slides/cpp-part1.pptx)  
-**Code:** [code-examples/basic/](../code-examples/basic/)
+**Code:** [code-examples/basic/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
 
 ---
 
@@ -112,7 +112,7 @@ This directory is organized for weekly lecture content, notes, and materials.
 - 10/27: Working on Bitmap image programs
 - 10/29: Working on Bitmap image programs
 
-**Code:** [code-examples/bmp/](../code-examples/bmp/)  
+**Code:** [code-examples/bmp/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/bmp)  
 **Assignment:** [Assignment 2](../assignments/assignment-02/)
 
 ---

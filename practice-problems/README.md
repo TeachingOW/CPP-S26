@@ -5,7 +5,7 @@ This directory contains practice problems organized by topic to help you master 
 ## Problem Sets
 
 ### OOP Problems
-**Directory:** [oop/](./oop/)  
+**Directory:** [oop/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)  
 **Topics:** Classes, Objects, Inheritance, Polymorphism, Encapsulation  
 **Files:**
 - [problems.md](./oop/problems.md) - Collection of OOP practice problems
@@ -16,7 +16,7 @@ This directory contains practice problems organized by topic to help you master 
 ---
 
 ### LRU Cache Problems
-**Directory:** [lru/](./lru/)  
+**Directory:** [lru/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/lru)  
 **Topics:** Data Structures, Hash Maps, Doubly Linked Lists, Algorithm Design  
 **Description:** Practice implementing Least Recently Used (LRU) cache with visual explanations and step-by-step examples.
 

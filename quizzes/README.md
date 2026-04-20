@@ -19,23 +19,23 @@ Quizzes are organized by week and topic, aligned with lecture materials:
 
 | Week | Topic | Quizzes | Points | Status |
 |------|-------|---------|--------|--------|
-| 1 | [C++ Basics](week-01-basics/) | 2 quizzes | 30-35 pts each | ✅ Complete |
-| 2 | [Control Structures](week-02-control-structures/) | 2 quizzes | 36-38 pts each | ✅ Complete |
-| 3 | [Functions](week-03-functions/) | 2 quizzes | 38 pts each | ✅ Complete |
-| 4 | [Pointers](week-04-pointers/) | 2 quizzes | 48 pts each | ✅ Complete |
-| 5 | [OOP Basics](week-05-oop-basics/) | 2 quizzes | 50 pts each | ✅ Complete |
-| 6 | [OOP Advanced](week-06-oop-advanced/) | 2 quizzes | 52 pts each | ✅ Complete |
-| 7 | [Memory Management](week-07-memory-management/) | 2 quizzes | 42-54 pts each | ✅ Complete |
-| 8 | [Templates](week-08-templates/) | 2 quizzes | 44-50 pts each | ✅ Complete |
-| 9 | [STL](week-09-stl/) | 2 quizzes | 52-60 pts each | ✅ Complete |
-| 10 | [File I/O](week-10-file-io/) | 2 quizzes | 40-42 pts each | ✅ Complete |
-| 11 | [Advanced C++](week-11-advanced-cpp/) | 2 quizzes | 50-54 pts each | ✅ Complete |
-| 12 | [Modern C++](week-12-modern-cpp/) | 2 quizzes | 52 pts each | ✅ Complete |
+| 1 | [C++ Basics](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-01-basics) | 2 quizzes | 30-35 pts each | ✅ Complete |
+| 2 | [Control Structures](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-02-control-structures) | 2 quizzes | 36-38 pts each | ✅ Complete |
+| 3 | [Functions](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-03-functions) | 2 quizzes | 38 pts each | ✅ Complete |
+| 4 | [Pointers](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-04-pointers) | 2 quizzes | 48 pts each | ✅ Complete |
+| 5 | [OOP Basics](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-05-oop-basics) | 2 quizzes | 50 pts each | ✅ Complete |
+| 6 | [OOP Advanced](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-06-oop-advanced) | 2 quizzes | 52 pts each | ✅ Complete |
+| 7 | [Memory Management](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-07-memory-management) | 2 quizzes | 42-54 pts each | ✅ Complete |
+| 8 | [Templates](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-08-templates) | 2 quizzes | 44-50 pts each | ✅ Complete |
+| 9 | [STL](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-09-stl) | 2 quizzes | 52-60 pts each | ✅ Complete |
+| 10 | [File I/O](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-10-file-io) | 2 quizzes | 40-42 pts each | ✅ Complete |
+| 11 | [Advanced C++](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-11-advanced-cpp) | 2 quizzes | 50-54 pts each | ✅ Complete |
+| 12 | [Modern C++](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/week-12-modern-cpp) | 2 quizzes | 52 pts each | ✅ Complete |
 
 ### Review Quizzes
 
-- **[Midterm Review](midterm-review/)**: 2 comprehensive practice quizzes (100 points each, covers Weeks 1-6) ✅ Complete
-- **[Final Review](final-review/)**: 2 comprehensive quizzes (150 points each, covers ALL weeks 1-12) ✅ Complete
+- **[Midterm Review](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/midterm-review)**: 2 comprehensive practice quizzes (100 points each, covers Weeks 1-6) ✅ Complete
+- **[Final Review](https://github.com/TeachingOW/CPP-S26/tree/main/quizzes/final-review)**: 2 comprehensive quizzes (150 points each, covers ALL weeks 1-12) ✅ Complete
 
 **Total Quizzes Created:** 24 weekly quizzes + 4 review quizzes = **28 quiz files**  
 **Total Solutions Created:** 24 weekly solutions + 4 review solutions = **28 solution files**  
@@ -230,10 +230,10 @@ Questions are marked with difficulty indicators:
 
 ### Links to Course Resources
 
-- **Topics**: [/topics](/topics) - Detailed topic explanations
-- **Code Examples**: [/code](/code) - Working code samples
-- **Assignments**: [/problems](/problems) - Programming assignments
-- **Tutorials**: [/tutorials](/tutorials) - Step-by-step guides
+- **Topics**: [../topics](../topics) - Detailed topic explanations
+- **Code Examples**: [../code-examples](../code-examples) - Working code samples
+- **Assignments**: [../assignments](../assignments) - Programming assignments
+- **Tutorials**: [../tutorials](../tutorials) - Step-by-step guides
 
 ### Cross-References in Quizzes
 

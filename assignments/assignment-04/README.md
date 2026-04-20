@@ -47,8 +47,7 @@ Here’s an example:
 You must implement this tool in **C/C++**. Here are some key points to consider:
 
 - Use [SimdJson](https://github.com/simdjson/simdjson) for parsing JSON data.  
-- Documentation of the library and quick start can be found [here](
-https://simdjson.org/api/0.4.0/index.html).
+- Documentation of the library and quick start can be found [here](https://simdjson.org/api/0.4.0/index.html).
 - Recursively traverse the JSON document to explore nested structures.  
 - During traversal, keep track of encountered attributes and their corresponding values.  
 - Based on the value types encountered (string, number, boolean, array, object), infer the data type for each attribute.  

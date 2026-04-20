@@ -27,7 +27,7 @@ This directory contains step-by-step tutorial guides for learning C++ concepts i
 
 **Related Materials:**
 - [PillarsofOOP.md](../topics/oop/PillarsofOOP.md)
-- [OOP Problems](../practice-problems/oop/)
+- [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
 - [Lecture 6-9 notes](../lectures/)
 
 ---
@@ -144,21 +144,21 @@ Each tutorial follows this structure:
 
 ### Topics
 Detailed concept explanations:
-- [OOP Topics](../topics/oop/)
-- [C++ Fundamentals](../topics/cpp-fundamentals/)
-- [Advanced Topics](../topics/advanced/)
+- [OOP Topics](https://github.com/TeachingOW/CPP-S26/tree/main/topics/oop)
+- [C++ Fundamentals](https://github.com/TeachingOW/CPP-S26/tree/main/topics/cpp-fundamentals)
+- [Advanced Topics](https://github.com/TeachingOW/CPP-S26/tree/main/topics/advanced)
 
 ### Code Examples
 Working code to study:
-- [Basic Examples](../code-examples/basic/)
-- [OOP Examples](../code-examples/oop/)
-- [Advanced Examples](../code-examples/advanced/)
+- [Basic Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
+- [OOP Examples](../code-examples/)
+- [Advanced Examples](../code-examples/)
 
 ### Practice
 Problems to solve:
-- [OOP Problems](../practice-problems/oop/)
-- [Array Problems](../practice-problems/arrays/)
-- [LRU Cache](../practice-problems/lru/)
+- [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
+- [Array Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/arrays)
+- [LRU Cache](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/lru)
 
 ### Assignments
 Graded projects:

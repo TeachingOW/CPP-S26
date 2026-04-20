@@ -158,7 +158,6 @@ int main() {
 ```
 
    Write down an implementation for `strlen`. </br>
-   **Solution** [soln](../codesnippets/length.cpp)
 
 ---
 

@@ -321,8 +321,8 @@ int main() {
 
 ### From Repository
 - [code-examples/basic/pointers.cpp](../code-examples/basic/pointers.cpp)
-- [code-examples/file-handling/](../code-examples/file-handling/)
-- [code-examples/bmp/](../code-examples/bmp/)
+- [code-examples/file-handling/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/file-handling)
+- [code-examples/bmp/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/bmp)
 - Examples from lecture Gists
 
 ### To Create

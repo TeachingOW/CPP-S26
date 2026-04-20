@@ -3,25 +3,25 @@
 
 | Assignment | Topic | Difficulty |
 |------------|-------|------------|
-| [Assignment 2](assignments/assignment-02/) | BMP Image Processing | ⭐⭐⭐ |
-| [Assignment 2.5](assignments/assignment-02.5/) | Advanced BMP Features | ⭐⭐⭐⭐ |
-| [Assignment 3](assignments/assignment-03/) | Data Structures | ⭐⭐⭐ |
-| [Assignment 4](assignments/assignment-04/) | JSON Schema Analyzer | ⭐⭐⭐⭐ |
-| [Assignment 5](assignments/assignment-05/) | LRU Cache | ⭐⭐⭐⭐⭐ |
+| [Assignment 2](./assignments/assignment-02/) | BMP Image Processing | ⭐⭐⭐ |
+| [Assignment 2.5](./assignments/assignment-02.5/) | Advanced BMP Features | ⭐⭐⭐⭐ |
+| [Assignment 3](./assignments/assignment-03/) | Data Structures | ⭐⭐⭐ |
+| [Assignment 4](./assignments/assignment-04/) | JSON Schema Analyzer | ⭐⭐⭐⭐ |
+| [Assignment 5](./assignments/assignment-05/) | LRU Cache | ⭐⭐⭐⭐⭐ |
 
-**[View all assignments →](assignments/)**
+**[View all assignments →](./assignments/)**
 
 ---
 
 ## 💻 Code Examples
 
-- [Basic Examples](code-examples/basic/) - Hello World, pointers, basic syntax
-- [File Handling](code-examples/file-handling/) - File matchers and I/O operations
-- [BMP Processing](code-examples/bmp/) - Bitmap image manipulation
-- [Algorithms](code-examples/algorithms/) - Sudoku solver and more
-- [Lecture Code](code-examples/lectures/) - Code from specific lectures
+- [Basic Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic) - Hello World, pointers, basic syntax
+- [File Handling](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/file-handling) - File matchers and I/O operations
+- [BMP Processing](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/bmp) - Bitmap image manipulation
+- [Algorithms](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/algorithms) - Sudoku solver and more
+- [Lecture Code](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/lectures) - Code from specific lectures
 
-**[View all code examples →](code-examples/)**
+**[View all code examples →](./code-examples/)**
 
 ---
 
@@ -52,7 +52,7 @@
 - **Lecture 10/22:** [Design Circular Queue](https://leetcode.com/problems/design-circular-queue/)
 - **Lecture 10/20:** [Vector (with Rule of 3)](https://gist.github.com/oldwestbury/3d25c40b3296936c2c457f1a1e5bd99e), Circular Buffer
 
-**[View full lecture schedule →](lectures/)**
+**[View full lecture schedule →](./lectures/)**
 
 ---
 

@@ -13,7 +13,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [Exception.md](./oop/Exception.md) - Exception handling in C++
 
 **Prerequisites:** Basic C++ syntax  
-**Related:** [OOP Tutorial](../tutorials/OOP.md), [OOP Problems](../practice-problems/oop/)
+**Related:** [OOP Tutorial](../tutorials/OOP.md), [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
 
 ---
 
@@ -28,7 +28,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [templates.md](./cpp-fundamentals/templates.md) - Function and class templates
 
 **Prerequisites:** Basic programming concepts  
-**Related:** [Code Examples](../code-examples/basic/)
+**Related:** [Code Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
 
 ---
 
@@ -75,7 +75,7 @@ This directory contains detailed notes and explanations for various C++ concepts
    - Pointers and references
    - Function arguments
    - File I/O
-2. Practice with [basic code examples](../code-examples/basic/)
+2. Practice with [basic code examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
 3. Work through [beginner problems](../practice-problems/)
 
 ### Intermediate Path
@@ -157,7 +157,7 @@ See [COURSE_OUTLINE.md](../COURSE_OUTLINE.md) for a complete list of planned top
   - [Additional C++ Resources](https://www.youtube.com/playlist?list=PLvv0ScY6vfd-fxDQiicYsjqAhJqZkkRH-)
 
 - **Books:**
-  - See [resources/books/](../resources/books/) for recommended texts
+  - See [resources/books/](https://github.com/TeachingOW/CPP-S26/tree/main/resources/books) for recommended texts
   - Scott Meyers' Effective C++ series
 
 - **Online:**
