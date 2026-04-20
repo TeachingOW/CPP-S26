@@ -38,10 +38,10 @@ For new students, we recommend:
 
 ## Related Materials
 
-- **Lecture Notes:** See [lectures/](../lectures/) directory
-- **Code Examples:** See [code-examples/](../code-examples/) directory
-- **Practice Problems:** See [practice-problems/](../practice-problems/) directory
-- **Assignments:** See [assignments/](../assignments/) directory
+- **Lecture Notes:** See [lectures/](https://github.com/TeachingOW/CPP-S26/tree/main/lectures) directory
+- **Code Examples:** See [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples) directory
+- **Practice Problems:** See [practice-problems/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems) directory
+- **Assignments:** See [assignments/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) directory
 
 ## Additional Topics to Cover
 

@@ -44,7 +44,7 @@ This directory contains code examples organized by topic to help students learn 
 
 **Topics:** Binary files, image processing, structs, file formats
 
-**Related:** [Assignment 2](../assignments/assignment-02/), [Assignment 2.5](../assignments/assignment-02.5/)
+**Related:** [Assignment 2](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02), [Assignment 2.5](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02.5)
 
 ---
 
@@ -120,10 +120,10 @@ g++ -std=c++11 -o test test.cpp
 
 ## Related Materials
 
-- **Topics:** [topics/](../topics/) - Concept explanations
-- **Assignments:** [assignments/](../assignments/) - Graded projects
-- **Practice Problems:** [practice-problems/](../practice-problems/) - Additional practice
-- **Lectures:** [lectures/](../lectures/) - Lecture notes and schedules
+- **Topics:** [topics/](https://github.com/TeachingOW/CPP-S26/tree/main/topics) - Concept explanations
+- **Assignments:** [assignments/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) - Graded projects
+- **Practice Problems:** [practice-problems/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems) - Additional practice
+- **Lectures:** [lectures/](https://github.com/TeachingOW/CPP-S26/tree/main/lectures) - Lecture notes and schedules
 
 ---
 
@@ -156,4 +156,4 @@ g++ -std=c++11 -o test test.cpp
 
 ---
 
-**Need Help?** Check the [resources/](../resources/) directory for books, cheat sheets, and external learning materials.
+**Need Help?** Check the [resources/](https://github.com/TeachingOW/CPP-S26/tree/main/resources) directory for books, cheat sheets, and external learning materials.

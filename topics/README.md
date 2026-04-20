@@ -13,7 +13,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [Exception.md](./oop/Exception.md) - Exception handling in C++
 
 **Prerequisites:** Basic C++ syntax  
-**Related:** [OOP Tutorial](../tutorials/OOP.md), [OOP Problems](../practice-problems/oop/)
+**Related:** [OOP Tutorial](../tutorials/OOP.md), [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
 
 ---
 
@@ -28,7 +28,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [templates.md](./cpp-fundamentals/templates.md) - Function and class templates
 
 **Prerequisites:** Basic programming concepts  
-**Related:** [Code Examples](../code-examples/basic/)
+**Related:** [Code Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
 
 ---
 
@@ -53,7 +53,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [modules.md](./advanced/modules.md) - Module-based organization in C++20
 
 **Prerequisites:** Strong understanding of C++ fundamentals  
-**Related:** [Advanced assignments](../assignments/)
+**Related:** [Advanced assignments](https://github.com/TeachingOW/CPP-S26/tree/main/assignments)
 
 ---
 
@@ -64,7 +64,7 @@ This directory contains detailed notes and explanations for various C++ concepts
 - [mergesort.md](./algorithms/mergesort.md) - Merge sort algorithm and implementation
 
 **Prerequisites:** Basic data structures knowledge  
-**Related:** [Practice Problems](../practice-problems/), [Sudoku Solver](https://github.com/TeachingOW/Sudoku-Solver)
+**Related:** [Practice Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems), [Sudoku Solver](https://github.com/TeachingOW/Sudoku-Solver)
 
 ---
 
@@ -75,15 +75,15 @@ This directory contains detailed notes and explanations for various C++ concepts
    - Pointers and references
    - Function arguments
    - File I/O
-2. Practice with [basic code examples](../code-examples/basic/)
-3. Work through [beginner problems](../practice-problems/)
+2. Practice with [basic code examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
+3. Work through [beginner problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems)
 
 ### Intermediate Path
 1. Study **OOP concepts**
    - Pillars of OOP
    - Exception handling
 2. Learn **Templates and Lambda**
-3. Complete [OOP assignments](../assignments/)
+3. Complete [OOP assignments](https://github.com/TeachingOW/CPP-S26/tree/main/assignments)
 
 ### Advanced Path
 1. Master **STL**
@@ -140,12 +140,12 @@ See [COURSE_OUTLINE.md](../COURSE_OUTLINE.md) for a complete list of planned top
 
 ## Related Materials
 
-- **Lectures:** [lectures/](../lectures/) - Weekly lecture notes
-- **Slides:** [slides/](../slides/) - PowerPoint presentations
-- **Code Examples:** [code-examples/](../code-examples/) - Practical implementations
-- **Assignments:** [assignments/](../assignments/) - Graded projects
-- **Practice:** [practice-problems/](../practice-problems/) - Additional exercises
-- **Resources:** [resources/](../resources/) - Books, cheat sheets, external links
+- **Lectures:** [lectures/](https://github.com/TeachingOW/CPP-S26/tree/main/lectures) - Weekly lecture notes
+- **Slides:** [slides/](https://github.com/TeachingOW/CPP-S26/tree/main/slides) - PowerPoint presentations
+- **Code Examples:** [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples) - Practical implementations
+- **Assignments:** [assignments/](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) - Graded projects
+- **Practice:** [practice-problems/](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems) - Additional exercises
+- **Resources:** [resources/](https://github.com/TeachingOW/CPP-S26/tree/main/resources) - Books, cheat sheets, external links
 
 ---
 
@@ -157,7 +157,7 @@ See [COURSE_OUTLINE.md](../COURSE_OUTLINE.md) for a complete list of planned top
   - [Additional C++ Resources](https://www.youtube.com/playlist?list=PLvv0ScY6vfd-fxDQiicYsjqAhJqZkkRH-)
 
 - **Books:**
-  - See [resources/books/](../resources/books/) for recommended texts
+  - See [resources/books/](https://github.com/TeachingOW/CPP-S26/tree/main/resources/books) for recommended texts
   - Scott Meyers' Effective C++ series
 
 - **Online:**

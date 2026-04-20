@@ -24,13 +24,13 @@ CPP-S26/
 
 ### New to C++?
 1. Install your development environment - [Installation Guide](docs/install.md)
-2. Review [C++ Fundamentals Topics](topics/cpp-fundamentals/)
-3. Try [Basic Code Examples](code-examples/basic/)
+2. Review [C++ Fundamentals Topics](https://github.com/TeachingOW/CPP-S26/tree/main/topics/cpp-fundamentals)
+3. Try [Basic Code Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
 4. Watch the [video lectures](#video-lectures)
 
 ### Continuing Students?
-1. Check [Lecture Schedule](lectures/) for weekly content
-2. Review [Assignments](assignments/) for due dates
+1. Check [Lecture Schedule](https://github.com/TeachingOW/CPP-S26/tree/main/lectures) for weekly content
+2. Review [Assignments](https://github.com/TeachingOW/CPP-S26/tree/main/assignments) for due dates
 3. Practice with [LeetCode Problems](COURSE_OUTLINE.md#leetcode-problems-to-assign)
 
 ---
@@ -38,7 +38,7 @@ CPP-S26/
 ## 📖 Learning Materials
 
 ### Slides
-- [Course Slides](slides/) - PowerPoint presentations for all topics
+- [Course Slides](https://github.com/TeachingOW/CPP-S26/tree/main/slides) - PowerPoint presentations for all topics
   - [Part 1: C++ Fundamentals](slides/cpp-part1.pptx)
   - [Part 2: Advanced C++ & OOP](slides/cpp-part2.pptx)
 
@@ -48,7 +48,7 @@ CPP-S26/
 - [Pillars of OOP](topics/oop/PillarsofOOP.md)
 - [Exception Handling](topics/oop/Exception.md)
 - [OOP Tutorial](tutorials/OOP.md)
-- [OOP Practice Problems](practice-problems/oop/)
+- [OOP Practice Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
 
 #### C++ Fundamentals
 - [Pointers](topics/cpp-fundamentals/pointers.md)
@@ -72,7 +72,7 @@ CPP-S26/
 #### Algorithms
 - [Merge Sort](topics/algorithms/mergesort.md)
 
-**[View all topics →](topics/)**
+**[View all topics →](https://github.com/TeachingOW/CPP-S26/tree/main/topics)**
 
 ## 🎥 Video Lectures
 
@@ -86,7 +86,7 @@ CPP-S26/
 ### Quick References
 - **[C++ Cheat Sheet (PDF)](resources/cheatsheet.pdf)** - Printable reference
 - **[C++ Cheat Sheet (Markdown)](resources/cheatsheet.md)** - Quick online reference
-- **[Complete STL Algorithms Guide](resources/books/)** - Comprehensive algorithm reference
+- **[Complete STL Algorithms Guide](https://github.com/TeachingOW/CPP-S26/tree/main/resources/books)** - Comprehensive algorithm reference
 
 ### External Resources
 - [cppreference.com](https://en.cppreference.com/) - C++ documentation
@@ -102,7 +102,7 @@ CPP-S26/
 - [CPP-Unittest](https://github.com/TeachingOW/CPP-Unittest)
 - [CppProjectTemplate](https://github.com/TeachingOW/CppProjectTemplate)
 
-**[View all resources →](resources/)**
+**[View all resources →](https://github.com/TeachingOW/CPP-S26/tree/main/resources)**
 
 ---
 **Happy Coding! 🚀**

@@ -27,8 +27,8 @@ This directory contains step-by-step tutorial guides for learning C++ concepts i
 
 **Related Materials:**
 - [PillarsofOOP.md](../topics/oop/PillarsofOOP.md)
-- [OOP Problems](../practice-problems/oop/)
-- [Lecture 6-9 notes](../lectures/)
+- [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
+- [Lecture 6-9 notes](https://github.com/TeachingOW/CPP-S26/tree/main/lectures)
 
 ---
 
@@ -62,7 +62,7 @@ This directory contains step-by-step tutorial guides for learning C++ concepts i
 - Document your learning journey
 
 #### Auditory Learners
-- Watch related [video lectures](../lectures/)
+- Watch related [video lectures](https://github.com/TeachingOW/CPP-S26/tree/main/lectures)
 - Explain concepts out loud
 - Discuss with study groups
 - Record yourself explaining topics
@@ -144,28 +144,28 @@ Each tutorial follows this structure:
 
 ### Topics
 Detailed concept explanations:
-- [OOP Topics](../topics/oop/)
-- [C++ Fundamentals](../topics/cpp-fundamentals/)
-- [Advanced Topics](../topics/advanced/)
+- [OOP Topics](https://github.com/TeachingOW/CPP-S26/tree/main/topics/oop)
+- [C++ Fundamentals](https://github.com/TeachingOW/CPP-S26/tree/main/topics/cpp-fundamentals)
+- [Advanced Topics](https://github.com/TeachingOW/CPP-S26/tree/main/topics/advanced)
 
 ### Code Examples
 Working code to study:
-- [Basic Examples](../code-examples/basic/)
-- [OOP Examples](../code-examples/)
-- [Advanced Examples](../code-examples/)
+- [Basic Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples/basic)
+- [OOP Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples)
+- [Advanced Examples](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples)
 
 ### Practice
 Problems to solve:
-- [OOP Problems](../practice-problems/oop/)
-- [Array Problems](../practice-problems/arrays/)
-- [LRU Cache](../practice-problems/lru/)
+- [OOP Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/oop)
+- [Array Problems](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/arrays)
+- [LRU Cache](https://github.com/TeachingOW/CPP-S26/tree/main/practice-problems/lru)
 
 ### Assignments
 Graded projects:
-- [Assignment 2: BMP Processing](../assignments/assignment-02/)
-- [Assignment 3](../assignments/assignment-03/)
-- [Assignment 4: JSON Analyzer](../assignments/assignment-04/)
-- [Assignment 5: LRU Cache](../assignments/assignment-05/)
+- [Assignment 2: BMP Processing](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-02)
+- [Assignment 3](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-03)
+- [Assignment 4: JSON Analyzer](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-04)
+- [Assignment 5: LRU Cache](https://github.com/TeachingOW/CPP-S26/tree/main/assignments/assignment-05)
 
 ---
 

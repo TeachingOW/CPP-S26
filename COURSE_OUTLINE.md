@@ -10,7 +10,7 @@ This document outlines topics to cover, problems to assign, and resources to inc
 **Prerequisites:** Templates, generics  
 **Resources:**
 - See [topics/cpp-fundamentals/templates.md](topics/cpp-fundamentals/templates.md)
-- Add examples in [code-examples/](code-examples/)
+- Add examples in [code-examples/](https://github.com/TeachingOW/CPP-S26/tree/main/code-examples)
 
 ---
 
