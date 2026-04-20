@@ -151,8 +151,8 @@ Detailed concept explanations:
 ### Code Examples
 Working code to study:
 - [Basic Examples](../code-examples/basic/)
-- [OOP Examples](../code-examples/oop/)
-- [Advanced Examples](../code-examples/advanced/)
+- [OOP Examples](../code-examples/)
+- [Advanced Examples](../code-examples/)
 
 ### Practice
 Problems to solve:

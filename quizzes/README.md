@@ -230,10 +230,10 @@ Questions are marked with difficulty indicators:
 
 ### Links to Course Resources
 
-- **Topics**: [/topics](/topics) - Detailed topic explanations
-- **Code Examples**: [/code](/code) - Working code samples
-- **Assignments**: [/problems](/problems) - Programming assignments
-- **Tutorials**: [/tutorials](/tutorials) - Step-by-step guides
+- **Topics**: [../topics](../topics) - Detailed topic explanations
+- **Code Examples**: [../code-examples](../code-examples) - Working code samples
+- **Assignments**: [../assignments](../assignments) - Programming assignments
+- **Tutorials**: [../tutorials](../tutorials) - Step-by-step guides
 
 ### Cross-References in Quizzes
 
